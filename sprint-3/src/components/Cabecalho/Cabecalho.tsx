@@ -18,16 +18,6 @@ export default function Cabecalho() {
                     data-guide-title="Navegação da página"
                     data-guide-text="Use o menu acima para acessar páginas como Início, Serviços, FAQ e mais."
                     data-guide-arrow="up">
-<<<<<<< HEAD
-
-                    <Link to="/">Início</Link>
-                    <Link to="/hospitais">Hospitais</Link>
-                    <Link to="/servicos">Serviços</Link>
-                    <Link to="/integrantes">Integrantes</Link>
-                    <Link to="/faq">FAQ</Link>
-                    <Link to="/contato">Contato</Link>
-                    <Link to="/entrar">Entrar</Link>
-=======
                 <ul>
                     <li><a href="#" className="active">Início</a></li>
                     <li><a href="./assets/paginas/hospitais.html">Hospitais</a></li>
@@ -37,7 +27,6 @@ export default function Cabecalho() {
                     <li><a href="./assets/paginas/contato.html">Contato</a></li>
                     <li className="nav-item-login"><a href="./assets/paginas/area-paciente/meu-perfil.html" className="btn-nav-login">Entrar</a></li>
                 </ul>
->>>>>>> main
             </nav>
         </div>
     </header>

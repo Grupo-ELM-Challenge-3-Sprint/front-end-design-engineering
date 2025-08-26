@@ -24,7 +24,7 @@ export default function Cabecalho() {
                     <li><a href="./assets/paginas/integrantes.html">Integrantes</a></li>
                     <li><a href="./assets/paginas/faq.html">FAQ</a></li>
                     <li><a href="./assets/paginas/contato.html">Contato</a></li>
-                    <li className="nav-item-login"><a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn-nav-login">Entrar</a></li>
+                    <li className="nav-item-login"><a href="./assets/paginas/area-paciente/meu-perfil.html" className="btn-nav-login">Entrar</a></li>
                 </ul>
             </nav>
         </div>

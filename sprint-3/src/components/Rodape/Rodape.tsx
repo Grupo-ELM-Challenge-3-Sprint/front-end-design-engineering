@@ -1,14 +1,14 @@
 export default function Rodape() {
   return (
     <footer>
-        <div className="container footer-content">
+        {/* <div className="container footer-content">
             <div className="footer-column about">
                 <h3>SimplesHC</h3>
                 <p>Simplificando o acesso à saúde para todos.</p>
                 <div className="social-icons">
-                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-youtube.png" alt="Ícone Youtube"> </a> 
-                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-instagram.png" alt="Ícone Instagram"> </a>
-                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-twitter.png" alt="Ícone Twitter"> </a>
+                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-youtube.png" alt="Ícone Youtube" /> </a> 
+                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-instagram.png" alt="Ícone Instagram" /> </a>
+                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-twitter.png" alt="Ícone Twitter" /> </a>
                 </div>
             </div>
             <div className="footer-column links">
@@ -43,7 +43,7 @@ export default function Rodape() {
         </div>
         <div className="footer-bottom">
             <p>© 2025 SimplesHC. Todos os direitos reservados.</p>
-        </div>
+        </div> */}
     </footer>
   );
 }

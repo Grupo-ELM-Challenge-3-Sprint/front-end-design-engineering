@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 export default function Cabecalho() {
   return (
     <header>
-        <div className="container">
+        <div classNameName="container">
             <div>
-                <a href="#" className="logo">
+                <a href="#" classNameName="logo">
                     <img src="./assets/img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC" />
                     <span>SimplesHC</span>
                 </a>   
             </div>
-            <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
-                <img src="./assets/img/icons/icone-botao.png" alt="Menu" className="menu-icon-img" />
+            <button classNameName="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                <img src="./assets/img/icons/icone-botao.png" alt="Menu" classNameName="menu-icon-img" />
             </button>
             <nav id="primary-navigation" aria-hidden="true"
                     data-guide-step="3"

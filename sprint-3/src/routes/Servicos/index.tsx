@@ -1,4 +1,6 @@
-  <main>
+export default function Servicos(){
+    return(
+<main>
         {/* <!-- Seção de introdução aos serviços --> */}
         <section id="servicos-hero">
             <div className="container">
@@ -171,3 +173,4 @@
             </div>
         </section>
     </main>
+)}

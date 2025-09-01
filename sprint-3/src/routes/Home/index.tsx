@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import medicaImage from '../../assets/img//imagem-index/medica.png';
-import examesImage from '../../assets/img//imagem-index/imagem-exames.png';
-import agendamentoImage from '../../assets/img//imagem-index/imagem-agendamento.png';
-import teleconsultaImage from '../../assets/img//imagem-index/imagem-teleconsulta.png';
-import medicoImage from '../../assets/img//imagem-index/medico.png';
+import medicaImage from '../../assets/img/imagem-index/medica.png';
+import examesImage from '../../assets/img/imagem-index/imagem-exames.png';
+import agendamentoImage from '../../assets/img/imagem-index/imagem-agendamento.png';
+import teleconsultaImage from '../../assets/img/imagem-index/imagem-teleconsulta.png';
+import medicoImage from '../../assets/img/imagem-index/medico.png';
 
 export default function Home(){
     return(

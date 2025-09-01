@@ -6,12 +6,12 @@ export default function Cabecalho() {
         <div className="container">
             <div>
                 <a href="#" className="logo">
-                    <img src="./assets/img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC" />
+                    <img src="./assets/img//img//imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC" />
                     <span>SimplesHC</span>
                 </a>   
             </div>
             <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
-                <img src="./assets/img/icons/icone-botao.png" alt="Menu" className="menu-icon-img" />
+                <img src="./assets/img//img//icons/icone-botao.png" alt="Menu" className="menu-icon-img" />
             </button>
             <nav id="primary-navigation" aria-hidden="true"
                     data-guide-step="3"

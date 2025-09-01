@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import medicaImage from '../../assets/imagem-index/medica.png';
-import examesImage from '../../assets/imagem-index/imagem-exames.png';
-import agendamentoImage from '../../assets/imagem-index/imagem-agendamento.png';
-import teleconsultaImage from '../../assets/imagem-index/imagem-teleconsulta.png';
-import medicoImage from '../../assets/imagem-index/medico.png';
+import medicaImage from '../../assets/img//imagem-index/medica.png';
+import examesImage from '../../assets/img//imagem-index/imagem-exames.png';
+import agendamentoImage from '../../assets/img//imagem-index/imagem-agendamento.png';
+import teleconsultaImage from '../../assets/img//imagem-index/imagem-teleconsulta.png';
+import medicoImage from '../../assets/img//imagem-index/medico.png';
 
 export default function Home(){
     return(
@@ -24,8 +24,8 @@ export default function Home(){
                          data-guide-title="Ações Rápidas" 
                          data-guide-text="Use estes botões para acessar sua área ou conhecer nossas unidades."
                          data-guide-arrow="up">
-                        <Link to="./assets/paginas/area-paciente/meu-perfil.html" className="btn btn-primary">Acesse sua área de paciente</Link>
-                        <Link to="./assets/paginas/hospitais.html#lista-unidades" className="btn btn-secondary">Conheça nossas unidades</Link>
+                        <Link to="./assets/img//paginas/area-paciente/meu-perfil.html" className="btn btn-primary">Acesse sua área de paciente</Link>
+                        <Link to="./assets/img//paginas/hospitais.html#lista-unidades" className="btn btn-secondary">Conheça nossas unidades</Link>
                     </div>
                 </div>
                 <div className="hero-image">
@@ -55,7 +55,7 @@ export default function Home(){
                         <p>Consulte-se com especialistas sem sair de casa, através de videochamadas seguras.</p>
                     </div>
                 </div>
-                <Link to="./assets/paginas/servicos.html" className="view-all-services">Ver todos os serviços →</Link>
+                <Link to="./assets/img//paginas/servicos.html" className="view-all-services">Ver todos os serviços →</Link>
             </div>
         </section>
 
@@ -78,7 +78,7 @@ export default function Home(){
                         </ul>
 
                     </div>
-                    <Link to="./assets/paginas/faq.html" className="btn btn-primary">Ver perguntas frequentes</Link>
+                    <Link to="./assets/img//paginas/faq.html" className="btn btn-primary">Ver perguntas frequentes</Link>
                 </div>
             </div>
         </section>

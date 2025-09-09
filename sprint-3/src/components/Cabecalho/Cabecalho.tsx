@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Cabecalho() {
   return (
-    <header>
+    <header className="bg-white py-[10px] border-b border-[#eee] relative top-0 z-[1000]">
         <div className="container">
             <div>
                 <a href="#" className="logo">

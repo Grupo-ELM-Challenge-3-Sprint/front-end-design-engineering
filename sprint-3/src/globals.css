@@ -1,21 +1,63 @@
+@import "tailwindcss";
+
+:root { scroll-behavior: smooth }
+
 * {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
 }
+
+header {
+  background-color: #fff;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
 nav {
   display: flex;
   width: 100vw;
   justify-content: center;
   align-items: center;
   height: 8vh;
-  background-color: royalblue;
   & a {
-    color: white;
     font-size: 1.5em;
     padding: 15px;
   }
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #005c99;
+  text-decoration: none;
+  z-index: 1001;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.logo span {
+  font-size: 1.3em;
+  color: #005c99;
+}
+
+
 main {
   display: flex;
   width: 100vw;
@@ -24,6 +66,8 @@ main {
   align-items: center;
   height: 70vh;
 }
+
+
 footer {
   color: white;
   display: flex;

@@ -2,53 +2,8 @@
 
 :root { scroll-behavior: smooth }
 
-header {
-  background-color: #fff;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  position: relative;
-  top: 0;
-  z-index: 1000;
-}
+/*Tailwindcss do Header*/
 
-header .container {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-nav {
-  display: flex;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  height: 8vh;
-  & a {
-    font-size: 1.0em;
-    padding: 15px;
-  }
-}
-
-.logo {
-  font-weight: bold;
-  color: #005c99;
-  text-decoration: none;
-  margin-left: 50px;
-  z-index: 1001;
-} 
-
-.logo img {
-  width: 100px;
-  height: auto;
-  margin-right: 8px;
-}
-
-.logo span {
-  font-size: 1.3em;
-  color: #005c99;
-}
 
 footer {
   color: white;

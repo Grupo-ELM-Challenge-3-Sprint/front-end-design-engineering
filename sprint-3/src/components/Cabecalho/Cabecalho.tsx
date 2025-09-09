@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import imagemLogo from '../../assets/img/imagem-index/imagem-logo.jpeg'
 // import imagemBotaoMenu from '../../assets/img/icons/icone-botao.png'
 
 export default function Cabecalho() {
 
+    const linkClasses = ({ isActive }: { isActive: boolean }) => `block text-base p-4 ${isActive ? "text-blue-600 font-bold border-b-2 border-blue-600" : "text-gray-700 hover:text-blue-600"}`;
+
   return (
-    <header className="bg-white py-[10px] border-b border-[#eee] relative top-0 z-[1000]" >
-        <div className="container">
-            <div>
-                <Link to="/" className="logo flex w-27 h-auto mr-2 items-center ">
-                    <img src={imagemLogo} alt="Logo SimplesHC" className="" />
-                    <span className="">SimplesHC</span>
-                </Link>   
-            </div>
+    <header className="bg-white py-2.5 border-b border-[#eee] relative top-0 z-[1000]" >
+        <div className="w-[90%] flex justify-between items-center relative">
+                <Link to="/" className="logo font-bold text-[#005c99] no-underline ml-12 z-[1001] flex items-center">
+                    <img src={imagemLogo} alt="Logo SimplesHC" className="w-24 h-auto mr-2" />
+                    <span className="text-lg text-[#005c99]">SimplesHC</span>
+                </Link>
             {/* <button 
                 className="menu-toggle" 
                 type="button" 
@@ -21,22 +21,14 @@ export default function Cabecalho() {
                 aria-controls="primary-navigation">
                 <img src={imagemBotaoMenu} alt="Menu" className="menu-icon-img" />
             </button> */}
-            <nav 
-                id="primary-navigation" 
-                aria-hidden="true"
-                data-guide-step="3"
-                data-guide-title="Navegação da página"
-                data-guide-text="Use o menu acima para acessar páginas como Início, Serviços, FAQ e mais."
-                data-guide-arrow="up">
-                <ul>
-                    <Link to={'/'}>Início</Link>
-                    <Link to={'/hospitais'}>Hospitais</Link>
-                    <Link to={'/servicos'}>Serviços</Link>
-                    <Link to={'/integrantes'}>Integrantes</Link>
-                    <Link to={'/faq'}>FAQ</Link>
-                    <Link to={'/contato'}>Contato</Link>
-                    <Link to={'/entrar'} className="btn-nav-login">Entrar</Link>
-                </ul>
+            <nav className="flex w-screen justify-end items-center h-[8vh]">
+                    <NavLink to={'/'} className={linkClasses}>Início</NavLink>
+                    <NavLink to={'/hospitais'} className={linkClasses}>Hospitais</NavLink>
+                    <NavLink to={'/servicos'} className={linkClasses}>Serviços</NavLink>
+                    <NavLink to={'/integrantes'} className={linkClasses}>Integrantes</NavLink>
+                    <NavLink to={'/faq'} className={linkClasses}>FAQ</NavLink>
+                    <NavLink to={'/contato'} className={linkClasses}>Contato</NavLink>
+                    <NavLink to={'/entrar'} className="bg-white text-blue-600 border border-blue-600 font-bold px-5 py-3 rounded hover:bg-[#e6f2ff] transition">Entrar</NavLink>
             </nav>
         </div>
     </header>

@@ -1,34 +1,29 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import imagemLogo from '../../assets/img/imagem-index/imagem-logo.jpeg'
+// import imagemBotaoMenu from '../../assets/img/icons/icone-botao.png'
 
 export default function Cabecalho() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   return (
-    <header className="bg-white py-[10px] border-b border-[#eee] relative top-0 z-[1000]">
+    <header className="bg-white py-[10px] border-b border-[#eee] relative top-0 z-[1000]" >
         <div className="container">
             <div>
-                <Link to="/" className="logo">
-                    <img src="./assets/img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC" />
-                    <span>SimplesHC</span>
+                <Link to="/" className="logo flex w-27 h-auto mr-2 items-center ">
+                    <img src={imagemLogo} alt="Logo SimplesHC" className="" />
+                    <span className="">SimplesHC</span>
                 </Link>   
             </div>
-            <button 
+            {/* <button 
                 className="menu-toggle" 
                 type="button" 
                 aria-label="Abrir menu" 
-                aria-expanded={isMenuOpen} 
-                aria-controls="primary-navigation"
-                onClick={toggleMenu}>
-                <img src="./assets/img/icons/icone-botao.png" alt="Menu" className="menu-icon-img" />
-            </button>
+                aria-expanded="false"
+                aria-controls="primary-navigation">
+                <img src={imagemBotaoMenu} alt="Menu" className="menu-icon-img" />
+            </button> */}
             <nav 
                 id="primary-navigation" 
-                aria-hidden={!isMenuOpen}
+                aria-hidden="true"
                 data-guide-step="3"
                 data-guide-title="Navegação da página"
                 data-guide-text="Use o menu acima para acessar páginas como Início, Serviços, FAQ e mais."

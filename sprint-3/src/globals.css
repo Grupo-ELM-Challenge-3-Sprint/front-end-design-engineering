@@ -2,12 +2,6 @@
 
 :root { scroll-behavior: smooth }
 
-* {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 header {
   background-color: #fff;
   padding: 10px 0;
@@ -32,22 +26,21 @@ nav {
   align-items: center;
   height: 8vh;
   & a {
-    font-size: 1.5em;
+    font-size: 1.0em;
     padding: 15px;
   }
 }
 
 .logo {
-  display: flex;
-  align-items: center;
   font-weight: bold;
   color: #005c99;
   text-decoration: none;
+  margin-left: 50px;
   z-index: 1001;
-}
+} 
 
 .logo img {
-  width: 60px;
+  width: 100px;
   height: auto;
   margin-right: 8px;
 }
@@ -56,17 +49,6 @@ nav {
   font-size: 1.3em;
   color: #005c99;
 }
-
-
-main {
-  display: flex;
-  width: 100vw;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-}
-
 
 footer {
   color: white;

@@ -15,11 +15,11 @@ export default function Rodape() {
                 <h4>Navegação</h4>
                 <ul>
                     <li><a href="#">Início</a></li>
-                    <li><a href="./assets/paginas/hospitais.html">Hospitais</a></li>
-                    <li><a href="./assets/paginas/servicos.html">Serviços</a></li>
-                    <li><a href="./assets/paginas/integrantes.html">Integrantes</a></li>
-                    <li><a href="./assets/paginas/faq.html">FAQ</a></li>
-                    <li><a href="./assets/paginas/contato.html">Contato</a></li>
+                    <li><a href="./assets/img/paginas/hospitais.html">Hospitais</a></li>
+                    <li><a href="./assets/img/paginas/servicos.html">Serviços</a></li>
+                    <li><a href="./assets/img/paginas/integrantes.html">Integrantes</a></li>
+                    <li><a href="./assets/img/paginas/faq.html">FAQ</a></li>
+                    <li><a href="./assets/img/paginas/contato.html">Contato</a></li>
                 </ul>
             </div>
             <div className="footer-column links">

@@ -5,12 +5,12 @@ import App from './App.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home/index.tsx';
 import Error from './routes/Error/index.tsx';
-import Servicos from './routes/Servicos/index.tsx';
 import Faq from './routes/Faq/index.tsx';
 import Contato from './routes/Contato/index.tsx';
 import Integrantes from './routes/Integrantes/index.tsx';
 import Hospitais from './routes/Hospitais/index.tsx';
 import Entrar from './routes/Entrar/index.tsx';
+import Servicos from './routes/Servicos/index.tsx';
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, errorElement:<Error/>, children:[

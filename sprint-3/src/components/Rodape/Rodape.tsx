@@ -1,49 +1,55 @@
+import { Link, NavLink } from "react-router-dom";
+import iconeYoutube from "../../assets/img/icons/icone-youtube.png";
+import iconeInstagram from "../../assets/img/icons/icone-instagram.png";
+import iconeTwitter from "../../assets/img/icons/icone-twitter.png";
+
 export default function Rodape() {
+
   return (
-    <footer>
-        {/* <div className="container footer-content">
-            <div className="footer-column about">
-                <h3>SimplesHC</h3>
-                <p>Simplificando o acesso à saúde para todos.</p>
-                <div className="social-icons">
-                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-youtube.png" alt="Ícone Youtube" /> </a> 
-                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-instagram.png" alt="Ícone Instagram" /> </a>
-                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-twitter.png" alt="Ícone Twitter" /> </a>
+    <footer className="grid p-5 pb-4 bg-[#202670] text-center w-screen text-white gap-6 grid-cols-1">
+        <div >
+            <div className="justify-start">
+                <h3 className="text-lg m-2.5">SimplesHC</h3>
+                <p className="text-base">Simplificando o acesso à saúde para todos.</p>
+                <div className="flex justify-center">
+                    <Link className="flex m-2.5 justify-center gap-2.5" to="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeYoutube} alt="Ícone Youtube" /> </Link> 
+                    <Link className="flex m-2.5 justify-center gap-2.5" to="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeInstagram} alt="Ícone Instagram" /> </Link>
+                    <Link className="flex m-2.5 justify-center gap-2.5" to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeTwitter} alt="Ícone Twitter" /></Link>
                 </div>
             </div>
-            <div className="footer-column links">
-                <h4>Navegação</h4>
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="./assets/img/paginas/hospitais.html">Hospitais</a></li>
-                    <li><a href="./assets/img/paginas/servicos.html">Serviços</a></li>
-                    <li><a href="./assets/img/paginas/integrantes.html">Integrantes</a></li>
-                    <li><a href="./assets/img/paginas/faq.html">FAQ</a></li>
-                    <li><a href="./assets/img/paginas/contato.html">Contato</a></li>
+            <div className="justify-start">
+                <h4 className="text-lg mb-2.5">Navegação</h4>
+                <ul className="grid">
+                    <NavLink className="text-sm mb-1.5" to={'/'} >Início</NavLink>
+                    <NavLink className="text-sm mb-1.5" to={'/hospitais'} >Hospitais</NavLink>
+                    <NavLink className="text-sm mb-1.5" to={'/servicos'} >Serviços</NavLink>
+                    <NavLink className="text-sm mb-1.5" to={'/integrantes'} >Integrantes</NavLink>
+                    <NavLink className="text-sm mb-1.5" to={'/faq'} >FAQ</NavLink>
+                    <NavLink className="text-sm mb-1.5" to={'/contato'} >Contato</NavLink>
+                </ul>
+                
+            </div>
+            <div className="justify-start">
+                <h4 className="text-lg m-2.5">Serviços</h4>
+                <ul className="grid">
+                    <NavLink className="text-sm mb-1.5" to={'/area-paciente'} >Área Paciente</NavLink>
+                    <NavLink className="text-sm mb-1.5" to={'/tutorial-entrar'} >Tutoriais Entrar App HC</NavLink>
+                    <NavLink className="text-sm mb-1.5" to={'/tutorial-hc'} >Tutoriais Gerais App HC</NavLink>
                 </ul>
             </div>
-            <div className="footer-column links">
-                <h4>Serviços</h4>
-                <ul>
-                    <li><a href="./area-paciente/meus-exames.html">Resultados de Exames</a></li>
-                    <li><a href="./area-paciente/minhas-receitas.html">Receitas Médicas</a></li>
-                    <li><a href="./area-paciente/minhas-consultas.html">Agendamento</a></li>
-                    <li><a href="./area-paciente/minhas-consultas.html">Teleconsulta</a></li>
-                </ul>
-            </div>
-            <div className="footer-column contact">
-                <h4>Contato</h4>
-                <p>HC Hospital das Clínicas</p>
-                <p>Rua Dr. Ovídio Pires de Campos, 225</p>
-                <p>São Paulo - SP</p>
-                <p>CEP 05403-010</p>
-                <p>Telefone: (11) 2661-0000</p>
-                <p>Email: contato@simplify-hc.com.br</p>
+            <div className="justify-start contact">
+                <h4 className="text-lg m-2.5">Contato</h4>
+                <p className="text-sm mb-1.5">HC Hospital das Clínicas</p>
+                <p className="text-sm mb-1.5">Rua Dr. Ovídio Pires de Campos, 225</p>
+                <p className="text-sm mb-1.5">São Paulo - SP</p>
+                <p className="text-sm mb-1.5">CEP 05403-010</p>
+                <p className="text-sm mb-1.5">Telefone: (11) 2661-0000</p>
+                <p className="text-sm mb-1.5">Email: contato@simplify-hc.com.br</p>
             </div>
         </div>
-        <div className="footer-bottom">
+        <div className="text-center p-3 border-t border-solid border-t-[#2c3894]">
             <p>© 2025 SimplesHC. Todos os direitos reservados.</p>
-        </div> */}
+        </div>
     </footer>
   );
 }

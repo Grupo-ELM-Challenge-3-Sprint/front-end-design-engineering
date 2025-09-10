@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import imagemLogo from '../../assets/img/imagem-index/imagem-logo.jpeg'
-// import imagemBotaoMenu from '../../assets/img/icons/icone-botao.png'
+import imagemBotaoMenu from '../../assets/img/icons/icone-botao.png'
 
 export default function Cabecalho() {
 
@@ -13,14 +13,14 @@ export default function Cabecalho() {
                     <img src={imagemLogo} alt="Logo SimplesHC" className="w-24 h-auto mr-2" />
                     <span className="text-lg text-[#005c99]">SimplesHC</span>
                 </Link>
-            {/* <button 
+            <button 
                 className="menu-toggle" 
                 type="button" 
                 aria-label="Abrir menu" 
                 aria-expanded="false"
                 aria-controls="primary-navigation">
-                <img src={imagemBotaoMenu} alt="Menu" className="menu-icon-img" />
-            </button> */}
+                <img src={imagemBotaoMenu} alt="Menu" className="menu-icon-img w-15 hidden " />
+            </button>
             <nav className="flex w-screen justify-end items-center h-[8vh]">
                     <NavLink to={'/'} className={linkClasses}>Início</NavLink>
                     <NavLink to={'/hospitais'} className={linkClasses}>Hospitais</NavLink>

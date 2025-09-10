@@ -2,20 +2,3 @@
 
 :root { scroll-behavior: smooth }
 
-/*Tailwindcss do Header*/
-
-
-footer {
-  color: white;
-  display: flex;
-  width: 100vw;
-  height: 10vh;
-  justify-content: center;
-  align-items: center;
-  background-color: royalblue;
-  & a {
-    color: white;
-    font-size: 1.5em;
-    padding: 15px;
-  }
-}

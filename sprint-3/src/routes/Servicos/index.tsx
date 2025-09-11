@@ -118,49 +118,6 @@ export default function Servicos(){
                 </div>
             </div>
         </section>
-
-        {/* <!-- Seção de categorias de serviços, agrupando por tipo de atendimento --> */}
-        <section id="categorias-servicos">
-            <div className="container">
-                <h2>Categorias de Serviços</h2>
-                <div className="categorias-wrapper">
-                    <div className="categoria-bloco">
-                        <h3>Serviços Ambulatoriais</h3>
-                        <ul>
-                            <li>Consultas médicas</li>
-                            <li>Vacinação</li>
-                            <li>Pequenos procedimentos</li>
-                            <li>Medicação assistida</li>
-                            <li>Curativos</li>
-                            <li>Pré-natal</li>
-                        </ul>
-                    </div>
-                    <div className="categoria-bloco">
-                        <h3>Exames e Diagnósticos</h3>
-                        <ul>
-                            <li>Análises clínicas</li>
-                            <li>Tomografia</li>
-                            <li>Raio-X</li>
-                            <li>Ressonância magnética</li>
-                            <li>Ultrassom</li>
-                            <li>Endoscopia</li>
-                        </ul>
-                    </div>
-                    <div className="categoria-bloco">
-                        <h3>Tratamentos Especializados</h3>
-                        <ul>
-                            <li>Oncologia</li>
-                            <li>Ortopedia</li>
-                            <li>Cardiologia</li>
-                            <li>Reabilitação</li>
-                            <li>Neurologia</li>
-                            <li>Fisioterapia</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         {/* <!-- Chamada para ação: agendamento ou contato --> */}
         <section id="cta-servicos">
             <div className="container">

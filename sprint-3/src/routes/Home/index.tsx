@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import '../../globals.css'
 import medicaImage from '../../assets/img/imagem-index/medica.png';
 import examesImage from '../../assets/img/imagem-index/imagem-exames.png';
 import agendamentoImage from '../../assets/img/imagem-index/imagem-agendamento.png';
@@ -10,35 +11,35 @@ export default function Home(){
     return(
         <main>
         {/* Seção principal de destaque (hero), apresenta o propósito do site e botões de ação rápida */}
-        <section id="hero" 
+        <section className="bg-[#e9f3fb] py-6 text-center"
                  data-guide-step="1" 
                  data-guide-title="Bem-vindo ao SimplesHC!" 
                  data-guide-text="Esta é a nossa seção principal, onde você encontra um resumo do nosso propósito e botões de acesso rápido."
                  data-guide-arrow="down">
-            <div className="container hero-content">
-                <div className="hero-text">
-                    <h1>Simplificando o acesso à saúde</h1>
-                    <p>O SimplesHC torna mais fácil o acesso aos serviços do Hospital das Clínicas para todos os pacientes, especialmente para os idosos.</p>
-                    <div className="hero-buttons" 
+            <div className="container flex flex-col items-center gap-[25px] px-8 py-10">
+                <div>
+                    <h1 className='mb-5 text-4xl font-bold text-[#1a237e]'>Simplificando o acesso à saúde</h1>
+                    <p className='mb-[25px] text-[#333]'>O SimplesHC torna mais fácil o acesso aos serviços do Hospital das Clínicas para todos os pacientes, especialmente para os idosos.</p>
+                    <div className="flex flex-col gap-[12px] w-full items-center"
                          data-guide-step="2" 
-                         data-guide-title="Ações Rápidas" 
+                         data-guide-title="Ações Rápidas"
                          data-guide-text="Use estes botões para acessar sua área ou conhecer nossas unidades."
                          data-guide-arrow="up">
-                        <Link to="./assets/img//paginas/area-paciente/meu-perfil.html" className="btn btn-primary">Acesse sua área de paciente</Link>
-                        <Link to="./assets/img//paginas/hospitais.html#lista-unidades" className="btn btn-secondary">Conheça nossas unidades</Link>
+                        <Link to="#" className="btn bg-[#005c99] text-white border border-[#005c99] hover:bg-[#004471]">Acesse sua área de paciente</Link>
+                        <Link to="#" className="btn bg-white text-[#005c99] border border-[#005c99] hover:bg-[#e6f2ff]">Conheça nossas unidades</Link>
                     </div>
                 </div>
-                <div className="hero-image">
-                    <img src={medicaImage} alt="Profissional de saúde utilizando um laptop em um ambiente moderno" />
+                <div className="w-full max-w-[400px] mt-[10px] mx-auto">
+                    <img src={medicaImage} alt="Profissional de saúde utilizando um laptop em um ambiente moderno" className='rounded-[8px] shadow-[0_4px_15px_rgba(0,0,0,0.2)]' />
                 </div>
             </div>
         </section>
 
         {/* Seção de apresentação dos principais serviços oferecidos */}
-        <section id="services">
+        <section className="px-6 bg-white">
             <div className="container">
-                <h2>Nossos Serviços</h2>
-                <div className="services-grid">
+                <h2 className='text-center'>Nossos Serviços</h2>
+                <div className="grid grid-cols-1 mb-[25px] gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="service-card">
                         <img src={examesImage} alt="ícone exames" />
                         <h3>Exames Online</h3>
@@ -55,22 +56,22 @@ export default function Home(){
                         <p>Consulte-se com especialistas sem sair de casa, através de videochamadas seguras.</p>
                     </div>
                 </div>
-                <Link to="./assets/img//paginas/servicos.html" className="view-all-services">Ver todos os serviços →</Link>
+                <Link to="#" className="block text-center mt-[15px] font-bold text-[#007bff] text-[0.85em] hover:underline">Ver todos os serviços →</Link>
             </div>
         </section>
 
         {/* Seção dedicada ao recursos de acessibilidade */}
         <section id="guide-interactive-section">
-            <div className="container guide-content">
-                <div className="guide-image">
-                    <img src={medicoImage} alt="Guia interativo" />
+            <div className="container flex flex-col items-center gap-[20px] text-center bg-gray-100">
+                <div className="w-full max-w-[400px] mx-auto my-6">
+                    <img src={medicoImage} alt="Guia interativo" className='rounded-lg shadow-lg' />
                 </div>
                 <div className="guide-text">
-                    <h2>Guia Interativo</h2>
-                    <p>Nossa plataforma conta com um assistente que ajuda você a navegar pelo sistema, explicando cada função e recurso disponível.</p>
-                    <div className="accessibility-features">
-                        <h4>Recursos de Acessibilidade</h4>
-                        <ul>
+                    <h2 className='text-3xl mb-5'>Guia Interativo</h2>
+                    <p className='text-[0.9em] mb-7'>Nossa plataforma conta com um assistente que ajuda você a navegar pelo sistema, explicando cada função e recurso disponível.</p>
+                    <div className="bg-white p-3 rounded-md border border-gray-300 mx-auto mb-5 text-left max-w-[90%] accessibility-features">
+                        <h4 className='text-neutral-800 mb-2 font-bold text-lg'>Recursos de Acessibilidade</h4>
+                        <ul className='list-disc pl-5'>
                             <li>Interface simplificada e responsiva, adaptada para celulares</li>
                             <li>Guia interativo para ajudar na navegação passo a passo</li>
                             <li>Textos diretos e linguagem acessível para usuários com pouca familiaridade digital</li>
@@ -78,16 +79,16 @@ export default function Home(){
                         </ul>
 
                     </div>
-                    <Link to="./assets/img//paginas/faq.html" className="btn btn-primary">Ver perguntas frequentes</Link>
+                    <Link to="#" className="btn mx-auto bg-[#005c99] text-white border border-[#005c99] hover:bg-[#004471] px-4 py-2 rounded m-7">Ver perguntas frequentes</Link>
                 </div>
             </div>
         </section>
 
         {/* Seção de depoimentos de pacientes */}
-        <section id="testimonials">
+        <section className='py-10 px-10'>
             <div className="container">
-                <h2>O que dizem nossos pacientes</h2>
-                <div className="testimonials-grid">
+                <h2 className='text-center'>O que dizem nossos pacientes</h2>
+                <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
                     <div className="testimonial-card">
                         <div className="initials">RS</div>
                         <h4>Roberto Silva</h4>

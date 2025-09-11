@@ -2,3 +2,96 @@
 
 :root { scroll-behavior: smooth }
 
+/*Colocando os Estilos da página Home */
+
+* {
+  @apply font-[Arial,sans-serif];
+}
+
+.container {
+  @apply max-w-5xl mx-auto py-5;
+}
+
+
+h2, h3 {
+  @apply text-[1.8em] mb-[30px] text-center text-[#1a237e] font-bold;
+}
+
+.btn {
+  @apply w-[95%] max-w-[320px] block py-[12px] px-[20px] rounded-[5px] no-underline font-bold transition-colors duration-300 text-center text-[0.95em];
+}
+
+/* Seção de apresentação dos principais serviços oferecidos */
+.service-card {
+  @apply bg-[#f9f9f9] p-[25px] rounded-[8px] text-center 
+         border border-[#e0e0e0] shadow-[0_2px_8px_rgba(0,0,0,0.05)]
+         transition-transform duration-200;
+}
+
+.service-card:hover {
+  @apply -translate-y-[5px] shadow-[0_4px_12px_rgba(0,0,0,0.1)];
+}
+
+.service-card img {
+  @apply w-[50px] h-[50px] mx-auto mb-[15px];
+}
+
+.service-card h3 {
+  @apply mb-4 text-[1.3em] text-[#005c99] font-bold;
+}
+
+.service-card p {
+  @apply text-[0.9em] text-[#555];
+}
+
+
+/* Seção dedicada ao recursos de acessibilidade */
+.accessibility-features ul li {
+  @apply mb-2 text-neutral-700;
+}
+
+/* Seção de depoimentos de pacientes */
+.testimonial-card {
+  @apply bg-[#f9f9f9] p-4 rounded-lg border border-gray-300 shadow-sm text-center;
+}
+
+.testimonial-card .initials {
+  @apply w-[40px] h-[40px] bg-blue-500 text-white rounded-full flex items-center justify-center text-[1.1em] font-bold mx-auto mb-4;
+}
+
+.testimonial-card h4 {
+  @apply text-[#005c99] text-[1.1em] mb-[5px];
+}
+
+.testimonial-card span {
+  @apply block text-sm text-gray-500 mb-[10px];
+}
+
+.testimonial-card p {
+  @apply text-[15px] text-gray-600 italic;
+}
+
+
+/*Rodapé*/
+
+/* Títulos do footer */
+.footer-column h3,
+.footer-column h4 {
+  @apply text-white m-2.5 text-[1em] text-lg;
+}
+
+/* Parágrafos e links */
+.footer-column p,
+.footer-column ul li a {
+  @apply text-[#c0c0c0] text-[0.8em] mb-[6px];
+}
+
+/* Lista sem marcadores */
+.footer-column ul {
+  @apply list-none pl-0;
+}
+
+/* Hover nos links */
+.footer-column ul li a:hover {
+  @apply text-white underline;
+}

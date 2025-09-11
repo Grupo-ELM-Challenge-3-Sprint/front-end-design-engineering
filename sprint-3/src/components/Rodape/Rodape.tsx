@@ -5,39 +5,41 @@ import iconeTwitter from "../../assets/img/icons/icone-twitter.png";
 
 export default function Rodape() {
 
+    const estilosClasses = "flex m-2.5 justify-center gap-2.5";
+
   return (
-    <footer className="grid p-5 pb-4 bg-[#202670] text-center w-screen text-white gap-6 grid-cols-1">
-        <div >
-            <div className="justify-start">
-                <h3 className="text-lg m-2.5">SimplesHC</h3>
-                <p className="text-base">Simplificando o acesso à saúde para todos.</p>
+    <footer className="grid p-5 pb-4 bg-[#202670] text-center w-full text-white gap-6 grid-cols-1">
+        <div>
+            <div className="footer-column justify-start">
+                <h3>SimplesHC</h3>
+                <p className="mb-1.5">Simplificando o acesso à saúde para todos.</p>
                 <div className="flex justify-center">
-                    <Link className="flex m-2.5 justify-center gap-2.5" to="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeYoutube} alt="Ícone Youtube" /> </Link> 
-                    <Link className="flex m-2.5 justify-center gap-2.5" to="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeInstagram} alt="Ícone Instagram" /> </Link>
-                    <Link className="flex m-2.5 justify-center gap-2.5" to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeTwitter} alt="Ícone Twitter" /></Link>
+                    <Link className={estilosClasses} to="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeYoutube} alt="Ícone Youtube" /> </Link> 
+                    <Link className={estilosClasses} to="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeInstagram} alt="Ícone Instagram" /> </Link>
+                    <Link className={estilosClasses} to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeTwitter} alt="Ícone Twitter" /></Link>
                 </div>
             </div>
-            <div className="justify-start">
+            <div className="footer-column justify-start">
                 <h4 className="text-lg mb-2.5">Navegação</h4>
                 <ul className="grid">
-                    <NavLink className="text-sm mb-1.5" to={'/'} >Início</NavLink>
-                    <NavLink className="text-sm mb-1.5" to={'/hospitais'} >Hospitais</NavLink>
-                    <NavLink className="text-sm mb-1.5" to={'/servicos'} >Serviços</NavLink>
-                    <NavLink className="text-sm mb-1.5" to={'/integrantes'} >Integrantes</NavLink>
-                    <NavLink className="text-sm mb-1.5" to={'/faq'} >FAQ</NavLink>
-                    <NavLink className="text-sm mb-1.5" to={'/contato'} >Contato</NavLink>
+                    <li><NavLink className="text-sm mb-1.5" to={'/'} >Início</NavLink></li>
+                    <li><NavLink className="text-sm mb-1.5" to={'/hospitais'} >Hospitais</NavLink></li>
+                    <li><NavLink className="text-sm mb-1.5" to={'/servicos'} >Serviços</NavLink></li>
+                    <li><NavLink className="text-sm mb-1.5" to={'/integrantes'} >Integrantes</NavLink></li>
+                    <li><NavLink className="text-sm mb-1.5" to={'/faq'} >FAQ</NavLink></li>
+                    <li><NavLink className="text-sm mb-1.5" to={'/contato'} >Contato</NavLink></li>
                 </ul>
                 
             </div>
-            <div className="justify-start">
+            <div className="footer-column justify-start">
                 <h4 className="text-lg m-2.5">Serviços</h4>
                 <ul className="grid">
-                    <NavLink className="text-sm mb-1.5" to={'/area-paciente'} >Área Paciente</NavLink>
-                    <NavLink className="text-sm mb-1.5" to={'/tutorial-entrar'} >Tutoriais Entrar App HC</NavLink>
-                    <NavLink className="text-sm mb-1.5" to={'/tutorial-hc'} >Tutoriais Gerais App HC</NavLink>
+                    <li><NavLink className="text-sm mb-1.5" to={'/area-paciente'} >Área Paciente</NavLink></li>
+                    <li><NavLink className="text-sm mb-1.5" to={'/tutorial-entrar'} >Tutoriais Entrar App HC</NavLink></li>
+                    <li><NavLink className="text-sm mb-1.5" to={'/tutorial-hc'} >Tutoriais Gerais App HC</NavLink></li>
                 </ul>
             </div>
-            <div className="justify-start contact">
+            <div className="footer-column justify-start contact">
                 <h4 className="text-lg m-2.5">Contato</h4>
                 <p className="text-sm mb-1.5">HC Hospital das Clínicas</p>
                 <p className="text-sm mb-1.5">Rua Dr. Ovídio Pires de Campos, 225</p>

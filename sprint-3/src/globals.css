@@ -12,7 +12,6 @@
   @apply max-w-5xl mx-auto py-5;
 }
 
-
 h2, h3 {
   @apply text-[1.8em] mb-[30px] text-center text-[#1a237e] font-bold;
 }

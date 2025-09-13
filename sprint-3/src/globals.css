@@ -24,28 +24,28 @@ h2, h3 {
 
 .menu-list > li {
     /* margem externa entre os itens no mobile */
-    @apply max-[950px]:mb-4 max-[950px]:w-[90%] max-[950px]:mx-auto min-[951px]:m-0;
+    @apply max-[951px]:mb-4 max-[951px]:w-[90%] max-[951px]:mx-auto 
+    min-[951px]:m-0;
   }
 
-  .menu-list > li > a {
+  .linksHeader {
     /* padding maior no mobile */
-    @apply block w-full text-base font-medium rounded text-center transition-colors
-           max-[950px]:px-6 max-[950px]:py-4 max-[950px]:text-[#333] max-[950px]:bg-[#f0f0f0]
-           min-[951px]:px-[10px] min-[951px]:py-[8px];
+  @apply block w-full text-base font-medium text-center transition-colors
+          max-[951px]:px-6 max-[951px]:py-4 max-[951px]:text-[#333] max-[951px]:bg-[#f0f0f0]
+          min-[951px]:px-[10px] min-[951px]:py-[10px];
   }
 
   .menu-list > li > a.active {
-    @apply text-blue-600 font-bold
-           max-[950px]:bg-[#e6f2ff] max-[950px]:border-l-4 max-[950px]:border-blue-600 max-[950px]:pl-[calc(1rem-4px)]
-           min-[951px]:border-b-2 min-[951px]:border-blue-600 min-[951px]:pl-[10px];
+  @apply text-blue-600
+        max-[951px]:bg-[#e6f2ff] max-[951px]:border-l-4 max-[951px]:border-blue-600 max-[951px]:pl-[calc(1rem-4px)]
+          min-[951px]:border-b-2 min-[951px]:border-blue-600;
   }
 
   .botao-entrar {
-    @apply text-[#007bff] border border-[#007bff] font-bold
-           max-[950px]:px-6 max-[950px]:py-4 max-[950px]:bg-white max-[950px]:rounded max-[950px]:hover:bg-[#e6f2ff]
-           min-[951px]:px-[18px] min-[951px]:py-[8px] min-[951px]:bg-white min-[951px]:rounded min-[951px]:hover:bg-[#e6f2ff];
+  @apply text-[#007bff] border border-[#007bff] font-bold
+          max-[951px]:block max-[951px]:text-center max-[951px]:px-6 max-[951px]:py-4 max-[951px]:bg-white max-[951px]:rounded max-[951px]:hover:bg-[#e6f2ff]
+          min-[951px]:px-[18px] min-[951px]:py-[12px] min-[951px]:bg-white min-[951px]:rounded min-[951px]:hover:bg-[#e6f2ff] min-[951px]:ml-2;
   }
-
 
 
 /* Seção de apresentação dos principais serviços oferecidos */

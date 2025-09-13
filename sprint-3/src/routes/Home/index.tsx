@@ -9,7 +9,7 @@ import medicoImage from '../../assets/img/imagem-index/medico.png';
 
 export default function Home(){
     return(
-        <main className='Home'>
+        <main>
         {/* Seção principal de destaque (hero), apresenta o propósito do site e botões de ação rápida */}
         <section className="bg-[#e9f3fb] py-6 text-center"
                  data-guide-step="1" 

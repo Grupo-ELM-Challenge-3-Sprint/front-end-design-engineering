@@ -18,7 +18,8 @@ h2 {
   @apply w-[95%] max-w-[320px] block py-[12px] px-[20px] rounded-[5px] no-underline font-bold transition-colors duration-300 text-center text-[0.95em];
 }
 
-/*Header*/
+/*Cabeçalho*/
+
 .menu-list > li {
     @apply max-[951px]:mb-4 max-[951px]:w-[90%] max-[951px]:mx-auto 
            min-[951px]:m-0;
@@ -45,10 +46,13 @@ h2 {
 
 /*Rodapé*/
 
-/* Títulos do footer */
+.footer-column {
+  @apply flex flex-col items-center md:items-start md:justify-center;
+}
+
 .footer-column h3,
 .footer-column h4 {
-  @apply text-white m-2.5 text-[1em] text-lg;
+  @apply text-white mb-1.5 text-[1em] text-lg font-bold;
 }
 
 /* Parágrafos e links */
@@ -57,30 +61,27 @@ h2 {
   @apply text-[#c0c0c0] text-[0.9em] mb-[6px];
 }
 
-/* Lista sem marcadores */
-.footer-column ul {
-  @apply list-none pl-0;
-}
-
 /* Hover nos links */
 .footer-column ul li a:hover {
   @apply text-white underline;
 }
 
 .social-icons {
-  @apply flex m-2.5 justify-center gap-2.5;
+  @apply flex m-3 justify-center gap-3;
 }
 
 
 
 
-/*Colocando os Estilos da página Home */
+/* Home */
+
 /* Seção de apresentação dos principais serviços oferecidos */
 .service-card {
   @apply bg-[#f9f9f9] p-[25px] rounded-[8px] text-center 
          border border-[#e0e0e0] shadow-[0_2px_8px_rgba(0,0,0,0.05)]
          transition-transform duration-200;
 }
+
 .service-card:hover {
   @apply -translate-y-[5px] shadow-[0_4px_12px_rgba(0,0,0,0.1)];
 }
@@ -96,7 +97,6 @@ h2 {
 .service-card p {
   @apply text-[0.9em] text-[#555];
 }
-
 
 /* Seção dedicada ao recursos de acessibilidade */
 .accessibility-features ul li {
@@ -128,44 +128,69 @@ h2 {
 
 
 
-/*Estilos da página Hospitais*/
-
-.hospitais h3 {
-  @apply text-xl mb-[30px] font-bold;
-}
-
-.unidade-card p {
-  @apply flex;
-}
+/*Hospitais*/
 
 .unidade-card { 
   @apply bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200 flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl; 
 }
 
-
-/*ESTILOS CHATGPT - Preciso revisar e reaproveitar os melhores estilos*/
-
-.unidade-card-content { 
-  @apply p-4 sm:p-5 flex flex-col flex-grow; 
+.unidade-card:hover {
+  @apply -translate-y-1 shadow-[0_5px_15px_rgba(0,77,169,0.1)];
 }
 
-.fachada-hospitais { 
-  @apply w-full max-h-[200px] object-cover border-b border-gray-200; 
+.fachada-hospitais {
+  @apply w-full max-h-[200px] object-cover border-b border-gray-200;
 }
 
-.info-icon { 
-  @apply w-4 h-4 mr-2 mt-[3px] object-contain shrink-0; 
+.unidade-card-content {
+  @apply p-4 flex-grow flex flex-col sm:p-5;
 }
 
-.btn-ver-no-mapa { 
-  @apply flex justify-center items-center text-[#007bff] font-medium text-xs sm:text-sm mt-auto py-2 w-full bg-gray-100 rounded transition sm:inline-flex sm:w-auto sm:px-3 sm:py-1.5 sm:bg-transparent hover:text-[#0056b3] hover:bg-gray-200 sm:hover:underline sm:hover:bg-transparent; 
+.unidade-card-content h3 {
+  @apply text-lg font-semibold text-gray-800 mb-3 sm:text-xl;
 }
 
-.arrow-icon { 
-  @apply ml-1 inline-block transition-transform; 
+.unidade-card-content p {
+  @apply text-[0.9em] text-gray-600 mb-2 leading-relaxed flex items-start sm:text-sm;
 }
 
-.btn-ver-no-mapa:hover .arrow-icon { 
-  @apply translate-x-[3px]; 
+.unidade-card-content p:last-of-type {
+  @apply mb-4;
 }
 
+.info-icon {
+  @apply w-4 h-4 mr-2 mt-[3px];
+}
+
+.btn-ver-no-mapa {
+  @apply inline-flex justify-center items-center 
+         text-blue-600 no-underline font-medium text-[0.8em] 
+         mt-auto py-2.5 bg-gray-100 rounded w-full 
+         transition-colors duration-200
+
+         /* hover e responsividade */
+         hover:underline hover:bg-transparent hover:text-blue-800
+         sm:p-0 sm:bg-transparent sm:text-sm;
+}
+
+.btn-ver-no-mapa .arrow-icon {
+  @apply ml-1 text-lg leading-none inline-block transition-transform duration-200 ease-in-out;
+}
+
+.btn-ver-no-mapa:hover .arrow-icon {
+  @apply translate-x-1;
+}
+
+
+/* Informações Gerais */
+.info-gerais-content h3 {
+  @apply text-xl text-gray-800 mt-7 mb-3 font-bold;
+}
+
+.info-gerais-content ul {
+  @apply mb-5 list-disc pl-5;
+}
+
+.info-gerais-content li {
+  @apply text-sm text-gray-800 mb-2 leading-relaxed;
+}

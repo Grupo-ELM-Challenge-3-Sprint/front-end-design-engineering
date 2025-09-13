@@ -6,9 +6,8 @@ import iconeTwitter from "../../assets/img/icons/icone-twitter.png";
 export default function Rodape() {
 
   return (
-    <footer className="grid p-5 pb-4 bg-[#202670] text-center w-full text-white gap-6 grid-cols-1">
-        <div>
-            <div className="footer-column justify-start">
+    <footer className="grid p-5 pb-4 bg-[#202670] w-full text-white gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center md:text-left items-start">
+            <div className="footer-column">
                 <h3>SimplesHC</h3>
                 <p>Simplificando o acesso à saúde para todos.</p>
                 <div className="social-icons flex justify-center">
@@ -17,7 +16,7 @@ export default function Rodape() {
                     <Link to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeTwitter} alt="Ícone Twitter" /></Link>
                 </div>
             </div>
-            <div className="footer-column justify-start">
+            <div className="footer-column">
                 <h4>Navegação</h4>
                 <ul className="grid">
                     <li><NavLink to={'/'} >Início</NavLink></li>
@@ -29,7 +28,7 @@ export default function Rodape() {
                 </ul>
                 
             </div>
-            <div className="footer-column justify-start">
+            <div className="footer-column">
                 <h4>Serviços</h4>
                 <ul className="grid">
                     <li><NavLink to={'/area-paciente'} >Área Paciente</NavLink></li>
@@ -37,7 +36,7 @@ export default function Rodape() {
                     <li><NavLink to={'/tutorial-hc'} >Tutoriais Gerais App HC</NavLink></li>
                 </ul>
             </div>
-            <div className="footer-column justify-start contact">
+            <div className="footer-column">
                 <h4>Contato</h4>
                 <p className="text-sm mb-1.5">HC Hospital das Clínicas</p>
                 <p className="text-sm mb-1.5">Rua Dr. Ovídio Pires de Campos, 225</p>
@@ -46,8 +45,7 @@ export default function Rodape() {
                 <p className="text-sm mb-1.5">Telefone: (11) 2661-0000</p>
                 <p className="text-sm mb-1.5">Email: contato@simplify-hc.com.br</p>
             </div>
-        </div>
-        <div className="text-center p-3 border-t border-solid border-t-[#2c3894]">
+        <div className="text-center p-3 border-t border-solid border-t-[#2c3894] col-span-1 md:col-span-2 lg:col-span-4">
             <p>© 2025 SimplesHC. Todos os direitos reservados.</p>
         </div>
     </footer>

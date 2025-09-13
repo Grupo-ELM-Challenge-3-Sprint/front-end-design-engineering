@@ -2,17 +2,15 @@
 
 :root { scroll-behavior: smooth }
 
-/*Colocando os Estilos da página Home */
-
 * {
   @apply font-[Arial,sans-serif];
 }
 
 .container {
-  @apply max-w-5xl mx-auto py-5;
+  @apply w-[90%] max-w-5xl mx-auto py-[15px];
 }
 
-h2, h3 {
+h2 {
   @apply text-[1.8em] mb-[30px] text-center text-[#1a237e] font-bold;
 }
 
@@ -21,31 +19,62 @@ h2, h3 {
 }
 
 /*Header*/
-
 .menu-list > li {
     @apply max-[951px]:mb-4 max-[951px]:w-[90%] max-[951px]:mx-auto 
-    min-[951px]:m-0;
-  }
+           min-[951px]:m-0;
+}
 
-  .linksHeader {
+.linksHeader {
   @apply block w-full text-base font-medium text-center transition-colors 
           max-[951px]:px-6 max-[951px]:py-4 max-[951px]:text-[#333] max-[951px]:bg-[#f0f0f0] max-[951px]:rounded-sm
           min-[951px]:px-[10px] min-[951px]:py-[10px];
-  }
+}
 
-  .menu-list > li > a.active {
+.menu-list > li > a.active {
   @apply text-blue-600
         max-[951px]:bg-[#e6f2ff] max-[951px]:border-l-4 max-[951px]:border-blue-600 max-[951px]:pl-[calc(1rem-4px)]
           min-[951px]:border-b-2 min-[951px]:border-blue-600;
-  }
+}
 
-  .botao-entrar {
+.botao-entrar {
   @apply text-[#007bff] border border-[#007bff] font-bold
           max-[951px]:block max-[951px]:text-center max-[951px]:px-6 max-[951px]:py-4 max-[951px]:bg-white max-[951px]:rounded max-[951px]:hover:bg-[#e6f2ff]
           min-[951px]:px-[18px] min-[951px]:py-[12px] min-[951px]:bg-white min-[951px]:rounded min-[951px]:hover:bg-[#e6f2ff] min-[951px]:ml-2;
-  }
+}
 
 
+/*Rodapé*/
+
+/* Títulos do footer */
+.footer-column h3,
+.footer-column h4 {
+  @apply text-white m-2.5 text-[1em] text-lg;
+}
+
+/* Parágrafos e links */
+.footer-column p,
+.footer-column ul li a {
+  @apply text-[#c0c0c0] text-[0.9em] mb-[6px];
+}
+
+/* Lista sem marcadores */
+.footer-column ul {
+  @apply list-none pl-0;
+}
+
+/* Hover nos links */
+.footer-column ul li a:hover {
+  @apply text-white underline;
+}
+
+.social-icons {
+  @apply flex m-2.5 justify-center gap-2.5;
+}
+
+
+
+
+/*Colocando os Estilos da página Home */
 /* Seção de apresentação dos principais serviços oferecidos */
 .service-card {
   @apply bg-[#f9f9f9] p-[25px] rounded-[8px] text-center 
@@ -96,30 +125,47 @@ h2, h3 {
 }
 
 
-/*Rodapé*/
 
-/* Títulos do footer */
-.footer-column h3,
-.footer-column h4 {
-  @apply text-white m-2.5 text-[1em] text-lg;
+
+
+/*Estilos da página Hospitais*/
+
+.hospitais h3 {
+  @apply text-xl mb-[30px] font-bold;
 }
 
-/* Parágrafos e links */
-.footer-column p,
-.footer-column ul li a {
-  @apply text-[#c0c0c0] text-[0.9em] mb-[6px];
+.unidade-card p {
+  @apply flex;
 }
 
-/* Lista sem marcadores */
-.footer-column ul {
-  @apply list-none pl-0;
+.unidade-card { 
+  @apply bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200 flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl; 
 }
 
-/* Hover nos links */
-.footer-column ul li a:hover {
-  @apply text-white underline;
+
+/*ESTILOS CHATGPT - Preciso revisar e reaproveitar os melhores estilos*/
+
+.unidade-card-content { 
+  @apply p-4 sm:p-5 flex flex-col flex-grow; 
 }
 
-.social-icons {
-  @apply flex m-2.5 justify-center gap-2.5;
+.fachada-hospitais { 
+  @apply w-full max-h-[200px] object-cover border-b border-gray-200; 
 }
+
+.info-icon { 
+  @apply w-4 h-4 mr-2 mt-[3px] object-contain shrink-0; 
+}
+
+.btn-ver-no-mapa { 
+  @apply flex justify-center items-center text-[#007bff] font-medium text-xs sm:text-sm mt-auto py-2 w-full bg-gray-100 rounded transition sm:inline-flex sm:w-auto sm:px-3 sm:py-1.5 sm:bg-transparent hover:text-[#0056b3] hover:bg-gray-200 sm:hover:underline sm:hover:bg-transparent; 
+}
+
+.arrow-icon { 
+  @apply ml-1 inline-block transition-transform; 
+}
+
+.btn-ver-no-mapa:hover .arrow-icon { 
+  @apply translate-x-[3px]; 
+}
+

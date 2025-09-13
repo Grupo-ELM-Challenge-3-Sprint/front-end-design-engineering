@@ -23,15 +23,13 @@ h2, h3 {
 /*Header*/
 
 .menu-list > li {
-    /* margem externa entre os itens no mobile */
     @apply max-[951px]:mb-4 max-[951px]:w-[90%] max-[951px]:mx-auto 
     min-[951px]:m-0;
   }
 
   .linksHeader {
-    /* padding maior no mobile */
-  @apply block w-full text-base font-medium text-center transition-colors
-          max-[951px]:px-6 max-[951px]:py-4 max-[951px]:text-[#333] max-[951px]:bg-[#f0f0f0]
+  @apply block w-full text-base font-medium text-center transition-colors 
+          max-[951px]:px-6 max-[951px]:py-4 max-[951px]:text-[#333] max-[951px]:bg-[#f0f0f0] max-[951px]:rounded-sm
           min-[951px]:px-[10px] min-[951px]:py-[10px];
   }
 

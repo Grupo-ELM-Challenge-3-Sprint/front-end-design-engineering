@@ -7,7 +7,7 @@
 }
 
 .container {
-  @apply w-[90%] max-w-5xl mx-auto py-[15px];
+  @apply w-[90%] md:w-[95%] max-w-7xl mx-auto py-[15px];
 }
 
 h2 {
@@ -28,7 +28,7 @@ h2 {
 .linksHeader {
   @apply block w-full text-base font-medium text-center transition-colors 
           max-[951px]:px-6 max-[951px]:py-4 max-[951px]:text-[#333] max-[951px]:bg-[#f0f0f0] max-[951px]:rounded-sm
-          min-[951px]:px-[10px] min-[951px]:py-[10px];
+          min-[951px]:px-[10px] min-[951px]:py-[10px] min-[951px]:text-[19px] min-[951px]:hover:text-blue-600;
 }
 
 .menu-list > li > a.active {
@@ -58,7 +58,7 @@ h2 {
 /* Parágrafos e links */
 .footer-column p,
 .footer-column ul li a {
-  @apply text-[#c0c0c0] text-[0.9em] mb-[6px];
+  @apply text-[#c0c0c0] text-[0.9em] mb-[6px] md:text-[17px];
 }
 
 /* Hover nos links */
@@ -95,7 +95,7 @@ h2 {
 }
 
 .service-card p {
-  @apply text-[0.9em] text-[#555];
+  @apply text-[0.9em] text-[#555] md:text-[17px];
 }
 
 /* Seção dedicada ao recursos de acessibilidade */
@@ -121,7 +121,7 @@ h2 {
 }
 
 .testimonial-card p {
-  @apply text-[15px] text-gray-600 italic;
+  @apply text-[15px] text-gray-600 italic md:text-[17px];
 }
 
 
@@ -151,7 +151,7 @@ h2 {
 }
 
 .unidade-card-content p {
-  @apply text-[0.9em] text-gray-600 mb-2 leading-relaxed flex items-start sm:text-sm;
+  @apply text-[0.9em] text-gray-600 mb-2 leading-relaxed flex items-start sm:text-sm md:text-[17px];
 }
 
 .unidade-card-content p:last-of-type {
@@ -192,5 +192,5 @@ h2 {
 }
 
 .info-gerais-content li {
-  @apply text-sm text-gray-800 mb-2 leading-relaxed;
+  @apply text-sm text-gray-800 mb-2 leading-relaxed md:text-[17px];
 }

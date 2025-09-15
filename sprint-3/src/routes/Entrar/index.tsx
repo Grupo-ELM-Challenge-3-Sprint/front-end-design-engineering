@@ -28,10 +28,6 @@ export default function Entrar(){
                             <small className="error-message"></small>
                         </div>
                         <div className="form-options">
-                            <label className="checkbox-label">
-                                <input type="checkbox" id="lembrarDeMim" name="lembrarDeMim" />
-                                Lembrar de mim
-                            </label>
                             <a href="#" id="linkEsqueciSenha" className="auth-link">Esqueci minha senha</a>
                         </div>
                         <button type="submit" className="btn btn-primary btn-full-width">Entrar</button>

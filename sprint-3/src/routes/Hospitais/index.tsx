@@ -21,7 +21,7 @@ export default function Hospitais(){
                  data-guide-arrow="down">
             <div className="container">
                 <h2>Nossas Unidades</h2>
-                <p className='text-gray-600 text-center'>Conheça as unidades do Hospital das Clínicas e escolha a mais próxima de você.</p>
+                <p className='text-gray-600 text-center md:text-[18px]'>Conheça as unidades do Hospital das Clínicas e escolha a mais próxima de você.</p>
             </div>
         </section>
 
@@ -106,7 +106,7 @@ export default function Hospitais(){
                     <h2 className='text-center mb-7'>Informações Gerais</h2>
                     
                     <h3>Atendimento</h3>
-                    <p className='text-sm text-gray-800 mb-4 leading-relaxed'>O Hospital das Clínicas da FMUSP oferece atendimento em diversas especialidades médicas. Os pacientes são atendidos mediante encaminhamento da rede pública de saúde, através do sistema CROSS (Central de Regulação de Ofertas de Serviços de Saúde).</p>
+                    <p className='text-sm text-gray-800 mb-4 leading-relaxed md:text-[17px]'>O Hospital das Clínicas da FMUSP oferece atendimento em diversas especialidades médicas. Os pacientes são atendidos mediante encaminhamento da rede pública de saúde, através do sistema CROSS (Central de Regulação de Ofertas de Serviços de Saúde).</p>
 
                     <h3>Documentos Necessários</h3>
                     <ul>
@@ -118,7 +118,7 @@ export default function Hospitais(){
                     </ul>
 
                     <h3>Agendamento</h3>
-                    <p className='text-sm text-gray-800 mb-4 leading-relaxed'>O agendamento de consultas e exames pode ser realizado através da central telefônica ou pelo site/aplicativo SimplesHC, onde você também pode acompanhar seus resultados e histórico médico.</p>
+                    <p className='text-sm text-gray-800 mb-4 leading-relaxed md:text-[17px]'>O agendamento de consultas e exames pode ser realizado através da central telefônica ou pelo site/aplicativo SimplesHC, onde você também pode acompanhar seus resultados e histórico médico.</p>
                 </div>
             </div>
         </section>

@@ -12,7 +12,7 @@ export default function Cabecalho() {
         <div className="w-[90%] flex justify-between items-center relative m-5">
             <Link to="/" className="font-bold flex items-center">
                 <img src={imagemLogo} alt="Logo SimplesHC" className="w-24 h-auto mr-2" />
-                <span className="text-xl text-[#005c99]">SimplesHC</span>
+                <span className="text-2xl text-[#005c99]">SimplesHC</span>
             </Link>
 
             <button className="hidden max-[951px]:block" type="button" aria-label="Abrir menu" onClick={() => setMenuOpen(!menuOpen)}>
@@ -20,7 +20,7 @@ export default function Cabecalho() {
             </button>
             <nav className={`
                     ${menuOpen ? "block" : "hidden"} 
-                    min-[951px]:flex min-[951px]:items-center min-[951px]:gap-4
+                    min-[951px]:flex min-[951px]:items-center min-[951px]:gap-4 min-[951px]:text-xl
                     max-[951px]:absolute max-[951px]:top-full max-[951px]:left-0 max-[951px]:w-full max-[951px]:bg-white max-[951px]:shadow-md max-[951px]:py-5
                 `}>
                 <ul className="menu-list flex flex-col items-center w-full min-[951px]:flex-row min-[951px]:w-auto">

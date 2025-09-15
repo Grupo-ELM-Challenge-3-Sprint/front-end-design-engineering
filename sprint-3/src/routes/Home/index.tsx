@@ -16,59 +16,59 @@ export default function Home(){
                  data-guide-title="Bem-vindo ao SimplesHC!" 
                  data-guide-text="Esta é a nossa seção principal, onde você encontra um resumo do nosso propósito e botões de acesso rápido."
                  data-guide-arrow="down">
-            <div className="container flex flex-col items-center gap-[25px] px-8 py-10">
+            <div className="container flex flex-col md:flex-row items-center gap-[25px] px-8 py-10 md:text-[17px]">
                 <div>
                     <h1 className='mb-5 text-4xl font-bold text-[#1a237e]'>Simplificando o acesso à saúde</h1>
                     <p className='mb-[25px] text-[#333]'>O SimplesHC torna mais fácil o acesso aos serviços do Hospital das Clínicas para todos os pacientes, especialmente para os idosos.</p>
-                    <div className="flex flex-col gap-[12px] w-full items-center"
+                    <div className="flex flex-col md:flex-row gap-[12px] w-full items-center"
                          data-guide-step="2" 
                          data-guide-title="Ações Rápidas"
                          data-guide-text="Use estes botões para acessar sua área ou conhecer nossas unidades."
                          data-guide-arrow="up">
                         <Link to="#" className="btn bg-[#005c99] text-white border border-[#005c99] hover:bg-[#004471]">Acesse sua área de paciente</Link>
-                        <Link to="#" className="btn bg-white text-[#005c99] border border-[#005c99] hover:bg-[#e6f2ff]">Conheça nossas unidades</Link>
+                        <Link to="/hospitais" className="btn bg-white text-[#005c99] border border-[#005c99] hover:bg-[#e6f2ff]">Conheça nossas unidades</Link>
                     </div>
                 </div>
-                <div className="w-full max-w-[400px] mt-[10px] mx-auto">
-                    <img src={medicaImage} alt="Profissional de saúde utilizando um laptop em um ambiente moderno" className='rounded-[8px] shadow-[0_4px_15px_rgba(0,0,0,0.2)]' />
+                <div className="w-full max-w-[500px] mt-[10px] mx-auto lg:max-w-[600px]">
+                    <img src={medicaImage} alt="Profissional de saúde utilizando um laptop em um ambiente moderno" className='rounded-[8px] shadow-[0_4px_15px_rgba(0,0,0,0.2)] mx-auto' />
                 </div>
             </div>
         </section>
 
         {/* Seção de apresentação dos principais serviços oferecidos */}
-        <section className="px-6 bg-white">
+        <section>
             <div className="container">
-                <h2 className='text-center'>Nossos Serviços</h2>
-                <div className="grid grid-cols-1 mb-[25px] gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <h2 className='text-center mt-3'>Nossos Serviços</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-[25px] gap-6">
                     <div className="service-card">
                         <img src={examesImage} alt="ícone exames" />
-                        <h3>Exames Online</h3>
-                        <p>Acesse seus resultados de exames a qualquer momento, de qualquer lugar, com total segurança.</p>
+                        <h3>Como Entrar no App HC</h3>
+                        <p>Veja como instalar e acessar o App HC no seu celular e fazer login com segurança.</p>
                     </div>
                     <div className="service-card">
                         <img src={agendamentoImage} alt="ícone agendamento" />
-                        <h3>Agendamento Fácil</h3>
-                        <p>Marque consultas e exames de forma simples e rápida, sem filas ou telefonemas.</p>
+                        <h3>Como Acessar os Serviços no App HC</h3>
+                        <p>Aprenda a encontrar e utilizar os principais serviços do App HC de forma simples.</p>
                     </div>
                     <div className="service-card">
                         <img src={teleconsultaImage} alt="ícone teleconsulta" />
-                        <h3>Teleconsulta</h3>
-                        <p>Consulte-se com especialistas sem sair de casa, através de videochamadas seguras.</p>
+                        <h3>Como entrar na Teleconsulta no App HC</h3>
+                        <p>Descubra como agendar e participar de uma teleconsulta pelo App HC, sem sair de casa.</p>
                     </div>
                 </div>
-                <Link to="#" className="block text-center mt-[15px] font-bold text-[#007bff] text-[0.85em] hover:underline">Ver todos os serviços →</Link>
+                <Link to="/servicos" className="block text-center mt-[15px] font-bold text-[#007bff] text-[18px] hover:underline mb-5">Ver todos os serviços →</Link>
             </div>
         </section>
 
         {/* Seção dedicada ao recursos de acessibilidade */}
-        <section id="guide-interactive-section">
-            <div className="container flex flex-col items-center gap-[20px] text-center bg-gray-100">
-                <div className="w-full max-w-[400px] mx-auto my-6">
+        <section >
+            <div className="flex flex-col md:flex-row items-center gap-[20px] text-center bg-gray-100 md:text-[17px] lg:text-[20px]">
+                <div className="w-full max-w-[400px] md:max-w-[600px] mx-auto my-6">
                     <img src={medicoImage} alt="Guia interativo" className='rounded-lg shadow-lg' />
                 </div>
-                <div className="guide-text">
-                    <h2 className='text-3xl mb-5'>Guia Interativo</h2>
-                    <p className='text-[0.9em] mb-7'>Nossa plataforma conta com um assistente que ajuda você a navegar pelo sistema, explicando cada função e recurso disponível.</p>
+                <div className="guide-text md:mx-auto">
+                    <h2 className='text-3xl mb-5 text-center mt-5 md:text-left'>Guia Interativo</h2>
+                    <p className='text-[0.9em] mb-7 mx-5'>Nossa plataforma conta com um assistente que ajuda você a navegar pelo sistema, explicando cada função e recurso disponível.</p>
                     <div className="bg-white p-3 rounded-md border border-gray-300 mx-auto mb-5 text-left max-w-[90%] accessibility-features">
                         <h4 className='text-neutral-800 mb-2 font-bold text-lg'>Recursos de Acessibilidade</h4>
                         <ul className='list-disc pl-5'>
@@ -79,13 +79,13 @@ export default function Home(){
                         </ul>
 
                     </div>
-                    <Link to="#" className="btn mx-auto bg-[#005c99] text-white border border-[#005c99] hover:bg-[#004471] px-4 py-2 rounded m-7">Ver perguntas frequentes</Link>
+                    <Link to="/faq" className="btn mx-auto bg-[#005c99] text-white border border-[#005c99] hover:bg-[#004471] px-4 py-2 rounded m-7">Ver perguntas frequentes</Link>
                 </div>
             </div>
         </section>
 
         {/* Seção de depoimentos de pacientes */}
-        <section className='py-10 px-10'>
+        <section className='p-10 md:p-5'>
             <div className="container">
                 <h2 className='text-center'>O que dizem nossos pacientes</h2>
                 <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>

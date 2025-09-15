@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 export default function Hospitais(){
 
     return(
-        <main>
+    <main>
         {/* <!-- Seção de introdução às unidades hospitalares --> */}
         <section id="unidades-hero"
                  data-guide-step="1"
@@ -37,7 +37,7 @@ export default function Hospitais(){
         </section>
 
         {/* <!-- Lista de unidades hospitalares em formato de cards --> */}
-        <section className="py-5 bg-gray-50 md:py-10"
+        <section id="lista-unidades" className="py-5 bg-gray-50 md:py-10"
                  data-guide-step="3"
                  data-guide-title="Detalhes das Unidades"
                  data-guide-text="Explore os cards abaixo para encontrar informações detalhadas sobre cada unidade, como endereço, telefone e horários de funcionamento."

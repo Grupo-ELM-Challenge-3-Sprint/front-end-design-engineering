@@ -9,7 +9,7 @@ import medicoImage from '../../assets/img/imagem-index/medico.png';
 
 export default function Home(){
     return(
-        <main>
+    <main>
         {/* Seção principal de destaque (hero), apresenta o propósito do site e botões de ação rápida */}
         <section className="bg-[#e9f3fb] py-6 text-center"
                  data-guide-step="1" 
@@ -25,8 +25,8 @@ export default function Home(){
                          data-guide-title="Ações Rápidas"
                          data-guide-text="Use estes botões para acessar sua área ou conhecer nossas unidades."
                          data-guide-arrow="up">
-                        <Link to="#" className="btn bg-[#005c99] text-white border border-[#005c99] hover:bg-[#004471]">Acesse sua área de paciente</Link>
-                        <Link to="/hospitais" className="btn bg-white text-[#005c99] border border-[#005c99] hover:bg-[#e6f2ff]">Conheça nossas unidades</Link>
+                        <Link to="#" className="btn btn-primary">Acesse sua área de paciente</Link>
+                        <Link to="/hospitais" className="btn btn-secondary">Conheça nossas unidades</Link>
                     </div>
                 </div>
                 <div className="w-full max-w-[500px] mt-[10px] mx-auto lg:max-w-[600px]">
@@ -79,7 +79,7 @@ export default function Home(){
                         </ul>
 
                     </div>
-                    <Link to="/faq" className="btn mx-auto bg-[#005c99] text-white border border-[#005c99] hover:bg-[#004471] px-4 py-2 rounded m-7">Ver perguntas frequentes</Link>
+                    <Link to="/faq" className="btn btn-primary mx-auto">Ver perguntas frequentes</Link>
                 </div>
             </div>
         </section>

@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export default function Integrantes(){
     return(
-        <main>
+    <main>
         {/* <!-- Seção de apresentação da equipe --> */}
         <section id="equipe-hero">
             <div className="container">
@@ -21,8 +23,8 @@ export default function Integrantes(){
                             <p className="integrante-rm">RM: 561432</p>
                             <p className="integrante-turma">Turma: 1TDSPG</p>
                             <div className="integrante-redes">
-                                <a href="https://www.linkedin.com/in/enzo-okuizumi-b60292256/" aria-label="Linkedin Enzo Okuizumi" title="Linkedin Enzo Okuizumi" target="_blank" rel="noopener"><img src="../img/icons/icone-linkedin.png" alt="LinkedIn"/></a>
-                                <a href="https://github.com/EnzoOkuizumiFiap" aria-label="GitHub Enzo Okuizumi" title="Github Enzo Okuizumi" target="_blank" rel="noopener"><img src="../img/icons/icone-github.png" alt="GitHub"/></a>
+                                <Link to="https://www.linkedin.com/in/enzo-okuizumi-b60292256/" aria-label="Linkedin Enzo Okuizumi" title="Linkedin Enzo Okuizumi" target="_blank" rel="noopener"><img src="../img/icons/icone-linkedin.png" alt="LinkedIn"/></Link>
+                                <Link to="https://github.com/EnzoOkuizumiFiap" aria-label="GitHub Enzo Okuizumi" title="Github Enzo Okuizumi" target="_blank" rel="noopener"><img src="../img/icons/icone-github.png" alt="GitHub"/></Link>
                             </div>
                         </div>
                     </div>
@@ -35,8 +37,8 @@ export default function Integrantes(){
                             <p className="integrante-rm">RM: 566422</p>
                             <p className="integrante-turma">Turma: 1TDSPG</p>
                             <div className="integrante-redes">
-                                <a href="https://www.linkedin.com/in/luz-barros-gouveia-09b147355/" aria-label="Linkedin Lucas Barros Gouveia" title="Linkedin Lucas Barros Gouveia" target="_blank" rel="noopener"><img src="../img/icons/icone-linkedin.png" alt="LinkedIn"/></a>
-                                <a href="https://github.com/LuzBGouveia" aria-label="GitHub Lucas Barros Gouveia" title="GitHub Lucas Barros Gouveia" target="_blank" rel="noopener"><img src="../img/icons/icone-github.png" alt="GitHub"/></a>
+                                <Link to="https://www.linkedin.com/in/luz-barros-gouveia-09b147355/" aria-label="Linkedin Lucas Barros Gouveia" title="Linkedin Lucas Barros Gouveia" target="_blank" rel="noopener"><img src="../img/icons/icone-linkedin.png" alt="LinkedIn"/></Link>
+                                <Link to="https://github.com/LuzBGouveia" aria-label="GitHub Lucas Barros Gouveia" title="GitHub Lucas Barros Gouveia" target="_blank" rel="noopener"><img src="../img/icons/icone-github.png" alt="GitHub"/></Link>
                             </div>
                         </div>
                     </div>
@@ -49,8 +51,8 @@ export default function Integrantes(){
                             <p className="integrante-rm">RM: 564836</p>
                             <p className="integrante-turma">Turma: 1TDSPG</p>
                             <div className="integrante-redes">
-                                <a href="http://linkedin.com/in/milton-marcelino-250298142" aria-label="Linkedin Milton Marcelino" title="Linkedin Milton Marcelino" target="_blank" rel="noopener"><img src="../img/icons/icone-linkedin.png" alt="Linkedin"/></a>
-                                <a href="https://github.com/MiltonMarcelino" aria-label="GitHub Milton Marcelino" title="GitHub Milton Marcelino" target="_blank" rel="noopener"><img src="../img/icons/icone-github.png" alt="GitHub"/></a>
+                                <Link to="http://linkedin.com/in/milton-marcelino-250298142" aria-label="Linkedin Milton Marcelino" title="Linkedin Milton Marcelino" target="_blank" rel="noopener"><img src="../img/icons/icone-linkedin.png" alt="Linkedin"/></Link>
+                                <Link to="https://github.com/MiltonMarcelino" aria-label="GitHub Milton Marcelino" title="GitHub Milton Marcelino" target="_blank" rel="noopener"><img src="../img/icons/icone-github.png" alt="GitHub"/></Link>
                             </div>
                         </div>
                     </div>
@@ -63,7 +65,7 @@ export default function Integrantes(){
             <div className="container">
                 <div className="sobre-projeto-content">
                     <h2>Sobre o Projeto</h2>
-                    <p>O <a href="https://github.com/Grupo-Challenge-EML-1TDSPG/front-end-design-engineering" target="_blank" rel="noopener">SimplesHC</a> (Link do Repositório GitHub) é uma plataforma web desenvolvida como parte da disciplina de Front-End Design Engineering. Seu principal objetivo é oferecer uma interface digital intuitiva e acessível para os serviços do Hospital das Clínicas, com foco especial em pacientes idosos ou com baixa familiaridade com tecnologia.</p>
+                    <p>O <Link to="https://github.com/Grupo-Challenge-EML-1TDSPG/front-end-design-engineering" target="_blank" rel="noopener">SimplesHC</Link> (Link do Repositório GitHub) é uma plataforma web desenvolvida como parte da disciplina de Front-End Design Engineering. Seu principal objetivo é oferecer uma interface digital intuitiva e acessível para os serviços do Hospital das Clínicas, com foco especial em pacientes idosos ou com baixa familiaridade com tecnologia.</p>
                     <p>A solução busca simplificar processos como agendamento de consultas, acesso a resultados de exames, visualização de receitas médicas e participação em teleconsultas. Tudo isso é feito com base em uma abordagem centrada no usuário, prezando por clareza, simplicidade e inclusão digital.</p>
                     <p>Utilizando HTML5, CSS3 e JavaScript, o projeto entrega uma experiência leve, responsiva e funcional, incluindo recursos como um guia interativo, um FAQ prático e suporte visual pensado para usuários com necessidades diversas.</p>
                     <p>Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impacto social real, facilitando o acesso à saúde digital e contribuindo para a redução do absenteísmo em consultas via teleconsulta no Hospital HC.</p>

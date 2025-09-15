@@ -18,6 +18,14 @@ h2 {
   @apply w-[95%] max-w-[320px] block py-[12px] px-[20px] rounded-[5px] no-underline font-bold transition-colors duration-300 text-center text-[0.95em];
 }
 
+.btn-primary {
+  @apply bg-[#005c99] text-white border border-[#005c99] hover:bg-[#004471];
+}
+
+.btn-secondary {
+  @apply bg-white text-[#005c99] border border-[#005c99] hover:bg-[#e6f2ff];
+}
+
 /*Cabeçalho*/
 
 .menu-list > li {
@@ -70,8 +78,7 @@ h2 {
   @apply flex m-3 justify-center gap-3;
 }
 
-
-
+/*==================================================================================================*/
 
 /* Home */
 
@@ -124,9 +131,7 @@ h2 {
   @apply text-[15px] text-gray-600 italic md:text-[17px];
 }
 
-
-
-
+/*==================================================================================================*/
 
 /*Hospitais*/
 
@@ -194,3 +199,48 @@ h2 {
 .info-gerais-content li {
   @apply text-sm text-gray-800 mb-2 leading-relaxed md:text-[17px];
 }
+
+/*==================================================================================================*/
+
+/* Servicos */
+
+.servico-card-icon-wrapper {
+  @apply w-[60px] h-[60px] bg-blue-100 rounded-full flex items-center justify-center mb-4;
+}
+
+.servico-icon {
+  @apply w-[40px] h-[40px];
+}
+
+.servico-card-pagina {
+  @apply rounded-lg border border-indigo-100 p-5 text-left shadow-[0_2px_10px_rgba(0,0,0,0.08)] flex-col transition-transform transition-shadow duration-200;
+}
+
+.servico-card-pagina:hover {
+  @apply -translate-y-1 shadow-[0_5px_15px_rgba(0,77,169,0.1)];
+}
+
+.servico-card-content h3 {
+  @apply text-lg text-[#1a237e] font-bold mb-2;
+}
+.servico-card-content p {
+  @apply text-[0.9em] text-gray-600 leading-relaxed md:text-[17px];
+}
+
+.btn-saiba-mais {
+  @apply inline-flex items-center text-[#007bff] font-semibold no-underline mt-5 transition-colors duration-200;
+}
+
+.btn-saiba-mais:hover {
+  @apply text-[#0056b3] underline;
+}
+
+.btn-saiba-mais .arrow-icon {
+  @apply ml-[5px] transition-transform duration-200;
+}
+
+.btn-saiba-mais:hover .arrow-icon {
+  @apply translate-x-[3px];
+}
+
+/*==================================================================================================*/

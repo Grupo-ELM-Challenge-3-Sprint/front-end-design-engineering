@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Entrar(){
     return(
         <main>
@@ -28,7 +30,7 @@ export default function Entrar(){
                             <small className="error-message"></small>
                         </div>
                         <div className="form-options">
-                            <a href="#" id="linkEsqueciSenha" className="auth-link">Esqueci minha senha</a>
+                            <Link to="#" id="linkEsqueciSenha" className="auth-link">Esqueci minha senha</Link>
                         </div>
                         <button type="submit" className="btn btn-primary btn-full-width">Entrar</button>
                     </form>
@@ -37,7 +39,7 @@ export default function Entrar(){
                        data-guide-title="Criar Conta"
                        data-guide-text="Se você ainda não tem uma conta, clique em 'Cadastre-se' para iniciar o processo de criação."
                        data-guide-arrow="up"
-                       data-guide-video-embed='<iframe src="https://www.youtube.com/embed/G0cfTSPXXzk?si=pn1WRZMskAdM6Si4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'>Não tem uma conta? <a href="#" id="linkCadastreSe" className="auth-link">Cadastre-se</a></p>
+                       data-guide-video-embed='<iframe src="https://www.youtube.com/embed/G0cfTSPXXzk?si=pn1WRZMskAdM6Si4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'>Não tem uma conta? <Link to="#" id="linkCadastreSe" className="auth-link">Cadastre-se</Link></p>
                     <div id="loginStatus" className="form-status-message" aria-live="polite"></div>
                 </div>
             </section>
@@ -45,7 +47,7 @@ export default function Entrar(){
             {/* <!-- === FORMULÁRIO DE CADASTRO (INICIALMENTE OCULTO) === --> */}
             <section id="cadastro-form-section" className="auth-section">
                 <div className="auth-card">
-                    <a href="#" className="back-to-login" id="backToLoginFromCadastro" aria-label="Voltar para login">← Voltar para login</a>
+                    <Link to="#" className="back-to-login" id="backToLoginFromCadastro" aria-label="Voltar para login">← Voltar para login</Link>
                     <h2>Criar uma conta</h2>
                     <p className="auth-subtitle">Preencha o formulário abaixo para se cadastrar no SimplesHC.</p>
                     
@@ -132,7 +134,7 @@ export default function Entrar(){
             {/* <!-- === FORMULÁRIO ESQUECI MINHA SENHA (INICIALMENTE OCULTO) === --> */}
             <section id="esqueci-senha-form-section" className="auth-section">
                 <div className="auth-card">
-                    <a href="#" className="back-to-login" id="backToLoginFromEsqueci" aria-label="Voltar para login">← Voltar para login</a>
+                    <Link to="#" className="back-to-login" id="backToLoginFromEsqueci" aria-label="Voltar para login">← Voltar para login</Link>
                     <h2>Recuperar senha</h2>
                     <p className="auth-subtitle">Informe seu CPF e email cadastrados para receber instruções de recuperação de senha.</p>
                     <form id="formEsqueciSenha">
@@ -159,8 +161,8 @@ export default function Entrar(){
                     <h2>Cadastro realizado com sucesso!</h2>
                     <p className="auth-subtitle">Sua conta no SimplesHC foi criada com sucesso. Agora você pode acessar todos os serviços do Hospital das Clínicas pela plataforma.</p>
                     <div className="success-actions">
-                        <a href="#" id="goToLoginFromSuccess" className="btn btn-primary btn-full-width">Fazer login</a>
-                        <a href="../../index.html" className="btn btn-secondary btn-full-width">Voltar à página inicial</a> 
+                        <Link to="#" id="goToLoginFromSuccess" className="btn btn-primary btn-full-width">Fazer login</Link>
+                        <Link to="../../index.html" className="btn btn-secondary btn-full-width">Voltar à página inicial</Link> 
                     </div>
                     <div className="proximos-passos">
                         <h3>Próximos passos</h3>

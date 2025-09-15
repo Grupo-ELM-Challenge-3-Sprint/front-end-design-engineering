@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Contato(){
     return(
         <main>
@@ -102,7 +104,7 @@ export default function Contato(){
                     </div>
                     <div className="info-bloco">
                         <h4>Email</h4>
-                        <p><a href="mailto:contato@simplify-hc.com.br">contato@simplify-hc.com.br</a></p>
+                        <p><Link to="mailto:contato@simplify-hc.com.br">contato@simplify-hc.com.br</Link></p>
                     </div>
                     <div className="info-bloco">
                         <h4>Horário de Atendimento</h4>
@@ -112,9 +114,9 @@ export default function Contato(){
                     <div className="info-bloco">
                         <h4>Redes Sociais</h4>
                         <div className="info-redes-sociais">
-                            <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-youtube.png" alt="Ícone Youtube" /></a>
-                            <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-instagram.png" alt="Ícone Instagram" /></a>
-                            <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-twitter.png" alt="Ícone Twitter" /></a>
+                            <Link to="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-youtube.png" alt="Ícone Youtube" /></Link>
+                            <Link to="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-instagram.png" alt="Ícone Instagram" /></Link>
+                            <Link to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-twitter.png" alt="Ícone Twitter" /></Link>
                         </div>
                     </div>
                 </aside>

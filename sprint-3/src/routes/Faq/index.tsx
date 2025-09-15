@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Faq(){
 
     return(
@@ -129,7 +131,7 @@ export default function Faq(){
 
                 <div className="faq-nao-encontrou">
                     <p>Não encontrou o que procurava?</p>
-                    <a href="./contato.html" className="btn btn-primary">Entre em contato conosco</a>
+                    <Link to="./contato.html" className="btn btn-primary">Entre em contato conosco</Link>
                 </div>
             </div>
         </section>

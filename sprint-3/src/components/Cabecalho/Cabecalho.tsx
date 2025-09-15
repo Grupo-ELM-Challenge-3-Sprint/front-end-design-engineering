@@ -8,7 +8,7 @@ export default function Cabecalho() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-    <header className="bg-white py-2.5 border-b border-[#eee] relative" >
+    <header className="bg-white py-2.5 border-b border-[#eee] relative z-10">
         <div className="w-[90%] flex justify-between items-center relative m-5">
             <Link to="/" className="font-bold flex items-center">
                 <img src={imagemLogo} alt="Logo SimplesHC" className="w-24 h-auto mr-2" />

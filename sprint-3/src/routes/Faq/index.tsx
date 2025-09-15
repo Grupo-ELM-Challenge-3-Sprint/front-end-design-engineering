@@ -71,19 +71,19 @@ export default function Faq() {
             <div className="container">
                 <div className="max-w-[800px] mx-auto border border-gray-200 rounded-lg overflow-hidden md:text-[18px]">    
                                 
-                    {faqs.map((faq, idx) => (
-                        <div className="border-b border-gray-200" key={idx}>
+                    {faqs.map((faq, indice) => (
+                        <div className="border-b border-gray-200" key={indice}>
                             <button
                                 className="faq-question text-[#1a237e] cursor-pointer text-[1.05em] p-5 w-full text-left flex justify-between items-center font-semibold hover:bg-[#eff1f7] focus:bg-[#eff1f7] focus:outline-none duration-200"
                                 type="button"
-                                aria-expanded={openIndex === idx}
-                                aria-controls={`faq-answer-${idx}`}
-                                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}>
+                                aria-expanded={openIndex === indice}
+                                aria-controls={`faq-answer-${indice}`}
+                                onClick={() => setOpenIndex(openIndex === indice ? null : indice)}>
                                 {faq.question}
-                                <span className={`transition-transform duration-300 ease-in-out ml-[10px] w-[12px] h-[12px] border-r-2 border-b-2 border-[#007bff] inline-block ${openIndex === idx ? "translate-y-[2px] -rotate-[135deg]" : "-translate-y-[2px] rotate-45"}`}></span>
+                                <span className={`transition-transform duration-300 ease-in-out ml-[10px] w-[12px] h-[12px] border-r-2 border-b-2 border-[#007bff] inline-block ${openIndex === indice ? "translate-y-[2px] -rotate-[135deg]" : "-translate-y-[2px] rotate-45"}`}></span>
                             </button>
-                            {openIndex === idx && (
-                                <div className={`px-5 bg-white overflow-hidden transition-all duration-400 ease-out ${openIndex === idx ? "max-h-[500px] pt-4 pb-4" : "max-h-0 pt-0 pb-0"}`} id={`faq-answer-${idx}`}>
+                            {openIndex === indice && (
+                                <div className={`px-5 bg-white overflow-hidden transition-all duration-400 ease-out ${openIndex === indice ? "max-h-[500px] pt-4 pb-4" : "max-h-0 pt-0 pb-0"}`} id={`faq-answer-${indice}`}>
                                 <p className="py-5">{faq.answer}</p>
                                 </div>
                             )}

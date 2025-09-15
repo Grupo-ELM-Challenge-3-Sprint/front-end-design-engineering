@@ -244,3 +244,63 @@ h2 {
 }
 
 /*==================================================================================================*/
+
+/* Integrantes */
+
+.equipe-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[25px];
+}
+
+.integrante-card {
+  @apply bg-white rounded-lg border border-gray-200 text-center p-[25px] px-5 shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-transform transition-shadow duration-200 ease-in-out;
+}
+
+.integrante-card:hover {
+  @apply -translate-y-1 shadow-[0_5px_15px_rgba(0,0,0,0.1)];
+}
+
+.integrante-foto {
+  @apply w-[150px] h-[150px] rounded-full object-cover mx-auto mb-5 border-[3px] border-indigo-100;
+}
+
+.integrante-info h3 {
+  @apply text-[1.25em] text-[#1a237e] mb-[5px];
+}
+
+.integrante-info .integrante-rm,
+.integrante-info .integrante-turma {
+  @apply text-[0.9em] text-gray-600 mb-[3px];
+}
+
+.integrante-info .integrante-turma {
+  @apply mb-[15px];
+}
+
+.integrante-redes {
+  @apply flex justify-center gap-[15px];
+}
+
+.integrante-redes a img {
+  @apply w-6 h-6 opacity-70 transition-opacity duration-200 ease-in;
+}
+
+.integrante-redes a:hover img {
+  @apply opacity-100;
+}
+
+
+.sobre-projeto-content {
+  @apply bg-white p-[25px] rounded-lg border border-gray-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] max-w-[800px] mx-auto;
+}
+
+.sobre-projeto-content p {
+  @apply text-[#333] leading-[1.7] mb-[15px];
+}
+
+.sobre-projeto-content p:last-child {
+  @apply mb-0;
+}
+
+/*==================================================================================================*/
+
+

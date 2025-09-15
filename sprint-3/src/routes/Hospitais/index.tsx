@@ -14,7 +14,7 @@ export default function Hospitais(){
     return(
     <main>
         {/* <!-- Seção de introdução às unidades hospitalares --> */}
-        <section id="unidades-hero"
+        <section className='bg-[#e9f3fb] py-10 text-center md:text-[17px] lg:text-[20px]'
                  data-guide-step="1"
                  data-guide-title="Bem-vindo às Nossas Unidades"
                  data-guide-text="Esta seção apresenta uma visão geral das nossas unidades hospitalares."
@@ -37,7 +37,7 @@ export default function Hospitais(){
         </section>
 
         {/* <!-- Lista de unidades hospitalares em formato de cards --> */}
-        <section id="lista-unidades" className="py-5 bg-gray-50 md:py-10"
+        <section className="py-5 bg-gray-50 md:py-10"
                  data-guide-step="3"
                  data-guide-title="Detalhes das Unidades"
                  data-guide-text="Explore os cards abaixo para encontrar informações detalhadas sobre cada unidade, como endereço, telefone e horários de funcionamento."

@@ -86,11 +86,9 @@ h2 {
 .service-card {
   @apply bg-[#f9f9f9] p-[25px] rounded-[8px] text-center 
          border border-[#e0e0e0] shadow-[0_2px_8px_rgba(0,0,0,0.05)]
-         transition-transform duration-200;
-}
-
-.service-card:hover {
-  @apply -translate-y-[5px] shadow-[0_4px_12px_rgba(0,0,0,0.1)];
+         transition-transform duration-200
+         
+         hover:-translate-y-[5px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)];
 }
 
 .service-card img {
@@ -303,3 +301,74 @@ h2 {
 
 /*==================================================================================================*/
 
+/* Contato */
+
+.form-group {
+  @apply mb-[20px];
+}
+
+.form-group label {
+  @apply block font-semibold mb-[6px] text-gray-700 text-[0.9em] md:text-[18px];
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+  @apply w-full p-[12px] border border-gray-300 rounded-[6px] text-[1em] text-gray-800 transition-colors duration-200;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  @apply border-[#007bff] outline-none shadow-[0_0_0_2px_rgba(0,123,255,0.25)];
+}
+
+.form-group textarea {
+  @apply min-h-[100px] max-h-[150px];
+}
+
+
+/* Validação e Mensagens de Erro */
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  @apply border-[#dc3545];
+}
+
+.form-group input.invalid:focus,
+.form-group select.invalid:focus,
+.form-group textarea.invalid:focus {
+  @apply shadow-[0_0_0_2px_rgba(220,53,69,0.25)];
+}
+
+.error-message {
+  @apply block text-[#dc3545] text-[0.8em] mt-[4px] min-h-[1.2em];
+}
+
+/* Barra Lateral de Informações de Contato */
+.info-contato-container {
+  @apply bg-[#f9fafb] p-[25px] rounded-lg border border-gray-200 flex-[1];
+}
+
+.info-bloco {
+  @apply mb-[20px];
+}
+
+.info-bloco h4 {
+  @apply text-[1em] text-gray-700 font-semibold mb-[5px];
+}
+
+.info-bloco p {
+  @apply text-[0.9em] md:text-[17px] text-gray-600 leading-[1.6] mb-[3px];
+}
+
+.info-redes-sociais img {
+  @apply w-[28px] h-[28px] opacity-80 transition-opacity duration-200 hover:opacity-100;
+}
+
+
+/*==================================================================================================*/
+
+/* Area Paciente */

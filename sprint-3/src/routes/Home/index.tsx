@@ -79,7 +79,7 @@ export default function Home(){
                         </ul>
 
                     </div>
-                    <Link to="/faq" className="btn btn-primary mx-auto">Ver perguntas frequentes</Link>
+                    <Link to="/faq" className="btn btn-primary mx-auto my-5">Ver perguntas frequentes</Link>
                 </div>
             </div>
         </section>

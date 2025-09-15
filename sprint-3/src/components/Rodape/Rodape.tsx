@@ -38,12 +38,12 @@ export default function Rodape() {
             </div>
             <div className="footer-column">
                 <h4>Contato</h4>
-                <p className="text-sm mb-1.5">HC Hospital das Clínicas</p>
-                <p className="text-sm mb-1.5">Rua Dr. Ovídio Pires de Campos, 225</p>
-                <p className="text-sm mb-1.5">São Paulo - SP</p>
-                <p className="text-sm mb-1.5">CEP 05403-010</p>
-                <p className="text-sm mb-1.5">Telefone: (11) 2661-0000</p>
-                <p className="text-sm mb-1.5">Email: contato@simplify-hc.com.br</p>
+                <p>HC Hospital das Clínicas</p>
+                <p>Rua Dr. Ovídio Pires de Campos, 225</p>
+                <p>São Paulo - SP</p>
+                <p>CEP 05403-010</p>
+                <p>Telefone: (11) 2661-0000</p>
+                <p>Email: contato@simplify-hc.com.br</p>
             </div>
         <div className="text-center p-3 border-t border-solid border-t-[#2c3894] col-span-1 md:col-span-2 lg:col-span-4">
             <p>© 2025 SimplesHC. Todos os direitos reservados.</p>

@@ -11,7 +11,7 @@ export default function Integrantes(){
     return(
     <main>
         {/* <!-- Seção de apresentação da equipe --> */}
-        <section className="bg-[#e9f3fb] py-[30px] text-center md:text-[18px]">
+        <section className="bg-[#e9f3fb] py-10 text-center md:text-[17px] lg:text-[20px]">
             <div className="container">
                 <h2>Nossa Equipe</h2>
                 <p>Conheça os desenvolvedores responsáveis pelo projeto SimplesHC.</p>

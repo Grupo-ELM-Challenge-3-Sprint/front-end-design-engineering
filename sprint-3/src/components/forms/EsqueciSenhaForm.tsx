@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactElement, FormEvent } from 'react';
 import type { FormData, StatusMessage } from '../../hooks';
 
 interface EsqueciSenhaFormProps {
@@ -6,18 +6,18 @@ interface EsqueciSenhaFormProps {
   errors: {[key: string]: string};
   statusMessage: StatusMessage;
   onInputChange: (field: string, value: string) => void;
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (e: FormEvent) => void;
   onFormChange: (form: string) => void;
 }
 
-export const EsqueciSenhaForm: React.FC<EsqueciSenhaFormProps> = ({
+export const EsqueciSenhaForm = ({
   formData,
   errors,
   statusMessage,
   onInputChange,
   onSubmit,
   onFormChange
-}) => {
+}: EsqueciSenhaFormProps): ReactElement => {
   return (
     <section>
       <div className="auth-card">

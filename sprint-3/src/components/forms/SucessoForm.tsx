@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import iconeCheck from '../../assets/img/icons/icone-check-verde.png';
 
@@ -6,7 +6,7 @@ interface SucessoFormProps {
   onFormChange: (form: string) => void;
 }
 
-export const SucessoForm: React.FC<SucessoFormProps> = ({ onFormChange }) => {
+export const SucessoForm = ({ onFormChange }: SucessoFormProps): ReactElement => {
   return (
     <section>
       <div className="auth-card text-center">

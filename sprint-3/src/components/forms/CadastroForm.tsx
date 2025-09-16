@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactElement, FormEvent } from 'react';
 import type { FormData, StatusMessage } from '../../hooks';
 
 interface CadastroFormProps {
@@ -9,13 +9,13 @@ interface CadastroFormProps {
   etapaCadastro: number;
   onInputChange: (field: string, value: string) => void;
   onTogglePassword: (field: string) => void;
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (e: FormEvent) => void;
   onFormChange: (form: string) => void;
   onNextStep: () => void;
   onPrevStep: () => void;
 }
 
-export const CadastroForm: React.FC<CadastroFormProps> = ({
+export const CadastroForm = ({
   formData,
   errors,
   statusMessage,
@@ -27,7 +27,7 @@ export const CadastroForm: React.FC<CadastroFormProps> = ({
   onFormChange,
   onNextStep,
   onPrevStep
-}) => {
+}: CadastroFormProps): ReactElement => {
   return (
     <section>
       <div className="auth-card">
@@ -98,7 +98,7 @@ export const CadastroForm: React.FC<CadastroFormProps> = ({
                 />
                 {errors.dataNascimento && <small className="error-message text-red-500">{errors.dataNascimento}</small>}
               </div>
-              <button type="button" onClick={onNextStep} className="btn btn-primary w-full mt-4">Continuar</button>
+              <button type="button" onClick={onNextStep} className="btn btn-primary w-full mt-4 cursor-pointer">Continuar</button>
             </div>
           )}
 
@@ -130,8 +130,8 @@ export const CadastroForm: React.FC<CadastroFormProps> = ({
                 />
               </div>
               <div className="flex gap-3 mt-6">
-                <button type="button" onClick={onPrevStep} className="btn btn-secondary w-full">Voltar</button>
-                <button type="button" onClick={onNextStep} className="btn btn-primary w-full">Continuar</button>
+                <button type="button" onClick={onPrevStep} className="btn btn-secondary w-full cursor-pointer">Voltar</button>
+                <button type="button" onClick={onNextStep} className="btn btn-primary w-full cursor-pointer">Continuar</button>
               </div>
             </div>
           )}
@@ -186,8 +186,8 @@ export const CadastroForm: React.FC<CadastroFormProps> = ({
                 <strong>Dica de segurança:</strong> Use uma senha forte com letras, números e símbolos.
               </p>
               <div className="flex gap-3 mt-6">
-                <button type="button" onClick={onPrevStep} className="btn btn-secondary w-full">Voltar</button>
-                <button type="submit" className="btn btn-primary w-full">Criar conta</button>
+                <button type="button" onClick={onPrevStep} className="btn btn-secondary w-full cursor-pointer">Voltar</button>
+                <button type="submit" className="btn btn-primary w-full cursor-pointer">Criar conta</button>
               </div>
             </div>
           )}

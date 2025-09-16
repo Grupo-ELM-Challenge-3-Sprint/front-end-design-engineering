@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactElement, FormEvent } from 'react';
 import type { FormData, StatusMessage } from '../../hooks';
 
 interface LoginFormProps {
@@ -8,11 +8,11 @@ interface LoginFormProps {
   showPasswords: {[key: string]: boolean};
   onInputChange: (field: string, value: string) => void;
   onTogglePassword: (field: string) => void;
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (e: FormEvent) => void;
   onFormChange: (form: string) => void;
 }
 
-export const LoginForm: React.FC<LoginFormProps> = ({
+export const LoginForm = ({
   formData,
   errors,
   statusMessage,
@@ -21,7 +21,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   onTogglePassword,
   onSubmit,
   onFormChange
-}) => {
+}: LoginFormProps): ReactElement => {
   return (
     <section>
       <div className="auth-card">
@@ -80,7 +80,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
               Esqueci minha senha
             </a>
           </div>
-          <button type="submit" className="btn btn-primary w-full">Entrar</button>
+          <button type="submit" className="btn btn-primary w-full cursor-pointer">Entrar</button>
         </form>
         <p className="auth-switch">
           Não tem uma conta? 

@@ -11,6 +11,8 @@ import Integrantes from './routes/Integrantes/index.tsx';
 import Hospitais from './routes/Hospitais/index.tsx';
 import Entrar from './routes/Entrar/index.tsx';
 import Servicos from './routes/Servicos/index.tsx';
+import Perfil from './routes/Perfil/index.tsx';
+
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, errorElement:<Error/>, children:[
@@ -21,6 +23,7 @@ const router = createBrowserRouter([
     {path:"/faq", element: <Faq/>},
     {path:"/contato", element: <Contato/>},
     {path:"/entrar", element: <Entrar/>},
+    {path:"/perfil", element: <Perfil/>},
   ]}
 ]);
 

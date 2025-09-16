@@ -1,180 +1,196 @@
-import { Link } from "react-router-dom";
+// src/pages/Entrar/index.jsx
+import { useState, useCallback, useMemo } from "react";
+import { useFormValidation, validators, useInputMasks, useFormState } from "../../hooks";
+import type { ValidationRules } from "../../hooks";
+import { LoginForm, CadastroForm, EsqueciSenhaForm, SucessoForm } from "../../components/forms";
 
-export default function Entrar(){
-    return(
-        <main>
-            <div className="login-container">
+import '../../globals.css';
 
-            {/* <!-- === FORMULÁRIO DE LOGIN (INICIALMENTE VISÍVEL) === --> */}
-            <section id="login-form-section" className="auth-section active"
-                     data-guide-step="1"
-                     data-guide-title="Acesse Sua Conta"
-                     data-guide-text="Bem-vindo! Use esta área para entrar na sua conta SimplesHC ou navegue para criar uma nova ou recuperar sua senha."
-                     data-guide-arrow="down"
-                     data-guide-video-embed='<iframe src="https://www.youtube.com/embed/GcPrazUFDXw?si=Z1tHN9qhQ2Nb0y8W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'>
-                <div className="auth-card">
-                    <h2>Acesse sua conta</h2>
-                    <p className="auth-subtitle">Entre com suas credenciais para acessar sua área de paciente.</p>
-                    <form id="formLogin">
-                        <div className="form-group">
-                            <label htmlFor="loginCpf">CPF</label>
-                            <input type="text" id="loginCpf" name="loginCpf" placeholder="000.000.000-00" required />
-                            <small className="error-message"></small>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="loginSenha">Senha</label>
-                            <div className="password-wrapper">
-                                <input type="password" id="loginSenha" name="loginSenha" placeholder="Sua senha" required />
-                                <button type="button" className="toggle-password" aria-label="Mostrar senha">👁️</button>
-                            </div>
-                            <small className="error-message"></small>
-                        </div>
-                        <div className="form-options">
-                            <Link to="#" id="linkEsqueciSenha" className="auth-link">Esqueci minha senha</Link>
-                        </div>
-                        <button type="submit" className="btn btn-primary btn-full-width">Entrar</button>
-                    </form>
-                    <p className="auth-switch"
-                       data-guide-step="2"
-                       data-guide-title="Criar Conta"
-                       data-guide-text="Se você ainda não tem uma conta, clique em 'Cadastre-se' para iniciar o processo de criação."
-                       data-guide-arrow="up"
-                       data-guide-video-embed='<iframe src="https://www.youtube.com/embed/G0cfTSPXXzk?si=pn1WRZMskAdM6Si4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'>Não tem uma conta? <Link to="#" id="linkCadastreSe" className="auth-link">Cadastre-se</Link></p>
-                    <div id="loginStatus" className="form-status-message" aria-live="polite"></div>
-                </div>
-            </section>
+export default function Entrar() {
+    // Estados principais
+    const [formAtual, setFormAtual] = useState('login');
+    const [etapaCadastro, setEtapaCadastro] = useState(1);
 
-            {/* <!-- === FORMULÁRIO DE CADASTRO (INICIALMENTE OCULTO) === --> */}
-            <section id="cadastro-form-section" className="auth-section">
-                <div className="auth-card">
-                    <Link to="#" className="back-to-login" id="backToLoginFromCadastro" aria-label="Voltar para login">← Voltar para login</Link>
-                    <h2>Criar uma conta</h2>
-                    <p className="auth-subtitle">Preencha o formulário abaixo para se cadastrar no SimplesHC.</p>
-                    
-                    {/* <!-- Indicador de Etapas --> */}
-                    <div className="stepper">
-                        <div className="step active" data-step="1">1</div>
-                        <div className="step-line"></div>
-                        <div className="step" data-step="2">2</div>
-                        <div className="step-line"></div>
-                        <div className="step" data-step="3">3</div>
-                    </div>
+    // Hooks customizados
+    const { formData, statusMessage, showPasswords, updateField, resetForm, setStatus, clearStatus, togglePasswordVisibility } = useFormState();
+    const { applyMask, getMaskType } = useInputMasks();
 
-                    <form id="formCadastro">
-                        {/* <!-- Etapa 1: Informações Pessoais --> */}
-                        <div className="form-step active" data-step="1">
-                            <h3>Informações Pessoais</h3>
-                            <div className="form-group">
-                                <label htmlFor="cadastroNomeCompleto">Nome completo*</label>
-                                <input type="text" id="cadastroNomeCompleto" name="cadastroNomeCompleto" placeholder="Digite seu nome completo" required />
-                                <small className="error-message"></small>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="cadastroCpf">CPF*</label>
-                                <input type="text" id="cadastroCpf" name="cadastroCpf" placeholder="Digite seu CPF" required />
-                                <small className="error-message"></small>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="dataNascimento">Data de nascimento*</label>
-                                <input type="text" id="dataNascimento" name="dataNascimento" placeholder="dd/mm/yyyy" required />
-                                <small className="error-message"></small>
-                            </div>
-                            <button type="button" className="btn btn-primary btn-full-width next-step">Continuar</button>
-                        </div>
+    // Regras de validação por formulário
+    const validationRules = useMemo((): ValidationRules => ({
+        // Login
+        loginCpf: { required: true, custom: validators.cpf },
+        loginSenha: { required: true },
+        
+        // Cadastro
+        cadastroNomeCompleto: { required: true, custom: validators.name },
+        cadastroCpf: { required: true, custom: validators.cpf },
+        dataNascimento: { required: true, custom: validators.date },
+        cadastroEmail: { required: true, custom: validators.email },
+        cadastroSenha: { required: true, custom: validators.password },
+        confirmarSenha: { 
+            required: true, 
+            custom: (value: string) => value !== formData.cadastroSenha ? 'As senhas não coincidem.' : null 
+        },
+        
+        // Esqueci senha
+        esqueciCpf: { required: true, custom: validators.cpf },
+        esqueciEmail: { required: true, custom: validators.email }
+    }), [formData.cadastroSenha]);
 
-                        {/* <!-- Etapa 2: Informações de Contato --> */}
-                        <div className="form-step" data-step="2">
-                            <h3>Informações de Contato</h3>
-                            <div className="form-group">
-                                <label htmlFor="cadastroEmail">Email*</label>
-                                <input type="email" id="cadastroEmail" name="cadastroEmail" placeholder="Digite seu email" required />
-                                <small className="error-message"></small>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="cadastroTelefone">Telefone</label>
-                                <input type="tel" id="cadastroTelefone" name="cadastroTelefone" placeholder="(XX) XXXXX-XXXX" />
-                            </div>
-                             <p className="form-dica"><strong>Dica:</strong> Cadastre um número de telefone com WhatsApp ou Telegram para receber lembretes de consultas e outras comunicações importantes.</p>
-                            <div className="step-buttons">
-                                <button type="button" className="btn btn-secondary prev-step">Voltar</button>
-                                <button type="button" className="btn btn-primary next-step">Continuar</button>
-                            </div>
-                        </div>
+    // Hook de validação
+    const { errors, validateForm, clearError, clearAllErrors } = useFormValidation(validationRules);
 
-                        {/* <!-- Etapa 3: Definir Senha --> */}
-                        <div className="form-step" data-step="3">
-                            <h3>Definir Senha</h3>
-                            <div className="form-group">
-                                <label htmlFor="cadastroSenha">Senha*</label>
-                                <div className="password-wrapper">
-                                    <input type="password" id="cadastroSenha" name="cadastroSenha" placeholder="Crie uma senha forte" required />
-                                    <button type="button" className="toggle-password" aria-label="Mostrar senha">👁️</button>
-                                </div>
-                                <small className="error-message"></small>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="confirmarSenha">Confirmar senha*</label>
-                                 <div className="password-wrapper">
-                                    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" required />
-                                    <button type="button" className="toggle-password" aria-label="Mostrar senha">👁️</button>
-                                </div>
-                                <small className="error-message"></small>
-                            </div>
-                            <p className="form-dica security-tip"><strong>Dica de segurança:</strong> Use uma senha com pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.</p>
-                            <div className="step-buttons">
-                                <button type="button" className="btn btn-secondary prev-step">Voltar</button>
-                                <button type="submit" className="btn btn-primary">Criar conta</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div id="cadastroStatus" className="form-status-message" aria-live="polite"></div>
-                </div>
-            </section>
+    // Handlers otimizados
+    const handleInputChange = useCallback((field: string, value: string) => {
+        const maskType = getMaskType(field);
+        const maskedValue = maskType ? applyMask(value, maskType) : value;
+        
+        updateField(field as keyof typeof formData, maskedValue);
+        
+        if (errors[field]) {
+            clearError(field);
+        }
+    }, [getMaskType, applyMask, updateField, errors, clearError]);
 
-            {/* <!-- === FORMULÁRIO ESQUECI MINHA SENHA (INICIALMENTE OCULTO) === --> */}
-            <section id="esqueci-senha-form-section" className="auth-section">
-                <div className="auth-card">
-                    <Link to="#" className="back-to-login" id="backToLoginFromEsqueci" aria-label="Voltar para login">← Voltar para login</Link>
-                    <h2>Recuperar senha</h2>
-                    <p className="auth-subtitle">Informe seu CPF e email cadastrados para receber instruções de recuperação de senha.</p>
-                    <form id="formEsqueciSenha">
-                        <div className="form-group">
-                            <label htmlFor="esqueciCpf">CPF</label>
-                            <input type="text" id="esqueciCpf" name="esqueciCpf" placeholder="Seu CPF cadastrado" required />
-                            <small className="error-message"></small>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="esqueciEmail">Email</label>
-                            <input type="email" id="esqueciEmail" name="esqueciEmail" placeholder="Seu email cadastrado" required />
-                            <small className="error-message"></small>
-                        </div>
-                        <button type="submit" className="btn btn-primary btn-full-width">Enviar instruções</button>
-                    </form>
-                    <div id="esqueciSenhaStatus" className="form-status-message" aria-live="polite"></div>
-                </div>
-            </section>
+    const handleFormChange = useCallback((newForm: string) => {
+        setFormAtual(newForm);
+        clearAllErrors();
+        clearStatus();
+        if (newForm === 'cadastro') {
+            setEtapaCadastro(1);
+        }
+    }, [clearAllErrors, clearStatus]);
 
-            {/* <!-- === TELA DE CADASTRO CONCLUÍDO (INICIALMENTE OCULTO) === --> */}
-            <section id="cadastro-sucesso-section" className="auth-section">
-                <div className="auth-card text-center">
-                    <img src="../img/icons/icone-check-verde.png" alt="Sucesso" className="success-icon" /> 
-                    <h2>Cadastro realizado com sucesso!</h2>
-                    <p className="auth-subtitle">Sua conta no SimplesHC foi criada com sucesso. Agora você pode acessar todos os serviços do Hospital das Clínicas pela plataforma.</p>
-                    <div className="success-actions">
-                        <Link to="#" id="goToLoginFromSuccess" className="btn btn-primary btn-full-width">Fazer login</Link>
-                        <Link to="../../index.html" className="btn btn-secondary btn-full-width">Voltar à página inicial</Link> 
-                    </div>
-                    <div className="proximos-passos">
-                        <h3>Próximos passos</h3>
-                        <ol>
-                            <li>Acesse sua conta com o CPF e senha cadastrados</li>
-                            <li>Complete seu perfil adicionando informações de saúde</li>
-                            <li>Agende sua primeira consulta ou exame</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-        </div>
+    const handleNextStep = useCallback(() => {
+        const stepFields = {
+            1: ['cadastroNomeCompleto', 'cadastroCpf', 'dataNascimento'],
+            2: ['cadastroEmail'],
+            3: ['cadastroSenha', 'confirmarSenha']
+        };
+        
+        const currentStepFields = stepFields[etapaCadastro as keyof typeof stepFields] || [];
+        console.log('Etapa atual:', etapaCadastro);
+        console.log('Campos da etapa:', currentStepFields);
+        
+        const stepData = currentStepFields.reduce((acc, field) => {
+            acc[field] = formData[field as keyof typeof formData];
+            return acc;
+        }, {} as {[key: string]: string});
+        
+        console.log('Dados da etapa:', stepData);
+        console.log('FormData completo:', formData);
+        
+        if (validateForm(stepData)) {
+            console.log('Validação passou, avançando etapa');
+            setEtapaCadastro(prev => prev + 1);
+        } else {
+            console.log('Validação falhou');
+        }
+    }, [etapaCadastro, formData, validateForm]);
+
+    const handlePrevStep = useCallback(() => {
+        setEtapaCadastro(prev => prev - 1);
+    }, []);
+
+    // Handlers de submissão otimizados
+    const handleLoginSubmit = useCallback((e: React.FormEvent) => {
+        e.preventDefault();
+        const loginData = {
+            loginCpf: formData.loginCpf,
+            loginSenha: formData.loginSenha
+        };
+        
+        if (validateForm(loginData)) {
+            setStatus('success', 'Login bem-sucedido! Redirecionando...');
+            setTimeout(() => {
+                window.location.href = '/perfil';
+            }, 1500);
+        } else {
+            setStatus('error', 'CPF ou senha inválidos.');
+        }
+    }, [formData, validateForm, setStatus]);
+
+    const handleCadastroSubmit = useCallback((e: React.FormEvent) => {
+        e.preventDefault();
+        const cadastroData = {
+            cadastroNomeCompleto: formData.cadastroNomeCompleto,
+            cadastroCpf: formData.cadastroCpf,
+            dataNascimento: formData.dataNascimento,
+            cadastroEmail: formData.cadastroEmail,
+            cadastroSenha: formData.cadastroSenha,
+            confirmarSenha: formData.confirmarSenha
+        };
+        
+        if (validateForm(cadastroData)) {
+            setFormAtual('sucesso');
+            resetForm();
+            setEtapaCadastro(1);
+        } else {
+            setStatus('error', 'Por favor, corrija os erros na última etapa.');
+        }
+    }, [formData, validateForm, resetForm, setStatus]);
+
+    const handleEsqueciSenhaSubmit = useCallback((e: React.FormEvent) => {
+        e.preventDefault();
+        const esqueciData = {
+            esqueciCpf: formData.esqueciCpf,
+            esqueciEmail: formData.esqueciEmail
+        };
+        
+        if (validateForm(esqueciData)) {
+            setStatus('success', 'Instruções de recuperação enviadas para seu email (simulação).');
+        } else {
+            setStatus('error', 'CPF ou email não encontrado/correspondente.');
+        }
+    }, [formData, validateForm, setStatus]);
+
+    return (
+        <main className="flex justify-center items-start min-h-screen bg-slate-100 p-4 sm:p-6">
+            <div className="w-full max-w-md">
+                {formAtual === 'login' && (
+                    <LoginForm
+                        formData={formData}
+                        errors={errors}
+                        statusMessage={statusMessage}
+                        showPasswords={showPasswords}
+                        onInputChange={handleInputChange}
+                        onTogglePassword={togglePasswordVisibility}
+                        onSubmit={handleLoginSubmit}
+                        onFormChange={handleFormChange}
+                    />
+                )}
+
+                {formAtual === 'cadastro' && (
+                    <CadastroForm
+                        formData={formData}
+                        errors={errors}
+                        statusMessage={statusMessage}
+                        showPasswords={showPasswords}
+                        etapaCadastro={etapaCadastro}
+                        onInputChange={handleInputChange}
+                        onTogglePassword={togglePasswordVisibility}
+                        onSubmit={handleCadastroSubmit}
+                        onFormChange={handleFormChange}
+                        onNextStep={handleNextStep}
+                        onPrevStep={handlePrevStep}
+                    />
+                )}
+
+                {formAtual === 'esqueci' && (
+                    <EsqueciSenhaForm
+                        formData={formData}
+                        errors={errors}
+                        statusMessage={statusMessage}
+                        onInputChange={handleInputChange}
+                        onSubmit={handleEsqueciSenhaSubmit}
+                        onFormChange={handleFormChange}
+                    />
+                )}
+
+                {formAtual === 'sucesso' && (
+                    <SucessoForm onFormChange={handleFormChange} />
+                )}
+            </div>
         </main>
     );
 }

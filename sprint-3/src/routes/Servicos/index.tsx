@@ -35,7 +35,7 @@ export default function Servicos(){
                         <div className="servico-card-content">
                             <h3>Agendamento Online</h3>
                             <p>Marque consultas e exames diretamente pelo nosso portal, sem precisar ligar ou ir ao hospital.</p>
-                            <Link to="./area-paciente/minhas-consultas.html" className="btn-saiba-mais">Agendar agora <span className="arrow-icon">→</span></Link>
+                            <Link to="./perfil/minhas-consultas.html" className="btn-saiba-mais">Agendar agora <span className="arrow-icon">→</span></Link>
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@ export default function Servicos(){
                         <div className="servico-card-content">
                             <h3>Teleconsulta</h3>
                             <p>Atendimento médico online com especialistas do HC, sem sair de casa e com a mesma qualidade.</p>
-                            <Link to="./area-paciente/minhas-consultas.html" className="btn-saiba-mais">Conhecer serviço <span className="arrow-icon">→</span></Link>
+                            <Link to="./perfil/minhas-consultas.html" className="btn-saiba-mais">Conhecer serviço <span className="arrow-icon">→</span></Link>
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@ export default function Servicos(){
                         <div className="servico-card-content">
                             <h3>Resultados de Exames</h3>
                             <p>Acesse seus resultados de exames pelo portal, disponíveis 24h após a coleta.</p>
-                            <Link to="./area-paciente/meus-exames.html" className="btn-saiba-mais">Ver meus exames <span className="arrow-icon">→</span></Link>
+                            <Link to="./perfil/meus-exames.html" className="btn-saiba-mais">Ver meus exames <span className="arrow-icon">→</span></Link>
                         </div>
                     </div>
 
@@ -107,7 +107,7 @@ export default function Servicos(){
                 <h2 className="text-[#1a237e] mb-2.5">Estamos aqui para cuidar de você</h2>
                 <p className="md:text-[18px] mb-[25px] text-[#2d3748] mx-auto">Agende sua consulta hoje mesmo ou entre em contato para saber mais sobre nossos serviços.</p>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-2.5 md:gap-4">
-                    <Link to="./area-paciente/meu-perfil.html" className="btn btn-primary">Acessar minha conta</Link>
+                    <Link to="./perfil/meu-perfil.html" className="btn btn-primary">Acessar minha conta</Link>
                     <Link to="/contato" className="btn btn-secondary">Fale conosco</Link>
                 </div>
             </div>

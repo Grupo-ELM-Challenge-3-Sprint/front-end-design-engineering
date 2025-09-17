@@ -12,6 +12,8 @@ import Hospitais from './routes/Hospitais/index.tsx';
 import Entrar from './routes/Entrar/index.tsx';
 import Servicos from './routes/Servicos/index.tsx';
 import Perfil from './routes/Perfil/index.tsx';
+import Tutoriais from './routes/Tutoriais/index.tsx';
+import TutorialContent from './routes/Tutoriais/TutorialContent.tsx';
 
 
 const router = createBrowserRouter([
@@ -24,6 +26,9 @@ const router = createBrowserRouter([
     {path:"/contato", element: <Contato/>},
     {path:"/entrar", element: <Entrar/>},
     {path:"/perfil", element: <Perfil/>},
+    {path:"/tutoriais", element: <Tutoriais/>},
+    {path:"/tutoriais/:id", element: <TutorialContent/>},
+    
   ]}
 ]);
 

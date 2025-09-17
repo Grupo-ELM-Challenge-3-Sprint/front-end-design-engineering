@@ -1,32 +1,8 @@
+import PacientePage from "../../components/Painel/PacientePage";
+
 export default function Perfil(){
     return(
-    <main className="paciente-main-container container">
-        <aside className="paciente-sidebar"
-                data-guide-step="2"
-                data-guide-title="Navegação da Área do Paciente"
-                data-guide-text="Use este menu para navegar entre as diferentes seções da sua área, como seus dados, exames, receitas e consultas."
-                data-guide-arrow="left">
-            <div className="paciente-sidebar-header">
-                <h3>Área do Paciente</h3>
-                <p id="sidebarUserName">Carregando...</p>
-            </div>
-            <nav className="paciente-nav" aria-label="Navegação da área do paciente">
-                <ul>
-                    <li><a href="./meu-perfil.html" className="active"><span className="nav-icon">👤</span> Meus Dados </a></li>
-                    <li><a href="./meus-exames.html"><span className="nav-icon">📄</span> Exames </a></li>
-                    <li><a href="./minhas-receitas.html"><span className="nav-icon">💊</span> Receitas </a></li>
-                    <li><a href="./minhas-consultas.html"><span className="nav-icon">📅</span> Consultas </a></li>
-                    <li><a href="#" id="linkSair"><span className="nav-icon">🚪</span> Sair </a></li>
-                </ul>
-            </nav>
-        </aside>
-        
-        <section className="paciente-content-area"
-                data-guide-step="1"
-                data-guide-title="Seus Dados Pessoais"
-                data-guide-text="Bem-vindo ao seu perfil! Aqui você pode visualizar e gerenciar suas informações pessoais, resumo de saúde e preferências de notificação."
-                data-guide-arrow="down">
-            
+    <PacientePage>            
             <div className="content-header">
                 <h2>Meus Dados</h2>
                 <div className="form-actions-header"
@@ -52,11 +28,11 @@ export default function Perfil(){
                         <h3>Informações Pessoais</h3>
                         <div className="info-item">
                             <strong>Nome Completo:</strong>
-                            <input type="text" id="userName" disabled title="Nome Completo" placeholder="Digite seu nome completo" />
+                            <input type="text" id="userName" disabled title="Nome Completo" placeholder="Nome usuário" />
                         </div>
                         <div className="info-item">
                             <strong>CPF:</strong>
-                            <input type="text" id="userCpf" disabled title="CPF" placeholder="Digite seu CPF" />
+                            <input type="text" id="userCpf" disabled title="CPF" placeholder="CPF usuário" />
                         </div>
                         <div className="info-item">
                             <strong>Data de Nascimento:</strong>
@@ -64,7 +40,7 @@ export default function Perfil(){
                         </div>
                         <div className="info-item">
                             <strong>Email:</strong>
-                            <input type="email" id="userEmail" disabled title="Email" placeholder="Digite seu email" />
+                            <input type="email" id="userEmail" disabled title="Email" placeholder="Email usuário" />
                         </div>
                         <div className="info-item">
                             <strong>Telefone:</strong>
@@ -73,7 +49,6 @@ export default function Perfil(){
                     </div>
                 </div>
             </form>
-        </section>
-    </main>
+    </PacientePage>
     );
 }

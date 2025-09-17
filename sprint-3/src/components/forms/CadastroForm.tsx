@@ -1,4 +1,6 @@
 import type { ReactElement, FormEvent } from 'react';
+import { Link } from 'react-router-dom';
+import iconeCheck from '../../assets/img/icons/icone-check-verde.png';
 import type { FormData, StatusMessage } from '../../hooks';
 
 interface CadastroFormProps {
@@ -28,6 +30,25 @@ export const CadastroForm = ({
   onNextStep,
   onPrevStep
 }: CadastroFormProps): ReactElement => {
+  // Renderizar a tela de sucesso quando etapaCadastro === 4
+  if (etapaCadastro === 4) {
+    return (
+      <section>
+        <div className="auth-card text-center">
+          <img src={iconeCheck} alt="Sucesso" className="w-12 h-12 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-slate-800 mb-2">Cadastro realizado!</h2>
+          <p className="auth-subtitle">Sua conta foi criada. Agora você já pode acessar a plataforma.</p>
+          <div className="mt-6 flex flex-col gap-3">
+            <a href="#" onClick={(e) => { e.preventDefault(); onFormChange('login'); }} className="btn btn-primary w-full">
+              Fazer login
+            </a>
+            <Link to="/" className="btn btn-secondary w-full">Voltar à página inicial</Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section>
       <div className="auth-card">

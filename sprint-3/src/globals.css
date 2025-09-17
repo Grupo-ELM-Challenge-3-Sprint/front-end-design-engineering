@@ -36,7 +36,7 @@ h2 {
 .linksHeader {
   @apply block w-full text-base font-medium text-center transition-colors 
           max-[951px]:px-6 max-[951px]:py-4 max-[951px]:text-[#333] max-[951px]:bg-[#f0f0f0] max-[951px]:rounded-sm
-          min-[951px]:px-[10px] min-[951px]:py-[10px] min-[951px]:text-[19px] min-[951px]:hover:text-blue-600;
+          min-[951px]:px-[10px] min-[951px]:py-[15px] min-[951px]:text-[20px] min-[951px]:hover:text-blue-600;
 }
 
 .menu-list > li > a.active {

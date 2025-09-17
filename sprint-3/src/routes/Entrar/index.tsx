@@ -2,7 +2,7 @@
 import { useState, useCallback, useMemo } from "react";
 import { useFormValidation, validators, useInputMasks, useFormState } from "../../hooks";
 import type { ValidationRules } from "../../hooks";
-import { LoginForm, CadastroForm, EsqueciSenhaForm, SucessoForm } from "../../components/forms";
+import { LoginForm, CadastroForm, EsqueciSenhaForm } from "../../components/forms";
 
 import '../../globals.css';
 
@@ -122,9 +122,9 @@ export default function Entrar() {
         };
         
         if (validateForm(cadastroData)) {
-            setFormAtual('sucesso');
+            // Exibe tela de sucesso dentro do CadastroForm (etapa 4)
+            setEtapaCadastro(4);
             resetForm();
-            setEtapaCadastro(1);
         } else {
             setStatus('error', 'Por favor, corrija os erros na última etapa.');
         }
@@ -185,10 +185,6 @@ export default function Entrar() {
                         onSubmit={handleEsqueciSenhaSubmit}
                         onFormChange={handleFormChange}
                     />
-                )}
-
-                {formAtual === 'sucesso' && (
-                    <SucessoForm onFormChange={handleFormChange} />
                 )}
             </div>
         </main>

@@ -106,7 +106,7 @@ export default function Servicos(){
             <div className="container">
                 <h2 className="text-[#1a237e] mb-2.5">Estamos aqui para cuidar de você</h2>
                 <p className="md:text-[18px] mb-[25px] text-[#2d3748] mx-auto">Agende sua consulta hoje mesmo ou entre em contato para saber mais sobre nossos serviços.</p>
-                <div className="flex flex-col md:flex-row justify-center items-center gap-2.5 md:gap-4">
+                <div className="flex flex-col md:flex-row justify-center items-center gap-2.5 md:gap-4 max-w-3xl mx-auto">
                     <Link to="./perfil/meu-perfil.html" className="btn btn-primary">Acessar minha conta</Link>
                     <Link to="/contato" className="btn btn-secondary">Fale conosco</Link>
                 </div>

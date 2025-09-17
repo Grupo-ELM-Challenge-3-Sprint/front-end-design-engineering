@@ -64,7 +64,7 @@ export default function Home(){
         <section >
             <div className="flex flex-col md:flex-row items-center gap-[20px] text-center bg-gray-100 md:text-[17px] lg:text-[20px]">
                 <div className="w-full max-w-[400px] md:max-w-[600px] mx-auto my-6">
-                    <img src={medicoImage} alt="Guia interativo" className='rounded-lg shadow-lg' />
+                    <img src={medicoImage} alt="Guia interativo" className='md:mx-5 rounded-lg shadow-lg' />
                 </div>
                 <div className="guide-text md:mx-auto">
                     <h2 className='text-3xl mb-5 text-center mt-5 md:text-left'>Guia Interativo</h2>

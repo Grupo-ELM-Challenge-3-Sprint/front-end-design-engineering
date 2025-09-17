@@ -10,8 +10,6 @@ export interface FormData {
   cadastroTelefone: string;
   cadastroSenha: string;
   confirmarSenha: string;
-  esqueciCpf: string;
-  esqueciEmail: string;
 }
 
 export interface StatusMessage {
@@ -29,9 +27,7 @@ export const useFormState = () => {
     cadastroEmail: '',
     cadastroTelefone: '',
     cadastroSenha: '',
-    confirmarSenha: '',
-    esqueciCpf: '',
-    esqueciEmail: ''
+    confirmarSenha: ''
   });
 
   const [statusMessage, setStatusMessage] = useState<StatusMessage>({ type: '', message: '' });
@@ -51,9 +47,7 @@ export const useFormState = () => {
       cadastroEmail: '',
       cadastroTelefone: '',
       cadastroSenha: '',
-      confirmarSenha: '',
-      esqueciCpf: '',
-      esqueciEmail: ''
+      confirmarSenha: ''
     });
   }, []);
 

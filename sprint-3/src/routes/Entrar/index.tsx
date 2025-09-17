@@ -2,20 +2,20 @@
 import { useState, useCallback, useMemo } from "react";
 import { useFormValidation, validators, useInputMasks, useFormState } from "../../hooks";
 import type { ValidationRules } from "../../hooks";
-import { LoginForm, CadastroForm, EsqueciSenhaForm } from "../../components/forms";
+import { LoginForm, CadastroForm } from "../../components/forms";
 
 import '../../globals.css';
 
 export default function Entrar() {
     // Estados principais
     const [formAtual, setFormAtual] = useState('login');
-    const [etapaCadastro, setEtapaCadastro] = useState(1);
+    const [cadastroSucesso, setCadastroSucesso] = useState(false);
 
     // Hooks customizados
     const { formData, statusMessage, showPasswords, updateField, resetForm, setStatus, clearStatus, togglePasswordVisibility } = useFormState();
     const { applyMask, getMaskType } = useInputMasks();
 
-    // Regras de validação por formulário
+    // Regras de validação simplificadas
     const validationRules = useMemo((): ValidationRules => ({
         // Login
         loginCpf: { required: true, custom: validators.cpf },
@@ -30,11 +30,7 @@ export default function Entrar() {
         confirmarSenha: { 
             required: true, 
             custom: (value: string) => value !== formData.cadastroSenha ? 'As senhas não coincidem.' : null 
-        },
-        
-        // Esqueci senha
-        esqueciCpf: { required: true, custom: validators.cpf },
-        esqueciEmail: { required: true, custom: validators.email }
+        }
     }), [formData.cadastroSenha]);
 
     // Hook de validação
@@ -57,42 +53,11 @@ export default function Entrar() {
         clearAllErrors();
         clearStatus();
         if (newForm === 'cadastro') {
-            setEtapaCadastro(1);
+            setCadastroSucesso(false);
         }
     }, [clearAllErrors, clearStatus]);
 
-    const handleNextStep = useCallback(() => {
-        const stepFields = {
-            1: ['cadastroNomeCompleto', 'cadastroCpf', 'dataNascimento'],
-            2: ['cadastroEmail'],
-            3: ['cadastroSenha', 'confirmarSenha']
-        };
-        
-        const currentStepFields = stepFields[etapaCadastro as keyof typeof stepFields] || [];
-        console.log('Etapa atual:', etapaCadastro);
-        console.log('Campos da etapa:', currentStepFields);
-        
-        const stepData = currentStepFields.reduce((acc, field) => {
-            acc[field] = formData[field as keyof typeof formData];
-            return acc;
-        }, {} as {[key: string]: string});
-        
-        console.log('Dados da etapa:', stepData);
-        console.log('FormData completo:', formData);
-        
-        if (validateForm(stepData)) {
-            console.log('Validação passou, avançando etapa');
-            setEtapaCadastro(prev => prev + 1);
-        } else {
-            console.log('Validação falhou');
-        }
-    }, [etapaCadastro, formData, validateForm]);
-
-    const handlePrevStep = useCallback(() => {
-        setEtapaCadastro(prev => prev - 1);
-    }, []);
-
-    // Handlers de submissão otimizados
+    // Handlers de submissão
     const handleLoginSubmit = useCallback((e: React.FormEvent) => {
         e.preventDefault();
         const loginData = {
@@ -122,27 +87,12 @@ export default function Entrar() {
         };
         
         if (validateForm(cadastroData)) {
-            // Exibe tela de sucesso dentro do CadastroForm (etapa 4)
-            setEtapaCadastro(4);
+            setCadastroSucesso(true);
             resetForm();
         } else {
-            setStatus('error', 'Por favor, corrija os erros na última etapa.');
+            setStatus('error', 'Por favor, corrija os erros no formulário.');
         }
     }, [formData, validateForm, resetForm, setStatus]);
-
-    const handleEsqueciSenhaSubmit = useCallback((e: React.FormEvent) => {
-        e.preventDefault();
-        const esqueciData = {
-            esqueciCpf: formData.esqueciCpf,
-            esqueciEmail: formData.esqueciEmail
-        };
-        
-        if (validateForm(esqueciData)) {
-            setStatus('success', 'Instruções de recuperação enviadas para seu email (simulação).');
-        } else {
-            setStatus('error', 'CPF ou email não encontrado/correspondente.');
-        }
-    }, [formData, validateForm, setStatus]);
 
     return (
         <main className="flex justify-center items-start min-h-screen bg-slate-100 p-4 sm:p-6">
@@ -166,23 +116,10 @@ export default function Entrar() {
                         errors={errors}
                         statusMessage={statusMessage}
                         showPasswords={showPasswords}
-                        etapaCadastro={etapaCadastro}
+                        cadastroSucesso={cadastroSucesso}
                         onInputChange={handleInputChange}
                         onTogglePassword={togglePasswordVisibility}
                         onSubmit={handleCadastroSubmit}
-                        onFormChange={handleFormChange}
-                        onNextStep={handleNextStep}
-                        onPrevStep={handlePrevStep}
-                    />
-                )}
-
-                {formAtual === 'esqueci' && (
-                    <EsqueciSenhaForm
-                        formData={formData}
-                        errors={errors}
-                        statusMessage={statusMessage}
-                        onInputChange={handleInputChange}
-                        onSubmit={handleEsqueciSenhaSubmit}
                         onFormChange={handleFormChange}
                     />
                 )}

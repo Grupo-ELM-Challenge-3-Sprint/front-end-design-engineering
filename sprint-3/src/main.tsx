@@ -14,6 +14,8 @@ import Servicos from './routes/Servicos/index.tsx';
 import Perfil from './routes/Perfil/index.tsx';
 import Tutoriais from './routes/Tutoriais/index.tsx';
 import TutorialContent from './routes/Tutoriais/TutorialContent.tsx';
+import Consultas from './routes/Consultas/index.tsx';
+import Receitas from './routes/Receitas/index.tsx';
 
 
 const router = createBrowserRouter([
@@ -28,7 +30,8 @@ const router = createBrowserRouter([
     {path:"/perfil", element: <Perfil/>},
     {path:"/tutoriais", element: <Tutoriais/>},
     {path:"/tutoriais/:id", element: <TutorialContent/>},
-    
+    {path:"/consultas", element: <Consultas/>},
+    {path:"/receitas", element: <Receitas/>},
   ]}
 ]);
 

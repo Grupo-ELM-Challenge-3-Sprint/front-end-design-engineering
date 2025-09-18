@@ -1,8 +1,17 @@
-import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import PacientePage from '../../components/Painel/PacientePage';
 import { tutorialDetails } from '../../data/tutoriais';
 
 export default function TutorialContent() {
+  const navigate = useNavigate();
+  useEffect(() => {
+      const cpfLogado = localStorage.getItem('cpfLogado');
+      if (!cpfLogado) {
+          navigate('/entrar');
+      }
+  }, [navigate]);
+
   const { id } = useParams();
   const data = tutorialDetails.find(t => t.id === id)!;
 

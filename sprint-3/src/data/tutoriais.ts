@@ -7,6 +7,7 @@ export interface TutorialItem {
 export const tutorials: TutorialItem[] = [
   { id: 'login', title: 'Como fazer login no app HC?', to: '/tutoriais/login' },
   { id: 'cadastro', title: 'Como se cadastrar no app HC?', to: '/tutoriais/cadastro' },
+  { id: 'esqueceu-senha', title: 'Esqueceu a sua senha?', to: '/tutoriais/esqueceu-senha' },
   { id: 'teleconsulta', title: 'Como acessar a teleconsulta no app HC?', to: '/tutoriais/teleconsulta' },
   { id: 'resultados-exames', title: 'Como acessar os meus resultados de exames?', to: '/tutoriais/resultados-exames' },
   { id: 'receitas', title: 'Como acessar as minhas receitas?', to: '/tutoriais/receitas' },
@@ -52,6 +53,41 @@ export const tutorialDetails: TutorialDetail[] = [
         title: 'Acesso realizado com sucesso', 
         description: 'Você será redirecionado para a tela de Início.',
         image: '/src/assets/img/tutoriais/login-etapa03.png'
+      },
+    ],
+  },
+
+  {
+    id: 'esqueceu-senha',
+    heading: 'Esqueceu a sua senha?',
+    videoTitle: 'Como recuperar a sua senha no App HC',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    intro: 'Veja como redefinir sua senha com segurança.',
+    steps: [
+      { 
+        title: 'Clique em Acessar Portal', 
+        description: 'Abra o app e toque em Acessar Portal.',
+        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+      },
+      { 
+        title: 'Toque em Esqueci minha senha', 
+        description: "Na tela de login, toque em 'Esqueci minha senha' para iniciar a recuperação.",
+        image: '/src/assets/img/tutoriais/esqueceu-senha-etapa02.png'
+      },
+      { 
+        title: 'Digite seu CPF', 
+        description: 'Informe seu CPF corretamente para validação.',
+        image: '/src/assets/img/tutoriais/esqueceu-senha-etapa03.png'
+      },
+      { 
+        title: 'Digite sua data de nascimento', 
+        description: 'Preencha sua data de nascimento e toque em Localizar Paciente.',
+        image: '/src/assets/img/tutoriais/esqueceu-senha-etapa04.png'
+      },
+      { 
+        title: 'Crie uma nova senha', 
+        description: 'Defina e confirme uma nova senha forte para sua conta.',
+        image: '/src/assets/img/tutoriais/esqueceu-senha-etapa05.png'
       },
     ],
   },
@@ -114,19 +150,24 @@ export const tutorialDetails: TutorialDetail[] = [
         image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
-        title: 'Acesse a seção de Teleconsulta', 
-        description: 'Na tela inicial, localize e clique na opção Teleconsulta.',
+        title: 'Faça login e acesse o Menu', 
+        description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
         image: '/src/assets/img/tutoriais/teleconsulta-etapa02.png'
       },
       { 
-        title: 'Agende sua consulta', 
-        description: 'Selecione a especialidade, médico e horário disponível.',
+        title: 'Clique na opção \'Teleconsultas\'', 
+        description: "No menu do Portal, clique na opção 'Teleconsultas'.",
         image: '/src/assets/img/tutoriais/teleconsulta-etapa03.png'
       },
       { 
-        title: 'Participe da consulta', 
-        description: 'No horário agendado, acesse o link da consulta e participe da videochamada.',
+        title: 'Verifique teleconsultas agendadas', 
+        description: 'Verifique se há teleconsultas agendadas na sua agenda.',
         image: '/src/assets/img/tutoriais/teleconsulta-etapa04.png'
+      },
+      { 
+        title: 'Acesse o link da consulta online', 
+        description: 'No horário marcado, acesse o link informado para a consulta online.',
+        image: '/src/assets/img/tutoriais/teleconsulta-etapa05.png'
       },
     ],
   },
@@ -144,19 +185,24 @@ export const tutorialDetails: TutorialDetail[] = [
         image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
-        title: 'Acesse a seção de Exames', 
-        description: 'Na tela inicial, localize e clique na opção Resultados de Exames.',
-        image: '/src/assets/img/tutoriais/exames-etapa02.png'
+        title: 'Faça login e acesse o Menu', 
+        description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
+        image: '/src/assets/img/tutoriais/resultados-exames-etapa02.png'
       },
       { 
-        title: 'Visualize seus resultados', 
-        description: 'Selecione o exame desejado para visualizar o resultado completo.',
-        image: '/src/assets/img/tutoriais/exames-etapa03.png'
+        title: 'Clique em \'Meus Resultados\'', 
+        description: "No menu do Portal, clique na opção 'Meus Resultados'.",
+        image: '/src/assets/img/tutoriais/resultados-exames-etapa03.png'
       },
       { 
-        title: 'Baixe ou compartilhe', 
-        description: 'Você pode baixar o PDF ou compartilhar o resultado com seu médico.',
-        image: '/src/assets/img/tutoriais/exames-etapa04.png'
+        title: 'Selecione e Visualize os Resultados', 
+        description: 'Selecione e Visualize os Resultados de Exames de Laboratório ou Imagem.',
+        image: '/src/assets/img/tutoriais/resultados-exames-etapa04.png'
+      },
+      { 
+        title: 'Visualize os Resultados detalhadamente', 
+        description: 'Visualize os Resultados de Exames com data, descrição e status do laudo.',
+        image: '/src/assets/img/tutoriais/resultados-exames-etapa05.png'
       },
     ],
   },
@@ -174,19 +220,24 @@ export const tutorialDetails: TutorialDetail[] = [
         image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
-        title: 'Acesse a seção de Receitas', 
-        description: 'Na tela inicial, localize e clique na opção Minhas Receitas.',
+        title: 'Faça login e acesse o Menu', 
+        description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
         image: '/src/assets/img/tutoriais/receitas-etapa02.png'
       },
       { 
-        title: 'Visualize suas receitas', 
-        description: 'Selecione a receita desejada para visualizar os medicamentos prescritos.',
+        title: 'Clique na opção \'Minhas Receitas\'', 
+        description: "No menu do Portal, clique na opção 'Minhas Receitas'.",
         image: '/src/assets/img/tutoriais/receitas-etapa03.png'
       },
       { 
-        title: 'Baixe ou imprima', 
-        description: 'Você pode baixar o PDF da receita ou imprimir para usar na farmácia.',
+        title: 'Veja a lista de prescrições', 
+        description: 'Veja a lista de prescrições com medicamentos, dosagens e validade.',
         image: '/src/assets/img/tutoriais/receitas-etapa04.png'
+      },
+      { 
+        title: 'Visualize prescrições ativas/Inativas', 
+        description: 'Visualize prescrições ativas/Inativas e, quando aplicável, instruções de uso.',
+        image: '/src/assets/img/tutoriais/receitas-etapa05.png'
       },
     ],
   },
@@ -204,19 +255,24 @@ export const tutorialDetails: TutorialDetail[] = [
         image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
-        title: 'Acesse a seção de Agendas', 
-        description: 'Na tela inicial, localize e clique na opção Minhas Agendas.',
+        title: 'Faça login e acesse o Menu', 
+        description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
         image: '/src/assets/img/tutoriais/agendas-etapa02.png'
       },
       { 
-        title: 'Visualize seus agendamentos', 
-        description: 'Veja todos os seus agendamentos futuros e passados.',
+        title: 'Clique na opção \'Minhas Agendas\'', 
+        description: "No menu do Portal, clique na opção 'Minhas Agendas'.",
         image: '/src/assets/img/tutoriais/agendas-etapa03.png'
       },
       { 
-        title: 'Gerencie seus compromissos', 
-        description: 'Você pode reagendar, cancelar ou agendar novas consultas.',
+        title: 'Consulte data, hora, local e especialidade', 
+        description: 'Consulte data, hora, local e especialidade dos atendimentos.',
         image: '/src/assets/img/tutoriais/agendas-etapa04.png'
+      },
+      { 
+        title: 'Verifique orientações específicas', 
+        description: 'Verifique orientações específicas do exame/consulta, quando houver.',
+        image: '/src/assets/img/tutoriais/agendas-etapa05.png'
       },
     ],
   },
@@ -234,19 +290,24 @@ export const tutorialDetails: TutorialDetail[] = [
         image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
-        title: 'Acesse a seção de Exames', 
-        description: 'Na tela inicial, localize e clique na opção Solicitar Exames.',
+        title: 'Faça login e acesse o Menu', 
+        description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
         image: '/src/assets/img/tutoriais/solicitar-exames-etapa02.png'
       },
       { 
-        title: 'Selecione o tipo de exame', 
-        description: 'Escolha o tipo de exame que você precisa realizar.',
+        title: 'Clique na opção \'Solicitação de Exames\'', 
+        description: "No menu do Portal, clique na opção 'Solicitação de Exames'.",
         image: '/src/assets/img/tutoriais/solicitar-exames-etapa03.png'
       },
       { 
-        title: 'Agende o exame', 
-        description: 'Selecione a data e horário disponível para realizar o exame.',
+        title: 'Verifique orientações', 
+        description: 'Verifique orientações: alguns exames exigem guia médica e agendamento.',
         image: '/src/assets/img/tutoriais/solicitar-exames-etapa04.png'
+      },
+      { 
+        title: 'Acompanhe solicitações', 
+        description: "Acompanhe solicitações e, após a coleta/realização, consulte 'Resultados'.",
+        image: '/src/assets/img/tutoriais/solicitar-exames-etapa05.png'
       },
     ],
   },
@@ -264,18 +325,18 @@ export const tutorialDetails: TutorialDetail[] = [
         image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
-        title: 'Acesse a seção de Documentos', 
-        description: 'Na tela inicial, localize e clique na opção Meus Documentos.',
+        title: 'Faça login e acesse o Menu', 
+        description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
         image: '/src/assets/img/tutoriais/documentos-etapa02.png'
       },
       { 
-        title: 'Visualize seus documentos', 
-        description: 'Selecione o documento desejado para visualizar ou baixar.',
+        title: 'Clique na opção \'Documentos\'', 
+        description: "No menu do Portal, clique na opção 'Documentos'.",
         image: '/src/assets/img/tutoriais/documentos-etapa03.png'
       },
       { 
-        title: 'Gerencie seus arquivos', 
-        description: 'Você pode baixar, compartilhar ou organizar seus documentos.',
+        title: 'Em seguida clique em \'Meus Documentos\'', 
+        description: "Em seguida clique em 'Meus Documentos'.",
         image: '/src/assets/img/tutoriais/documentos-etapa04.png'
       },
     ],

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../../globals.css';
 import agendamentoImagem from '../../assets/img/imagens-servicos/imagem-agendamento.png';
 import teleconsultaImagem from '../../assets/img/imagens-servicos/imagem-teleconsulta.png';
-import examesImagem from '../../assets/img/imagens-servicos/imagem-exames.png';
+import tutoriaisImagem from '../../assets/img/imagens-servicos/imagem-tutoriais.png';
 import atendimentoImagem from '../../assets/img/imagens-servicos/imagem-atendimento.png';
 import especialidadesImagem from '../../assets/img/imagens-servicos/imagem-especialidades.png';
 
@@ -47,19 +47,19 @@ export default function Servicos(){
                         <div className="servico-card-content">
                             <h3>Teleconsulta</h3>
                             <p>Atendimento médico online com especialistas do HC, sem sair de casa e com a mesma qualidade.</p>
-                            <Link to="./perfil/minhas-consultas.html" className="btn-saiba-mais">Conhecer serviço <span className="arrow-icon">→</span></Link>
+                            <Link to="/consultas" className="btn-saiba-mais">Conhecer serviço <span className="arrow-icon">→</span></Link>
                         </div>
                     </div>
 
-                    {/* <!-- Card: Resultados de Exames --> */}
+                    {/* <!-- Card: Tutoriais App HC --> */}
                     <div className="servico-card-pagina">
                         <div className="servico-card-icon-wrapper">
-                            <img src={examesImagem} alt="Ícone Resultados de Exames" className="servico-icon"/>
+                            <img src={tutoriaisImagem} alt="Ícone Tutoriais" className="servico-icon"/>
                         </div>
                         <div className="servico-card-content">
-                            <h3>Resultados de Exames</h3>
+                            <h3>Tutoriais</h3>
                             <p>Acesse seus resultados de exames pelo portal, disponíveis 24h após a coleta.</p>
-                            <Link to="./perfil/meus-exames.html" className="btn-saiba-mais">Ver meus exames <span className="arrow-icon">→</span></Link>
+                            <Link to="/tutoriais" className="btn-saiba-mais">Ver meus exames <span className="arrow-icon">→</span></Link>
                         </div>
                     </div>
 
@@ -107,7 +107,7 @@ export default function Servicos(){
                 <h2 className="text-[#1a237e] mb-2.5">Estamos aqui para cuidar de você</h2>
                 <p className="md:text-[18px] mb-[25px] text-[#2d3748] mx-auto">Agende sua consulta hoje mesmo ou entre em contato para saber mais sobre nossos serviços.</p>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-2.5 md:gap-4 max-w-3xl mx-auto">
-                    <Link to="./perfil/meu-perfil.html" className="btn btn-primary">Acessar minha conta</Link>
+                    <Link to="/perfil" className="btn btn-primary">Acessar minha conta</Link>
                     <Link to="/contato" className="btn btn-secondary">Fale conosco</Link>
                 </div>
             </div>

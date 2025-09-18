@@ -53,11 +53,7 @@ export const CadastroForm = ({
   return (
     <section>
       <div className="auth-card">
-        <button 
-          type="button"
-          onClick={() => onFormChange('login')} 
-          className="back-link bg-transparent border-none p-0 cursor-pointer"
-        >
+        <button type="button" onClick={() => onFormChange('login')} className="back-link bg-transparent border-none p-0 cursor-pointer">
           ← Voltar para login
         </button>
         <h2 className="text-2xl font-bold text-center text-slate-800 mb-2">Criar uma conta</h2>
@@ -67,53 +63,28 @@ export const CadastroForm = ({
           <h3 className="form-step-title">Informações Pessoais</h3>
           <div className="form-group">
             <label htmlFor="cadastroNomeCompleto">Nome completo*</label>
-            <input 
-              className={`form-input ${errors.cadastroNomeCompleto ? 'border-red-500' : ''}`}
-              type="text" 
-              id="cadastroNomeCompleto" 
-              value={formData.cadastroNomeCompleto}
-              onChange={(e) => onInputChange('cadastroNomeCompleto', e.target.value)}
-              required 
-            />
+            <input id="cadastroNomeCompleto" className={`form-input ${errors.cadastroNomeCompleto ? 'border-red-500' : ''}`} type="text" value={formData.cadastroNomeCompleto}
+              onChange={(e) => onInputChange('cadastroNomeCompleto', e.target.value)} required />
             {errors.cadastroNomeCompleto && <small className="error-message text-red-500">{errors.cadastroNomeCompleto}</small>}
           </div>
           <div className="form-group">
             <label htmlFor="cadastroCpf">CPF*</label>
-            <input 
-              className={`form-input ${errors.cadastroCpf ? 'border-red-500' : ''}`}
-              type="text" 
-              id="cadastroCpf" 
-              value={formData.cadastroCpf}
-              onChange={(e) => onInputChange('cadastroCpf', e.target.value)}
-              required 
-            />
+            <input id="cadastroCpf" className={`form-input ${errors.cadastroCpf ? 'border-red-500' : ''}`} type="text" value={formData.cadastroCpf}
+              onChange={(e) => onInputChange('cadastroCpf', e.target.value)} required />
             {errors.cadastroCpf && <small className="error-message text-red-500">{errors.cadastroCpf}</small>}
           </div>
           <div className="form-group">
             <label htmlFor="dataNascimento">Data de nascimento*</label>
-            <input 
-              className={`form-input ${errors.dataNascimento ? 'border-red-500' : ''}`}
-              type="text" 
-              id="dataNascimento" 
-              placeholder="dd/mm/aaaa"
-              value={formData.dataNascimento}
-              onChange={(e) => onInputChange('dataNascimento', e.target.value)}
-              required 
-            />
+            <input id="dataNascimento" className={`form-input ${errors.dataNascimento ? 'border-red-500' : ''}`} type="text" placeholder="dd/mm/aaaa" value={formData.dataNascimento}
+              onChange={(e) => onInputChange('dataNascimento', e.target.value)} required />
             {errors.dataNascimento && <small className="error-message text-red-500">{errors.dataNascimento}</small>}
           </div>
 
           <h3 className="form-step-title mt-6">Informações de Contato</h3>
           <div className="form-group">
             <label htmlFor="cadastroEmail">Email*</label>
-            <input 
-              className={`form-input ${errors.cadastroEmail ? 'border-red-500' : ''}`}
-              type="email" 
-              id="cadastroEmail" 
-              value={formData.cadastroEmail}
-              onChange={(e) => onInputChange('cadastroEmail', e.target.value)}
-              required 
-            />
+            <input id="cadastroEmail" className={`form-input ${errors.cadastroEmail ? 'border-red-500' : ''}`} type="email" value={formData.cadastroEmail} 
+              onChange={(e) => onInputChange('cadastroEmail', e.target.value)} required />
             {errors.cadastroEmail && <small className="error-message text-red-500">{errors.cadastroEmail}</small>}
           </div>
           <div className="form-group">

@@ -14,6 +14,8 @@ export default function PacienteSidebar() {
         <ul>
           <li><NavLink to="/perfil" className={({isActive}) => isActive ? 'active' : ''}><span className="nav-icon">👤</span> Meus Dados </NavLink></li>
           <li><NavLink to="/tutoriais" className={({isActive}) => isActive ? 'active' : ''}><span className="nav-icon">📄</span> Tutoriais </NavLink></li>
+          <li><NavLink to="/receitas" className={({isActive}) => isActive ? 'active' : ''}><span className="nav-icon">💊</span> Receitas </NavLink></li>
+          <li><NavLink to="/consultas" className={({isActive}) => isActive ? 'active' : ''}><span className="nav-icon">📅</span> Consultas </NavLink></li>
           <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}><span className="nav-icon">🚪</span> Sair </NavLink></li>
         </ul>
       </nav>

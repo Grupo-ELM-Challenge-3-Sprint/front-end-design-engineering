@@ -3,6 +3,7 @@ import { useState, useCallback, useMemo } from "react";
 import { useFormValidation, validators, useInputMasks, useFormState } from "../../hooks";
 import type { ValidationRules } from "../../hooks";
 import { LoginForm, CadastroForm } from "../../components/forms";
+import { addPaciente, getPacientePorCpf } from "../../data/dados";
 
 import '../../globals.css';
 
@@ -64,12 +65,18 @@ export default function Entrar() {
             loginCpf: formData.loginCpf,
             loginSenha: formData.loginSenha
         };
-        
+
         if (validateForm(loginData)) {
-            setStatus('success', 'Login bem-sucedido! Redirecionando...');
-            setTimeout(() => {
-                window.location.href = '/perfil';
-            }, 1500);
+            const paciente = getPacientePorCpf(loginData.loginCpf);
+            if (paciente && paciente.senha === loginData.loginSenha) {
+                localStorage.setItem('cpfLogado', loginData.loginCpf); // Salva o CPF do usuário logado
+                setStatus('success', 'Login bem-sucedido! Redirecionando...');
+                setTimeout(() => {
+                    window.location.href = '/perfil';
+                }, 1500);
+            } else {
+                setStatus('error', 'CPF ou senha inválidos.');
+            }
         } else {
             setStatus('error', 'CPF ou senha inválidos.');
         }
@@ -85,8 +92,26 @@ export default function Entrar() {
             cadastroSenha: formData.cadastroSenha,
             confirmarSenha: formData.confirmarSenha
         };
-        
+
         if (validateForm(cadastroData)) {
+            // Verifica se já existe paciente com esse CPF
+            const jaExiste = getPacientePorCpf(cadastroData.cadastroCpf);
+            if (jaExiste) {
+                setStatus('error', 'Já existe um cadastro com este CPF.');
+                return;
+            }
+            // Monta novo paciente
+            const novoPaciente = {
+                nomeCompleto: cadastroData.cadastroNomeCompleto,
+                cpf: cadastroData.cadastroCpf,
+                dataNascimento: cadastroData.dataNascimento,
+                email: cadastroData.cadastroEmail,
+                telefone: '',
+                senha: cadastroData.cadastroSenha,
+                lembretesConsulta: [],
+                lembretesReceita: [],
+            };
+            addPaciente(novoPaciente);
             setCadastroSucesso(true);
             resetForm();
         } else {

@@ -15,5 +15,3 @@ export default function PacientePage({ children }: PacientePageProps) {
     </main>
   );
 }
-
-

@@ -21,7 +21,7 @@ export default function Hospitais(){
                  data-guide-arrow="down">
             <div className="container">
                 <h2>Nossas Unidades</h2>
-                <p className='text-gray-600 text-center md:text-[18px]'>Conheça as unidades do Hospital das Clínicas e escolha a mais próxima de você.</p>
+                <p className='text-center md:text-[18px]'>Conheça as unidades do Hospital das Clínicas e escolha a mais próxima de você.</p>
             </div>
         </section>
 

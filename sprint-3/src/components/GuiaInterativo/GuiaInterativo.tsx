@@ -29,7 +29,9 @@ export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia 
       left: '50%',
       transform: 'translate(-50%, -50%)'
     });
+    const [posicaoSetaFinal, setPosicaoSetaFinal] = useState<string>('down');
     const elementoDestacadoRef = useRef<HTMLElement | null>(null);
+    const balaoRef = useRef<HTMLDivElement | null>(null);
 
     // Remove automatic start effect, rely on iniciar prop only
     useEffect(() => {
@@ -91,7 +93,7 @@ export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia 
         // Calcula a posição do balão após a rolagem
         setTimeout(() => {
             const rect = elementoAlvo.getBoundingClientRect();
-            const balaoEl = document.getElementById('guia-balao'); // Pega o balão para medir
+            const balaoEl = balaoRef.current;
             if (!balaoEl) return;
             const balaoRect = balaoEl.getBoundingClientRect();
 
@@ -114,6 +116,8 @@ export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia 
                 }
             }
 
+            setPosicaoSetaFinal(posicaoSeta);
+
             switch (posicaoSeta) {
                 case 'up':
                     top = rect.bottom + gap;
@@ -134,8 +138,7 @@ export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia 
             }
 
             // Corrige para não sair da tela horizontalmente
-            const minLeftOffset = 260; // Minimum left offset to avoid sidebar overlap, adjust as needed
-            if (left < minLeftOffset) left = minLeftOffset;
+            if (left < 10) left = 10;
             if (left + balaoRect.width > window.innerWidth) left = window.innerWidth - balaoRect.width - 10;
 
             // Corrige para não sair da tela verticalmente
@@ -178,33 +181,11 @@ if (!estaAtivo || passos.length === 0) {
 }
 
     const passoAtual = passos[passoAtualIndex];
-    let posicaoSeta = passoAtual.posicaoSeta;
-
-    // Dynamically flip balloon position if it doesn't fit above the element
-    const rect = passoAtual.elemento.getBoundingClientRect();
-    const gap = 15;
-    const balaoEl = document.getElementById('guia-balao');
-    let balaoRect = { width: 0, height: 0 };
-    if (balaoEl) {
-        balaoRect = balaoEl.getBoundingClientRect();
-    }
-
-    if (posicaoSeta === 'down') {
-        const potentialTop = rect.top - balaoRect.height - gap;
-        if (potentialTop < 10) {
-            posicaoSeta = 'up';
-        }
-    } else if (posicaoSeta === 'up') {
-        const potentialTop = rect.bottom + balaoRect.height + gap;
-        if (potentialTop > window.innerHeight) {
-            posicaoSeta = 'down';
-        }
-    }
 
     return createPortal(
         <div className="guia-overlay" onClick={() => onGuideInteraction && onGuideInteraction()}>
-            <div id="guia-balao" className="guia-balao" style={posicaoBalao} onClick={e => e.stopPropagation()}>
-                <div className={`guia-seta guia-seta-${posicaoSeta}`}></div>
+            <div ref={balaoRef} id="guia-balao" className="guia-balao" style={posicaoBalao} onClick={e => e.stopPropagation()}>
+                <div className={`guia-seta guia-seta-${posicaoSetaFinal}`}></div>
                 <div className="guia-conteudo">
                     <h3 className="guia-titulo">{passoAtual.titulo}</h3>
                     <p className="guia-texto">{passoAtual.texto}</p>

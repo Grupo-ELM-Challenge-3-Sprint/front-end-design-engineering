@@ -147,17 +147,38 @@ body.guia-ativo-no-scroll {
   @apply bg-transparent border-0 text-blue-600 underline text-xs cursor-pointer;
 }
 
-/* Seta que aponta para o elemento */
 .guia-seta {
   @apply absolute w-0 h-0 border-solid;
 }
+
+/* Para baixo */
 .guia-seta-down {
-  @apply bottom-full left-1/2 -translate-x-1/2 border-[0_8px_8px_8px] border-transparent border-b-white;
+  @apply top-full left-1/2 -translate-x-1/2
+         border-x-[8px] border-b-0 border-t-[8px]
+         border-transparent border-t-gray-400;
+ 
 }
+
+/* Para cima */
 .guia-seta-up {
-  @apply top-full left-1/2 -translate-x-1/2 border-[8px_8px_0_8px] border-transparent border-t-0;
+   @apply bottom-full left-1/2 -translate-x-1/2
+         border-x-[8px] border-t-0 border-b-[8px]
+         border-transparent border-b-gray-400;
 }
-/* Adicione .guia-seta-left e .guia-seta-right se precisar */
+
+/* Para a esquerda */
+.guia-seta-left {
+  @apply right-full top-1/2 -translate-y-1/2
+         border-y-[8px] border-l-0 border-r-[8px]
+         border-transparent border-r-gray-400;
+}
+
+/* Para a direita */
+.guia-seta-right {
+  @apply left-full top-1/2 -translate-y-1/2
+         border-y-[8px] border-r-0 border-l-[8px]
+         border-transparent border-l-gray-400;
+}
 
 /*==================================================================================================*/
 

@@ -10,7 +10,7 @@ import especialidadesImagem from '../../assets/img/imagens-servicos/imagem-espec
 export default function Servicos(){
     return(
     <main>
-        {/* <!-- Seção de introdução aos serviços --> */}
+        {/* Seção de introdução aos serviços  */}
         <section className="bg-[#e9f3fb] py-10 text-center md:text-[17px] lg:text-[20px]">
             <div className="container">
                 <h2>Nossos Serviços</h2>
@@ -18,7 +18,7 @@ export default function Servicos(){
             </div>
         </section>
 
-        {/* <!-- Grid de serviços principais, cada card apresenta um serviço com ícone, descrição e ação --> */}
+        {/* Grid de serviços principais, cada card apresenta um serviço com ícone, descrição e ação  */}
         <section className="py-5"
             data-guide-step="1" 
             data-guide-title="Nossos Serviços"
@@ -27,7 +27,7 @@ export default function Servicos(){
             <div className="container">
                 <h2>Serviços em Destaque</h2>
                 <div className="servicos-grid-pagina grid grid-cols-1 gap-6 md:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:gap-8">
-                    {/* <!-- Card: Receitas --> */}
+                    {/* Card: Receitas  */}
                     <div className="servico-card-pagina">
                         <div className="servico-card-icon-wrapper">
                             <img src={agendamentoImagem} alt="Ícone Receitas" className="servico-icon"/>
@@ -39,7 +39,7 @@ export default function Servicos(){
                         </div>
                     </div>
 
-                    {/* <!-- Card: Teleconsulta --> */}
+                    {/* Card: Teleconsulta  */}
                     <div className="servico-card-pagina">
                         <div className="servico-card-icon-wrapper">
                             <img src={teleconsultaImagem} alt="Ícone Teleconsulta" className="servico-icon"/>
@@ -51,7 +51,7 @@ export default function Servicos(){
                         </div>
                     </div>
 
-                    {/* <!-- Card: Tutoriais App HC --> */}
+                    {/* Card: Tutoriais App HC  */}
                     <div className="servico-card-pagina">
                         <div className="servico-card-icon-wrapper">
                             <img src={tutoriaisImagem} alt="Ícone Tutoriais" className="servico-icon"/>
@@ -63,7 +63,7 @@ export default function Servicos(){
                         </div>
                     </div>
 
-                    {/* <!-- Card: Atendimento 24h --> */}
+                    {/* Card: Atendimento 24h  */}
                     <div className="servico-card-pagina">
                         <div className="servico-card-icon-wrapper">
                             <img src={atendimentoImagem} alt="Ícone Atendimento 24h" className="servico-icon"/>
@@ -75,7 +75,7 @@ export default function Servicos(){
                         </div>
                     </div>
 
-                    {/* <!-- Card: Especialidades --> */}
+                    {/* Card: Especialidades  */}
                     <div className="servico-card-pagina">
                         <div className="servico-card-icon-wrapper">
                             <img src={especialidadesImagem} alt="Ícone Especialidades" className="servico-icon"/>
@@ -87,7 +87,7 @@ export default function Servicos(){
                         </div>
                     </div>
 
-                    {/* <!-- Card: Unidades HC --> */}
+                    {/* Card: Unidades HC  */}
                     <div className="servico-card-pagina">
                         <div className="servico-card-icon-wrapper">
                             <img src={especialidadesImagem} alt="Ícone Unidades HC" className="servico-icon"/>
@@ -101,7 +101,7 @@ export default function Servicos(){
                 </div>
             </div>
         </section>
-        {/* <!-- botão para Acessar minha conta ou Contato --> */}
+        {/* botão para Acessar minha conta ou Contato  */}
         <section className="py-10 bg-indigo-100 text-center md:text-lg">
             <div className="container">
                 <h2 className="text-[#1a237e] mb-2.5">Estamos aqui para cuidar de você</h2>

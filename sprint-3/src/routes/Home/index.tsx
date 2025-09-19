@@ -24,7 +24,7 @@ export default function Home(){
                          data-guide-step="2" 
                          data-guide-title="Ações Rápidas"
                          data-guide-text="Use estes botões para acessar sua área ou conhecer nossas unidades."
-                         data-guide-arrow="up">
+                         data-guide-arrow="down">
                         <Link to="/perfil" className="btn btn-primary">Acesse sua área de paciente</Link>
                         <Link to="/hospitais" className="btn btn-secondary">Conheça nossas unidades</Link>
                     </div>

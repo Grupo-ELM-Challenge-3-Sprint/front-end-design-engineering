@@ -10,7 +10,7 @@ import iconeGitHub from '../../assets/img/icons/icone-github.png';
 export default function Integrantes(){
     return(
     <main>
-        {/* <!-- Seção de apresentação da equipe --> */}
+        {/* Seção de apresentação da equipe  */}
         <section className="bg-[#e9f3fb] py-10 text-center md:text-[17px] lg:text-[20px]">
             <div className="container">
                 <h2>Nossa Equipe</h2>
@@ -18,11 +18,11 @@ export default function Integrantes(){
             </div>
         </section>
 
-        {/* <!-- Cards dos integrantes, com foto, nome, RM, turma e redes sociais --> */}
+        {/* Cards dos integrantes, com foto, nome, RM, turma e redes sociais  */}
         <section id="membros-equipe">
             <div className="container">
                 <div className="equipe-grid">
-                    {/* <!-- Card Integrante 1 --> */}
+                    {/* Card Integrante 1  */}
                     <div className="integrante-card">
                         <img src={fotoEnzo} alt="Foto do Integrante 1" className="integrante-foto"/>
                         <div className="integrante-info">
@@ -36,7 +36,7 @@ export default function Integrantes(){
                         </div>
                     </div>
 
-                    {/* <!-- Card Integrante 2 --> */}
+                    {/* Card Integrante 2  */}
                     <div className="integrante-card">
                         <img src={fotoLucas} alt="Foto do Integrante 2" className="integrante-foto"/>
                         <div className="integrante-info">
@@ -50,7 +50,7 @@ export default function Integrantes(){
                         </div>
                     </div>
 
-                    {/* <!-- Card Integrante 3 --> */}
+                    {/* Card Integrante 3  */}
                     <div className="integrante-card">
                         <img src={fotoMilton} alt="Foto do Integrante 3" className="integrante-foto"/>
                         <div className="integrante-info">
@@ -67,7 +67,7 @@ export default function Integrantes(){
             </div>
         </section>
 
-        {/* <!-- Seção sobre o projeto, explicando objetivos, tecnologias e impacto social --> */}
+        {/* Seção sobre o projeto, explicando objetivos, tecnologias e impacto social  */}
         <section className="py-[30px] bg-[#f9fafb]">
             <div className="container">
                 <div className="sobre-projeto-content">

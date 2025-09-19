@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import GuiaInterativo from './GuiaInterativo';
 import FloatingButton from './FloatingButton';
 
-const GuiaInterativoWrapper: React.FC = () => {
+export default function GuiaInterativoWrapper() {
   const [guiaAtivo, setGuiaAtivo] = useState(false);
-  const [menuAberto, setMenuAberto] = useState(false); // Assuming menu state is managed here
+  const [menuAberto, setMenuAberto] = useState(false); //Assumindo que Menu é gerenciado aqui... Algo que não é... Precisamos ver o código e tentar implementar
+
 
   const iniciarGuia = () => {
     setGuiaAtivo(true);
@@ -30,6 +31,4 @@ const GuiaInterativoWrapper: React.FC = () => {
       <GuiaInterativo iniciar={guiaAtivo} onConcluir={concluirGuia} onGuideInteraction={handleGuideInteraction} />
     </>
   );
-};
-
-export default GuiaInterativoWrapper;
+}

@@ -13,7 +13,7 @@ export default function Hospitais(){
 
     return(
     <main>
-        {/* <!-- Seção de introdução às unidades hospitalares --> */}
+        {/* Seção de introdução às unidades hospitalares  */}
         <section className='bg-[#e9f3fb] py-10 text-center md:text-[17px] lg:text-[20px]'
                  data-guide-step="1"
                  data-guide-title="Bem-vindo às Nossas Unidades"
@@ -25,7 +25,7 @@ export default function Hospitais(){
             </div>
         </section>
 
-        {/* <!-- Mapa interativo das unidades, com iframe do Google Maps --> */}
+        {/* Mapa interativo das unidades, com iframe do Google Maps  */}
         <section className="py-5 sm:py-8 md:py-10 xl:py-12"
                  data-guide-step="2"
                  data-guide-title="Mapa Interativo"
@@ -36,7 +36,7 @@ export default function Hospitais(){
             </div>
         </section>
 
-        {/* <!-- Lista de unidades hospitalares em formato de cards --> */}
+        {/* Lista de unidades hospitalares em formato de cards  */}
         <section className="py-5 bg-gray-50 md:py-10"
                  data-guide-step="3"
                  data-guide-title="Detalhes das Unidades"
@@ -45,7 +45,7 @@ export default function Hospitais(){
             
             <div className="container">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:gap-8">
-                    {/* <!-- Card de Unidade 1 --> */}
+                    {/* Card de Unidade 1  */}
                     <div className="unidade-card">
                         <img src={imreaVilaMariana} className="fachada-hospitais" alt="Fachada IMREA Vila Mariana"/>
                         <div className="unidade-card-content">
@@ -57,7 +57,7 @@ export default function Hospitais(){
                         </div>
                     </div>
 
-                    {/* <!-- Card de Unidade 2 --> */}
+                    {/* Card de Unidade 2  */}
                     <div className="unidade-card">
                         <img src={imreaUmarizal} className="fachada-hospitais" alt="Fachada IMREA Umarizal"/>
                         <div className="unidade-card-content">
@@ -69,7 +69,7 @@ export default function Hospitais(){
                         </div>
                     </div>
 
-                    {/* <!-- Card de Unidade 3 --> */}
+                    {/* Card de Unidade 3  */}
                     <div className="unidade-card">
                         <img src={imreaLapa} className="fachada-hospitais" alt="Fachada IMREA Lapa"/>
                         <div className="unidade-card-content">
@@ -80,7 +80,7 @@ export default function Hospitais(){
                             <Link to="https://maps.app.goo.gl/R3sU1STb2zPuhboR6" className="btn-ver-no-mapa" target="_blank" rel="noopener">Ver no mapa <span className="arrow-icon">↗</span></Link>
                         </div>
                     </div>
-                     {/* <!-- Card de Unidade 4 --> */}
+                     {/* Card de Unidade 4  */}
                      <div className="unidade-card">
                         <img src={imreaClinicas} className="fachada-hospitais" alt="Fachada IMREA Clínicas"/>
                         <div className="unidade-card-content">
@@ -95,7 +95,7 @@ export default function Hospitais(){
             </div>
         </section>
 
-        {/* <!-- Seção com informações gerais sobre atendimento, documentos e agendamento --> */}
+        {/* Seção com informações gerais sobre atendimento, documentos e agendamento  */}
         <section className='py-5 md:py-10'
                  data-guide-step="4"
                  data-guide-title="Informações Gerais Importantes"

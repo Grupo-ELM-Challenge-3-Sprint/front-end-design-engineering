@@ -84,6 +84,81 @@ h2 {
   @apply flex m-3 justify-center gap-3;
 }
 
+
+/*Guia Interativo */
+
+/* Overlay que escurece o fundo */
+.guia-overlay {
+  @apply fixed top-0 left-0 w-full h-full z-50;
+}
+
+/* O elemento da página que está sendo destacado */
+.guia-elemento-destacado {
+  @apply relative z-50 rounded-md transition-shadow duration-300;
+}
+
+/* Evita o scroll da página enquanto o guia está ativo */
+body.guia-ativo-no-scroll {
+  @apply overflow-hidden;
+}
+
+/* Balão principal do guia */
+.guia-balao {
+  @apply fixed z-50 bg-white rounded-lg shadow-lg w-[320px] max-w-[90vw] p-4 border border-gray-300 transition-all duration-300 ease-in-out;
+}
+
+/* Conteúdo de texto dentro do balão */
+.guia-conteudo {
+  @apply mb-4;
+}
+.guia-titulo {
+  @apply text-lg font-semibold text-[#1a237e] mb-2;
+}
+.guia-texto {
+  @apply text-sm text-gray-600 leading-relaxed;
+}
+
+/* Navegação (botões e contador) */
+.guia-navegacao {
+  @apply flex justify-between items-center border-t border-gray-300 pt-3;
+}
+.guia-contador {
+  @apply text-xs text-gray-500 font-medium;
+}
+.guia-btn-proximo,
+.guia-btn-anterior {
+  @apply px-4 py-2 rounded-md font-semibold cursor-pointer transition-colors border border-transparent;
+}
+.guia-btn-proximo {
+  @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-800;
+}
+.guia-btn-anterior {
+  @apply bg-gray-200 text-gray-700 border-gray-200 hover:bg-gray-300;
+}
+.guia-btn-anterior:disabled {
+  @apply bg-gray-100 text-gray-400 cursor-not-allowed;
+}
+
+/* Link para pular o guia */
+.guia-pular {
+  @apply text-center mt-3;
+}
+.guia-pular button {
+  @apply bg-transparent border-0 text-blue-600 underline text-xs cursor-pointer;
+}
+
+/* Seta que aponta para o elemento */
+.guia-seta {
+  @apply absolute w-0 h-0 border-solid;
+}
+.guia-seta-down {
+  @apply bottom-full left-1/2 -translate-x-1/2 border-[0_8px_8px_8px] border-transparent border-b-white;
+}
+.guia-seta-up {
+  @apply top-full left-1/2 -translate-x-1/2 border-[8px_8px_0_8px] border-transparent border-t-0;
+}
+/* Adicione .guia-seta-left e .guia-seta-right se precisar */
+
 /*==================================================================================================*/
 
 /* Home */
@@ -523,3 +598,7 @@ h2 {
 #formInformacoesPessoais.edit-mode input#userDob:disabled {
   @apply bg-[#f2f2f2] border-[#ddd] text-[#666] cursor-not-allowed opacity-80;
 }
+
+
+/*==================================================================================================*/
+

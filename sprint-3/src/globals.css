@@ -51,6 +51,12 @@ h2 {
           min-[951px]:px-[18px] min-[951px]:py-[12px] min-[951px]:bg-white min-[951px]:rounded min-[951px]:hover:bg-[#e6f2ff] min-[951px]:ml-2;
 }
 
+.botao-sair {
+  @apply text-[#dc3545] border border-[#dc3545] font-bold rounded transition-colors duration-200 cursor-pointer
+         max-[951px]:block max-[951px]:text-center max-[951px]:px-6 max-[951px]:py-4 max-[951px]:mx-auto max-[951px]:w-full
+         min-[951px]:px-[18px] min-[951px]:py-[12px] min-[951px]:ml-2 inline-block hover:bg-[#ffe6e9] hover:text-[#a71d2a];
+}
+
 
 /*Rodapé*/
 

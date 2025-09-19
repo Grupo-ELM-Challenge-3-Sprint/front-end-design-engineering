@@ -1,11 +1,17 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import imagemLogo from '../../assets/img/imagem-index/imagem-logo.jpeg'
 import imagemBotaoMenu from '../../assets/img/icons/icone-botao.png'
 import { useState } from "react";
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Cabecalho() {
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const { isLoggedIn, handleLogout } = useAuth();
+    const location = useLocation();
+
+    const userAreaPaths = ['/perfil', '/tutoriais', '/receitas', '/consultas'];
+    const isUserArea = userAreaPaths.includes(location.pathname);
 
     return (
     <header className="bg-white py-2.5 border-b border-[#eee] relative z-10">
@@ -30,7 +36,13 @@ export default function Cabecalho() {
                     <li><NavLink to={'/integrantes'} className="linksHeader">Integrantes</NavLink></li>
                     <li><NavLink to={'/faq'} className="linksHeader">FAQ</NavLink></li>
                     <li><NavLink to={'/contato'} className="linksHeader">Contato</NavLink></li>
-                    <li><NavLink to={'/entrar'} className="botao-entrar">Entrar</NavLink></li>
+                    <li>
+                        {isLoggedIn && isUserArea ? (
+                            <button onClick={handleLogout} className="botao-sair">Sair</button>
+                        ) : (
+                            <NavLink to={'/perfil'} className="botao-entrar">Entrar</NavLink>
+                        )}
+                    </li>
                 </ul>
             </nav>
         </div>

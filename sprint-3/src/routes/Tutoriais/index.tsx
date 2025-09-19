@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { tutorials } from '../../data/tutoriais';
 import PacientePage from '../../components/Painel/PacientePage';
+import { useAuth } from '../../hooks/useAuth';
 
 const TutorialCard = ({ title, to }: { title: string; to: string }) => (
   <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
@@ -14,6 +16,12 @@ const TutorialCard = ({ title, to }: { title: string; to: string }) => (
 );
 
 export default function Tutoriais() {
+  const { checkAuth } = useAuth();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
   return (
     <PacientePage>
       <div className="py-2">

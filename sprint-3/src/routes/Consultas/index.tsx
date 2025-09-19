@@ -224,7 +224,6 @@ export default function Consultas() {
                             {editingLembrete ? 'Alterar Lembrete' : 'Adicionar Lembrete'}
                         </h3>
                         <form onSubmit={handleFormSubmit} className="space-y-4">
-                            {/* Os campos do formulário permanecem os mesmos */}
                             <div>
                                 <label htmlFor="tipoConsulta" className="block text-sm font-medium text-slate-700 mb-1">Tipo de Consulta*:</label>
                                 <select id="tipoConsulta" name="tipoConsulta" value={formData.tipoConsulta} onChange={handleInputChange} required className="w-full p-2 border border-slate-300 rounded-md">

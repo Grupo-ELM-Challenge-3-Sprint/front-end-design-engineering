@@ -5,7 +5,7 @@ import PacientePage from '../../components/Painel/PacientePage';
 import { useAuth } from '../../hooks/useAuth';
 
 const TutorialCard = ({ title, to }: { title: string; to: string }) => (
-  <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+  <div className="border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
     <h3 className="text-slate-800 text-base md:text-lg font-semibold leading-relaxed mb-6 group-hover:text-blue-600 transition-colors duration-200">{title}</h3>
     <Link 
       to={to} 

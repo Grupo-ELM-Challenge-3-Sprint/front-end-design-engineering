@@ -27,15 +27,15 @@ export default function Servicos(){
             <div className="container">
                 <h2>Serviços em Destaque</h2>
                 <div className="servicos-grid-pagina grid grid-cols-1 gap-6 md:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:gap-8">
-                    {/* <!-- Card: Agendamento Online --> */}
+                    {/* <!-- Card: Receitas --> */}
                     <div className="servico-card-pagina">
                         <div className="servico-card-icon-wrapper">
-                            <img src={agendamentoImagem} alt="Ícone Agendamento Online" className="servico-icon"/>
+                            <img src={agendamentoImagem} alt="Ícone Receitas" className="servico-icon"/>
                         </div>
                         <div className="servico-card-content">
-                            <h3>Agendamento Online</h3>
-                            <p>Marque consultas e exames diretamente pelo nosso portal, sem precisar ligar ou ir ao hospital.</p>
-                            <Link to="./perfil/minhas-consultas.html" className="btn-saiba-mais">Agendar agora <span className="arrow-icon">→</span></Link>
+                            <h3>Receitas</h3>
+                            <p>yada yada yada yada yada yada yada yada yada yada yada yada</p>
+                            <Link to="/receitas" className="btn-saiba-mais">Adicione agora <span className="arrow-icon">→</span></Link>
                         </div>
                     </div>
 
@@ -46,7 +46,7 @@ export default function Servicos(){
                         </div>
                         <div className="servico-card-content">
                             <h3>Teleconsulta</h3>
-                            <p>Atendimento médico online com especialistas do HC, sem sair de casa e com a mesma qualidade.</p>
+                            <p>yada yada yada yada yada yada yada yada yada yada yada yada</p>
                             <Link to="/consultas" className="btn-saiba-mais">Conhecer serviço <span className="arrow-icon">→</span></Link>
                         </div>
                     </div>
@@ -58,8 +58,8 @@ export default function Servicos(){
                         </div>
                         <div className="servico-card-content">
                             <h3>Tutoriais</h3>
-                            <p>Acesse seus resultados de exames pelo portal, disponíveis 24h após a coleta.</p>
-                            <Link to="/tutoriais" className="btn-saiba-mais">Ver meus exames <span className="arrow-icon">→</span></Link>
+                            <p>yada yada yada yada yada yada yada yada yada yada yada yada</p>
+                            <Link to="/tutoriais" className="btn-saiba-mais">Ver Tutoriais <span className="arrow-icon">→</span></Link>
                         </div>
                     </div>
 
@@ -101,7 +101,7 @@ export default function Servicos(){
                 </div>
             </div>
         </section>
-        {/* <!-- Chamada para ação: agendamento ou contato --> */}
+        {/* <!-- botão para Acessar minha conta ou Contato --> */}
         <section className="py-10 bg-indigo-100 text-center md:text-lg">
             <div className="container">
                 <h2 className="text-[#1a237e] mb-2.5">Estamos aqui para cuidar de você</h2>

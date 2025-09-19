@@ -89,6 +89,7 @@ export default function Entrar() {
             cadastroCpf: formData.cadastroCpf,
             dataNascimento: formData.dataNascimento,
             cadastroEmail: formData.cadastroEmail,
+            cadastroTelefone: formData.cadastroTelefone,
             cadastroSenha: formData.cadastroSenha,
             confirmarSenha: formData.confirmarSenha
         };
@@ -106,7 +107,7 @@ export default function Entrar() {
                 cpf: cadastroData.cadastroCpf,
                 dataNascimento: cadastroData.dataNascimento,
                 email: cadastroData.cadastroEmail,
-                telefone: '',
+                telefone: formData.cadastroTelefone,
                 senha: cadastroData.cadastroSenha,
                 lembretesConsulta: [],
                 lembretesReceita: [],

@@ -5,47 +5,18 @@ import telefoneIcone from '../../assets/img/icons/imagem-telefone.png';
 import horarioIcone from '../../assets/img/icons/imagem-horario.png';
 import type { Hospital } from '../../data/hospitais';
 
-interface HospitalCardProps {
-  hospital: Hospital;
-  index: number;
-}
-
-const HospitalCard = React.memo(({ hospital, index }: HospitalCardProps) => {
+export default React.memo(function HospitalCard({ hospital }: { hospital: Hospital }) {
   return (
-    <article
-      className="unidade-card"
-      role="article"
-      aria-labelledby={`hospital-${hospital.id}-title`}
-      data-guide-step={index + 3}
-      data-guide-title={hospital.nome}
-      data-guide-text={`Informações detalhadas sobre ${hospital.nome}`}
-      data-guide-arrow="up"
-    >
-      <img
-        src={hospital.imagem}
-        className="fachada-hospitais"
-        alt={hospital.alt}
-        loading="lazy"
-        width="400"
-        height="200"
-      />
+    <article className="unidade-card" role="article" aria-labelledby={`hospital-${hospital.id}-title`}>
+      <img src={hospital.imagem} className="fachada-hospitais" alt={hospital.alt} loading="lazy" />
 
       <div className="unidade-card-content">
-        <h3
-          id={`hospital-${hospital.id}-title`}
-          className="unidade-card-title"
-        >
+        <h3 id={`hospital-${hospital.id}-title`} className="unidade-card-title">
           {hospital.nome}
         </h3>
 
         <p className="unidade-card-info">
-          <img
-            src={localizacaoIcone}
-            alt="ícone localização"
-            className="info-icon"
-            width="16"
-            height="16"
-          />
+          <img src={localizacaoIcone} alt="ícone localização" className="info-icon" />
           {hospital.endereco.split('\n').map((line, idx) => (
             <React.Fragment key={idx}>
               {line}
@@ -55,42 +26,20 @@ const HospitalCard = React.memo(({ hospital, index }: HospitalCardProps) => {
         </p>
 
         <p className="unidade-card-info">
-          <img
-            src={telefoneIcone}
-            alt="ícone telefone"
-            className="info-icon"
-            width="16"
-            height="16"
-          />
+          <img src={telefoneIcone} alt="ícone telefone" className="info-icon" />
           {hospital.telefone}
         </p>
 
         <p className="unidade-card-info">
-          <img
-            src={horarioIcone}
-            alt="ícone horário"
-            className="info-icon"
-            width="16"
-            height="16"
-          />
+          <img src={horarioIcone} alt="ícone horário" className="info-icon" />
           {hospital.horario}
         </p>
 
-        <Link
-          to={hospital.mapaUrl}
-          className="btn-ver-no-mapa"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Ver ${hospital.nome} no mapa (abre em nova aba)`}
-        >
-          Ver no mapa
-          <span className="arrow-icon" aria-hidden="true">↗</span>
+        <Link to={hospital.mapaUrl} className="btn-ver-no-mapa" target="_blank" rel="noopener noreferrer" aria-label={`Ver ${hospital.nome} no mapa`} >
+          Ver no mapa <span className="arrow-icon">↗</span>
         </Link>
       </div>
     </article>
   );
 });
 
-HospitalCard.displayName = 'HospitalCard';
-
-export default HospitalCard;

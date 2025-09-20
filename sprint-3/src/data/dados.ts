@@ -1,4 +1,3 @@
-// src/data/dados.ts
 
 // Definições de tipos para nossos lembretes
 export interface LembreteConsulta {
@@ -25,7 +24,7 @@ export interface Paciente {
   dataNascimento: string;
   email: string;
   telefone: string;
-  senha: string; // Apenas para fins de exemplo
+  senha: string;
   lembretesConsulta: LembreteConsulta[];
   lembretesReceita: LembreteReceita[];
 }

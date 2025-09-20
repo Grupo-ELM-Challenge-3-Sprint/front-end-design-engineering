@@ -1,7 +1,7 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import imagemLogo from '../../assets/img/imagem-index/imagem-logo.jpeg'
 import imagemBotaoMenu from '../../assets/img/icons/icone-botao.png'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from '../../hooks/useAuth';
 
 export default function Cabecalho() {
@@ -12,6 +12,11 @@ export default function Cabecalho() {
 
     const userAreaPaths = ['/perfil', '/tutoriais', '/receitas', '/consultas'];
     const isUserArea = userAreaPaths.includes(location.pathname);
+
+    // Fecha o menu automaticamente quando a rota muda
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [location.pathname]);
 
     return (
     <header className="bg-white py-2.5 border-b border-[#eee] relative z-10">
@@ -25,7 +30,7 @@ export default function Cabecalho() {
                 <img src={imagemBotaoMenu} alt="Menu" className="menu-icon-img w-8" />
             </button>
             <nav className={`
-                    ${menuOpen ? "block" : "hidden"} 
+                    ${menuOpen ? "block" : "hidden"}
                     min-[951px]:flex min-[951px]:items-center min-[951px]:gap-4 min-[951px]:text-xl
                     max-[951px]:absolute max-[951px]:top-full max-[951px]:left-0 max-[951px]:w-full max-[951px]:bg-white max-[951px]:shadow-md max-[951px]:py-5
                 `}>

@@ -27,7 +27,7 @@ export default function Cabecalho() {
             </Link>
 
             <button className="hidden max-[951px]:block" type="button" aria-label="Abrir menu" onClick={() => setMenuOpen(!menuOpen)}>
-                <img src={imagemBotaoMenu} alt="Menu" className="menu-icon-img w-8" />
+                <img src={imagemBotaoMenu} alt="Menu" className="w-8" />
             </button>
             <nav className={`
                     ${menuOpen ? "block" : "hidden"}

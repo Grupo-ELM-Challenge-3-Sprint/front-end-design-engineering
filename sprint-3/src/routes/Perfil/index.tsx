@@ -83,10 +83,10 @@ export default function Perfil() {
             <div className="content-header">
                 <h2>Meus Dados</h2>
                 <div className="form-actions-header"
-                    data-guide-step="4"
+                    data-guide-step="2"
                     data-guide-title="Editar Informações"
                     data-guide-text="Clique em 'Editar' para modificar seus dados de contato e preferências. Lembre-se de 'Salvar' as alterações."
-                    data-guide-arrow="right">
+                    data-guide-arrow="up">
                     {!editMode && (
                         <button id="editProfileButton" className="btn btn-secondary" type="button" onClick={handleEdit}>Editar</button>
                     )}
@@ -101,7 +101,7 @@ export default function Perfil() {
             <form id="formInformacoesPessoais" onSubmit={handleSave}>
                 <div className="meus-dados-grid">
                     <div className="info-section"
-                        data-guide-step="3"
+                        data-guide-step="1"
                         data-guide-title="Suas Informações Pessoais"
                         data-guide-text="Confira seus dados cadastrais. Alguns campos como nome e CPF não podem ser alterados por aqui."
                         data-guide-arrow="down">

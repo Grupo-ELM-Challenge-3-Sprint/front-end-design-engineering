@@ -96,15 +96,28 @@ export default function Receitas() {
         <PacientePage>
             <section className="py-2">
                 <div className="flex flex-col md:flex-row justify-between md:items-center mb-8 gap-4">
-                    <h1 className="text-3xl md:text-4xl font-bold text-slate-900 text-left">
+                    <h1 className="text-3xl md:text-4xl font-bold text-slate-900 text-left"
+                        data-guide-step="1"
+                        data-guide-title="Bem-vindo às Receitas!"
+                        data-guide-text="Esta é a página onde você gerencia seus lembretes de medicamentos e receitas médicas."
+                        data-guide-arrow="down">
                         Meus Lembretes de Medicamentos
                     </h1>
-                    <button onClick={handleOpenAddModal} className="px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full md:w-auto">
+                    <button onClick={handleOpenAddModal}
+                            className="px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full md:w-auto"
+                            data-guide-step="2"
+                            data-guide-title="Adicionar Lembrete"
+                            data-guide-text="Clique aqui para adicionar um novo lembrete de medicamento ou receita."
+                            data-guide-arrow="up">
                         Adicionar Lembrete
                     </button>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-6"
+                     data-guide-step="3"
+                     data-guide-title="Seus Lembretes"
+                     data-guide-text="Aqui você vê todos os seus lembretes de medicamentos. Cada card mostra o nome do medicamento e suas instruções."
+                     data-guide-arrow="up">
                     {lembretes.length > 0 ? (
                         lembretes.map((lembrete) => (
                             <div key={lembrete.id} className="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden">
@@ -123,7 +136,11 @@ export default function Receitas() {
                             </div>
                         ))
                     ) : (
-                        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm text-center">
+                        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm text-center"
+                             data-guide-step="4"
+                             data-guide-title="Nenhum Lembrete"
+                             data-guide-text="Quando você não tem lembretes, esta mensagem aparece. Use o botão 'Adicionar Lembrete' para criar um novo."
+                             data-guide-arrow="up">
                             <p className="text-slate-600">Você não possui nenhum lembrete de medicamento.</p>
                         </div>
                     )}

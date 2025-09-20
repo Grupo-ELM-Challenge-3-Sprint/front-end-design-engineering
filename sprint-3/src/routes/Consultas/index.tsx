@@ -157,7 +157,12 @@ export default function Consultas() {
                     <h1 className="text-3xl md:text-4xl font-bold text-slate-900 text-left">
                         Meus Lembretes de Consulta
                     </h1>
-                    <button onClick={handleOpenAddModal} className="px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full md:w-auto cursor-pointer">
+                    <button onClick={handleOpenAddModal}
+                            className="px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full md:w-auto cursor-pointer"
+                            data-guide-step="2"
+                            data-guide-title="Adicionar Consulta"
+                            data-guide-text="Clique aqui para agendar uma nova consulta ou teleconsulta."
+                            data-guide-arrow="up">
                         Adicionar Lembrete
                     </button>
                 </div>

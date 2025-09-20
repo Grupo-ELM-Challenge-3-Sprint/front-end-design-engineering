@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 
 import '../../globals.css';
-import agendamentoImagem from '../../assets/img/imagens-servicos/imagem-agendamento.png';
-import teleconsultaImagem from '../../assets/img/imagens-servicos/imagem-teleconsulta.png';
-import tutoriaisImagem from '../../assets/img/imagens-servicos/imagem-tutoriais.png';
-import atendimentoImagem from '../../assets/img/imagens-servicos/imagem-atendimento.png';
-import especialidadesImagem from '../../assets/img/imagens-servicos/imagem-especialidades.png';
+import { servicos } from '../../data/servicos';
+import ServiceCard from '../../components/ServiceCard';
 
 export default function Servicos(){
     return(
@@ -18,89 +15,26 @@ export default function Servicos(){
             </div>
         </section>
 
-        {/* Grid de serviços principais, cada card apresenta um serviço com ícone, descrição e ação  */}
+        {/* Grid de serviços principais usando o novo componente ServiceCard */}
         <section className="py-5"
-            data-guide-step="1" 
+            data-guide-step="1"
             data-guide-title="Nossos Serviços"
             data-guide-text="Explore os principais serviços que o SimplesHC oferece para facilitar seu acesso à saúde."
             data-guide-arrow="down">
             <div className="container">
                 <h2>Serviços em Destaque</h2>
                 <div className="servicos-grid-pagina grid grid-cols-1 gap-6 md:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:gap-8">
-                    {/* Card: Receitas  */}
-                    <div className="servico-card-pagina">
-                        <div className="servico-card-icon-wrapper">
-                            <img src={agendamentoImagem} alt="Ícone Receitas" className="servico-icon"/>
-                        </div>
-                        <div className="servico-card-content">
-                            <h3>Receitas</h3>
-                            <p>yada yada yada yada yada yada yada yada yada yada yada yada</p>
-                            <Link to="/receitas" className="btn-saiba-mais">Adicione agora <span className="arrow-icon">→</span></Link>
-                        </div>
-                    </div>
-
-                    {/* Card: Teleconsulta  */}
-                    <div className="servico-card-pagina">
-                        <div className="servico-card-icon-wrapper">
-                            <img src={teleconsultaImagem} alt="Ícone Teleconsulta" className="servico-icon"/>
-                        </div>
-                        <div className="servico-card-content">
-                            <h3>Teleconsulta</h3>
-                            <p>yada yada yada yada yada yada yada yada yada yada yada yada</p>
-                            <Link to="/consultas" className="btn-saiba-mais">Conhecer serviço <span className="arrow-icon">→</span></Link>
-                        </div>
-                    </div>
-
-                    {/* Card: Tutoriais App HC  */}
-                    <div className="servico-card-pagina">
-                        <div className="servico-card-icon-wrapper">
-                            <img src={tutoriaisImagem} alt="Ícone Tutoriais" className="servico-icon"/>
-                        </div>
-                        <div className="servico-card-content">
-                            <h3>Tutoriais</h3>
-                            <p>yada yada yada yada yada yada yada yada yada yada yada yada</p>
-                            <Link to="/tutoriais" className="btn-saiba-mais">Ver Tutoriais <span className="arrow-icon">→</span></Link>
-                        </div>
-                    </div>
-
-                    {/* Card: Atendimento 24h  */}
-                    <div className="servico-card-pagina">
-                        <div className="servico-card-icon-wrapper">
-                            <img src={atendimentoImagem} alt="Ícone Atendimento 24h" className="servico-icon"/>
-                        </div>
-                        <div className="servico-card-content">
-                            <h3>Atendimento 24h</h3>
-                            <p>Emergências médicas atendidas 24 horas por dia, em todas as unidades HC.</p>
-                            <Link to="/hospitais#lista-unidades" className="btn-saiba-mais">Ver unidades <span className="arrow-icon">→</span></Link>
-                        </div>
-                    </div>
-
-                    {/* Card: Especialidades  */}
-                    <div className="servico-card-pagina">
-                        <div className="servico-card-icon-wrapper">
-                            <img src={especialidadesImagem} alt="Ícone Especialidades" className="servico-icon"/>
-                        </div>
-                        <div className="servico-card-content">
-                            <h3>Especialidades</h3>
-                            <p>Mais de 40 especialidades médicas com profissionais renomados e equipamentos de última geração.</p>
-                            <Link to="/hospitais#lista-unidades" className="btn-saiba-mais">Conhecer especialidades <span className="arrow-icon">→</span></Link>
-                        </div>
-                    </div>
-
-                    {/* Card: Unidades HC  */}
-                    <div className="servico-card-pagina">
-                        <div className="servico-card-icon-wrapper">
-                            <img src={especialidadesImagem} alt="Ícone Unidades HC" className="servico-icon"/>
-                        </div>
-                        <div className="servico-card-content">
-                            <h3>Unidades HC</h3>
-                            <p>Conheça todas as unidades do Hospital das Clínicas espalhadas pela cidade.</p>
-                            <Link to="/hospitais" className="btn-saiba-mais">Ver no mapa <span className="arrow-icon">→</span></Link>
-                        </div>
-                    </div>
+                    {servicos.map((servico, index) => (
+                        <ServiceCard
+                            key={servico.id}
+                            servico={servico}
+                            index={index}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
+
         {/* botão para Acessar minha conta ou Contato  */}
         <section className="py-10 bg-indigo-100 text-center md:text-lg">
             <div className="container">

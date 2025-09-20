@@ -642,3 +642,12 @@ body.guia-ativo-no-scroll {
 
 /*==================================================================================================*/
 
+/* Consultas */
+
+.form-consultas {
+  @apply block text-sm font-medium text-slate-700 mb-1;
+}
+
+.card-body {
+  @apply font-semibold text-slate-800;
+}

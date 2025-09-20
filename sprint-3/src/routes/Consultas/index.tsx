@@ -183,11 +183,11 @@ export default function Consultas() {
 
                                 {/* Card Body */}
                                 <div className="p-4 md:p-5 space-y-3 text-slate-700">
-                                    <p><strong className="font-semibold text-slate-800">Médico:</strong> {lembrete.medico}</p>
-                                    <p><strong className="font-semibold text-slate-800">Data e Horário:</strong> {formatarDataHora(lembrete.data, lembrete.hora)}</p>
-                                    <p><strong className="font-semibold text-slate-800">Local:</strong> {lembrete.local}</p>
+                                    <p><strong className="card-body">Médico:</strong> {lembrete.medico}</p>
+                                    <p><strong className="card-body">Data e Horário:</strong> {formatarDataHora(lembrete.data, lembrete.hora)}</p>
+                                    <p><strong className="card-body">Local:</strong> {lembrete.local}</p>
                                     {lembrete.observacoes && (
-                                        <p><strong className="font-semibold text-slate-800">Observações:</strong> {lembrete.observacoes}</p>
+                                        <p><strong className="card-body">Observações:</strong> {lembrete.observacoes}</p>
                                     )}
                                 </div>
 
@@ -211,7 +211,7 @@ export default function Consultas() {
                             </div>
                         ))
                     ) : (
-                        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm text-center">
+                        <div className=" border border-slate-200 rounded-xl p-6 shadow-sm text-center">
                             <p className="text-slate-600">Você não possui nenhum lembrete de consulta.</p>
                         </div>
                     )}
@@ -230,30 +230,30 @@ export default function Consultas() {
                         </h3>
                         <form onSubmit={handleFormSubmit} className="space-y-4">
                             <div>
-                                <label htmlFor="tipoConsulta" className="block text-sm font-medium text-slate-700 mb-1">Tipo de Consulta*:</label>
+                                <label htmlFor="tipoConsulta" className="form-consultas">Tipo de Consulta*:</label>
                                 <select id="tipoConsulta" name="tipoConsulta" value={formData.tipoConsulta} onChange={handleInputChange} required className="w-full p-2 border border-slate-300 rounded-md">
                                     <option value="Presencial">Presencial</option>
                                     <option value="Teleconsulta">Teleconsulta</option>
                                 </select>
                             </div>
                             <div>
-                                <label htmlFor="especialidadeConsulta" className="block text-sm font-medium text-slate-700 mb-1">Especialidade*:</label>
+                                <label htmlFor="especialidadeConsulta" className="form-consultas">Especialidade*:</label>
                                 <input type="text" id="especialidadeConsulta" name="especialidadeConsulta" value={formData.especialidadeConsulta} onChange={handleInputChange} placeholder="Ex: Cardiologia" required className="w-full p-2 border border-slate-300 rounded-md" />
                             </div>
                             <div>
-                                <label htmlFor="medicoConsulta" className="block text-sm font-medium text-slate-700 mb-1">Médico (Opcional):</label>
+                                <label htmlFor="medicoConsulta" className="form-consultas">Médico (Opcional):</label>
                                 <input type="text" id="medicoConsulta" name="medicoConsulta" value={formData.medicoConsulta} onChange={handleInputChange} placeholder="Nome do médico" className="w-full p-2 border border-slate-300 rounded-md" />
                             </div>
                             <div>
-                                <label htmlFor="dataConsulta" className="block text-sm font-medium text-slate-700 mb-1">Data e Hora*:</label>
+                                <label htmlFor="dataConsulta" className="form-consultas">Data e Hora*:</label>
                                 <input type="datetime-local" id="dataConsulta" name="dataConsulta" value={formData.dataConsulta} onChange={handleInputChange} required className="w-full p-2 border border-slate-300 rounded-md" />
                             </div>
                             <div>
-                                <label htmlFor="localConsulta" className="block text-sm font-medium text-slate-700 mb-1">Local/Link*:</label>
+                                <label htmlFor="localConsulta" className="form-consultas">Local/Link*:</label>
                                 <input type="text" id="localConsulta" name="localConsulta" value={formData.localConsulta} onChange={handleInputChange} placeholder="Ex: Unidade Paulista ou link da sala" required className="w-full p-2 border border-slate-300 rounded-md" />
                             </div>
                             <div>
-                                <label htmlFor="observacoesConsulta" className="block text-sm font-medium text-slate-700 mb-1">Observações:</label>
+                                <label htmlFor="observacoesConsulta" className="form-consultas">Observações:</label>
                                 <textarea id="observacoesConsulta" name="observacoesConsulta" value={formData.observacoesConsulta} onChange={handleInputChange} rows={3} placeholder="Ex: Trazer exames anteriores" className="w-full p-2 border border-slate-300 rounded-md"></textarea>
                             </div>
                             <div className="flex justify-end gap-4 pt-4">

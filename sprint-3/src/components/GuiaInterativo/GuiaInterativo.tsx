@@ -1,13 +1,12 @@
-// src/components/GuiaInterativo/GuiaInterativo.tsx
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import '../../globals.css';
 
+// --- Interfaces e Tipos ---
 interface GuiaInterativoProps {
   iniciar?: boolean;
   onConcluir?: () => void;
   chaveGuia?: string;
-  onGuideInteraction?: () => void;
 }
 
 interface PassoGuia {
@@ -15,66 +14,115 @@ interface PassoGuia {
   passo: number;
   titulo: string;
   texto: string;
-  posicaoSeta: string;
+  posicaoSetaPreferida: string;
 }
 
+interface Posicao {
+  top: number;
+  left: number;
+}
+
+// --- Funções Auxiliares ---
 const marcarGuiaComoVisto = (chave: string): void => localStorage.setItem(chave, 'true');
 
-export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia = 'guiaPrincipal', onGuideInteraction }: GuiaInterativoProps) {
+// Uma margem para garantir que o balão não cole nas bordas da tela
+const MARGEM_VIEWPORT = 10;
+
+export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia = 'guiaPrincipal' }: GuiaInterativoProps) {
     const [passos, setPassos] = useState<PassoGuia[]>([]);
     const [passoAtualIndex, setPassoAtualIndex] = useState<number>(0);
     const [estaAtivo, setEstaAtivo] = useState<boolean>(false);
-    const [posicaoBalao, setPosicaoBalao] = useState<{ top: string; left: string; transform: string }>({
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)'
-    });
+    const [posicaoBalao, setPosicaoBalao] = useState<Posicao>({ top: -9999, left: -9999 }); // Inicia fora da tela
     const [posicaoSetaFinal, setPosicaoSetaFinal] = useState<string>('down');
+    
     const elementoDestacadoRef = useRef<HTMLElement | null>(null);
     const balaoRef = useRef<HTMLDivElement | null>(null);
+    // Ref para o timeout de fallback, para podermos limpá-lo
+    const fallbackTimeoutRef = useRef<number | null>(null);
 
-    // Remove automatic start effect, rely on iniciar prop only
+    // --- LÓGICA PRINCIPAL ---
+
+    // Função robusta para calcular a posição do balão
+    const calcularEPosicionarBalao = useCallback(() => {
+      if (!estaAtivo || passos.length === 0 || !balaoRef.current) return;
+
+      const passoAtual = passos[passoAtualIndex];
+      const elementoAlvo = passoAtual.elemento;
+      const balaoEl = balaoRef.current;
+
+      const rect = elementoAlvo.getBoundingClientRect();
+      // Usamos getComputedStyle para obter as dimensões reais, que é mais confiável
+      const balaoRect = balaoEl.getBoundingClientRect();
+      
+      let posicaoSeta = passoAtual.posicaoSetaPreferida;
+      let top = 0, left = 0;
+
+      // 1. LÓGICA DE FLIP AUTOMÁTICO: Decide se inverte a posição para caber na tela
+      if (posicaoSeta === 'down' && rect.top - balaoRect.height - MARGEM_VIEWPORT < 0) {
+        posicaoSeta = 'up'; // Não cabe em cima, inverte para baixo
+      } else if (posicaoSeta === 'up' && rect.bottom + balaoRect.height + MARGEM_VIEWPORT > window.innerHeight) {
+        posicaoSeta = 'down'; // Não cabe embaixo, inverte para cima
+      }
+      
+      setPosicaoSetaFinal(posicaoSeta);
+
+      // 2. CÁLCULO INICIAL DA POSIÇÃO
+      const gap = 15;
+      switch (posicaoSeta) {
+          case 'up':
+              top = rect.bottom + gap;
+              left = rect.left + (rect.width / 2) - (balaoRect.width / 2);
+              break;
+          // Adicionar casos 'left' e 'right' se necessário, com lógica de flip similar
+          default: // down
+              top = rect.top - balaoRect.height - gap;
+              left = rect.left + (rect.width / 2) - (balaoRect.width / 2);
+              break;
+      }
+
+      // 3. CORREÇÃO DE BOUNDARY (LIMITES): Garante que NUNCA saia da tela
+      if (left < MARGEM_VIEWPORT) {
+        left = MARGEM_VIEWPORT;
+      }
+      if (left + balaoRect.width > window.innerWidth - MARGEM_VIEWPORT) {
+        left = window.innerWidth - balaoRect.width - MARGEM_VIEWPORT;
+      }
+      if (top < MARGEM_VIEWPORT) {
+        top = MARGEM_VIEWPORT;
+      }
+      if (top + balaoRect.height > window.innerHeight - MARGEM_VIEWPORT) {
+        top = window.innerHeight - balaoRect.height - MARGEM_VIEWPORT;
+      }
+
+      setPosicaoBalao({ top, left });
+    }, [estaAtivo, passoAtualIndex, passos]);
+
+    // Efeito para iniciar e coletar os passos
     useEffect(() => {
         if (iniciar) {
-            iniciarGuia();
+            const elementosDoGuia = document.querySelectorAll<HTMLElement>('[data-guide-step]');
+            const passosData: PassoGuia[] = Array.from(elementosDoGuia).map(el => ({
+                elemento: el,
+                passo: parseInt(el.dataset.guideStep || '0', 10),
+                titulo: el.dataset.guideTitle || 'Dica Rápida',
+                texto: el.dataset.guideText || 'Veja este elemento importante.',
+                posicaoSetaPreferida: el.dataset.guideArrow || 'down',
+            })).sort((a, b) => a.passo - b.passo);
+
+            if (passosData.length > 0) {
+                setPassos(passosData);
+                setPassoAtualIndex(0);
+                setEstaAtivo(true);
+                document.body.classList.add('guia-ativo-no-scroll');
+            }
         }
     }, [iniciar]);
 
-    const iniciarGuia = (forcar = false) => {
-        const elementosDoGuia = document.querySelectorAll('[data-guide-step]');
-        const passosData: PassoGuia[] = Array.from(elementosDoGuia).map(el => {
-            const element = el as HTMLElement;
-            return {
-                elemento: element,
-                passo: parseInt(element.dataset.guideStep || '0', 10),
-                titulo: element.dataset.guideTitle || 'Dica Rápida',
-                texto: element.dataset.guideText || 'Veja este elemento importante.',
-                posicaoSeta: element.dataset.guideArrow || 'down',
-            };
-        }).sort((a, b) => a.passo - b.passo);
-
-        if (passosData.length > 0) {
-            setPassos(passosData);
-            setPassoAtualIndex(0);
-            setEstaAtivo(true);
-            document.body.classList.add('guia-ativo-no-scroll');
-
-            if (forcar) {
-                localStorage.removeItem(chaveGuia);
-            }
-        } else {
-            console.warn('Guia Interativo: Nenhum elemento com data-guide-step encontrado.');
-        }
-    };
-
-    // Efeito para atualizar o destaque e a posição do balão quando o passo muda
+    // Efeito principal que gerencia o passo atual
     useEffect(() => {
         if (!estaAtivo || passos.length === 0) return;
 
-        console.log('GuiaInterativo: passos detectados:', passos.length);
-        console.log('GuiaInterativo: passoAtualIndex:', passoAtualIndex);
-
-        // Limpa o destaque do elemento anterior
+        // Limpa destaque anterior
         if (elementoDestacadoRef.current) {
             elementoDestacadoRef.current.classList.remove('guia-elemento-destacado');
         }
@@ -82,73 +130,38 @@ export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia 
         const passoAtual = passos[passoAtualIndex];
         const elementoAlvo = passoAtual.elemento;
 
-        console.log('GuiaInterativo: elementoAlvo:', elementoAlvo);
-        console.log('GuiaInterativo: boundingClientRect:', elementoAlvo.getBoundingClientRect());
-
-        // Destaca o novo elemento
         elementoAlvo.classList.add('guia-elemento-destacado');
-        elementoAlvo.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
         elementoDestacadoRef.current = elementoAlvo;
 
-        // Calcula a posição do balão após a rolagem
-        setTimeout(() => {
-            const rect = elementoAlvo.getBoundingClientRect();
-            const balaoEl = balaoRef.current;
-            if (!balaoEl) return;
-            const balaoRect = balaoEl.getBoundingClientRect();
+        // O evento 'scrollend' dispara QUANDO a rolagem TERMINA.
+        const onScrollEnd = () => {
+          if(fallbackTimeoutRef.current) clearTimeout(fallbackTimeoutRef.current); // Limpa o fallback
+          calcularEPosicionarBalao();
+        };
 
-            console.log('GuiaInterativo: balaoRect:', balaoRect);
+        // Adicionamos o listener ANTES de rolar
+        document.addEventListener('scrollend', onScrollEnd, { once: true });
 
-            const gap = 15; // Espaço entre o balão e o elemento
-            let top = 0, left = 0;
-            let posicaoSeta = passoAtual.posicaoSeta;
+        elementoAlvo.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        
+        // Adicionamos um fallback caso o evento 'scrollend' não dispare (ex: elemento já visível)
+        fallbackTimeoutRef.current = window.setTimeout(() => {
+          document.removeEventListener('scrollend', onScrollEnd);
+          calcularEPosicionarBalao();
+        }, 400);
 
-            // Dynamically flip balloon position if it doesn't fit above the element
-            if (posicaoSeta === 'down') {
-                const potentialTop = rect.top - balaoRect.height - gap;
-                if (potentialTop < 10) {
-                    posicaoSeta = 'up';
-                }
-            } else if (posicaoSeta === 'up') {
-                const potentialTop = rect.bottom + balaoRect.height + gap;
-                if (potentialTop > window.innerHeight) {
-                    posicaoSeta = 'down';
-                }
-            }
-
-            setPosicaoSetaFinal(posicaoSeta);
-
-            switch (posicaoSeta) {
-                case 'up':
-                    top = rect.bottom + gap;
-                    left = rect.left + (rect.width / 2) - (balaoRect.width / 2);
-                    break;
-                case 'left':
-                    top = rect.top + (rect.height / 2) - (balaoRect.height / 2);
-                    left = rect.right + gap;
-                    break;
-                case 'right':
-                    top = rect.top + (rect.height / 2) - (balaoRect.height / 2);
-                    left = rect.left - balaoRect.width - gap;
-                    break;
-                default: // down
-                    top = rect.top - balaoRect.height - gap;
-                    left = rect.left + (rect.width / 2) - (balaoRect.width / 2);
-                    break;
-            }
-
-            // Corrige para não sair da tela horizontalmente
-            if (left < 10) left = 10;
-            if (left + balaoRect.width > window.innerWidth) left = window.innerWidth - balaoRect.width - 10;
-
-            // Corrige para não sair da tela verticalmente
-            if (top < 10) top = 10;
-            if (top + balaoRect.height > window.innerHeight) top = window.innerHeight - balaoRect.height - 10;
-
-            setPosicaoBalao({ top: `${top}px`, left: `${left}px`, transform: 'none' });
-        }, 300); // Espera o scroll suave terminar
-
-    }, [passoAtualIndex, estaAtivo, passos]);
+        // Listener para redimensionamento da tela (importante para mobile)
+        window.addEventListener('resize', calcularEPosicionarBalao);
+        
+        // Função de limpeza do useEffect: remove os listeners para evitar memory leaks
+        return () => {
+            if (fallbackTimeoutRef.current) clearTimeout(fallbackTimeoutRef.current);
+            document.removeEventListener('scrollend', onScrollEnd);
+            window.removeEventListener('resize', calcularEPosicionarBalao);
+        };
+    }, [passoAtualIndex, estaAtivo, passos, calcularEPosicionarBalao]);
+    
+    // --- Handlers de Ação ---
 
     const handleConcluir = (marcarComoVisto: boolean) => {
         if (marcarComoVisto) {
@@ -159,14 +172,14 @@ export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia 
         }
         document.body.classList.remove('guia-ativo-no-scroll');
         setEstaAtivo(false);
-        if (onConcluir) onConcluir(); // Chama a função do componente pai, se houver
+        if (onConcluir) onConcluir();
     };
 
     const handleProximo = () => {
         if (passoAtualIndex < passos.length - 1) {
             setPassoAtualIndex(passoAtualIndex + 1);
         } else {
-            handleConcluir(true); // Conclui e marca como visto
+            handleConcluir(true);
         }
     };
 
@@ -176,15 +189,20 @@ export default function GuiaInterativo({ iniciar = false, onConcluir, chaveGuia 
         }
     };
 
-if (!estaAtivo || passos.length === 0) {
-    return null;
-}
+    if (!estaAtivo || passos.length === 0) {
+        return null;
+    }
 
     const passoAtual = passos[passoAtualIndex];
+    const estiloBalao: React.CSSProperties = {
+    top: `${posicaoBalao.top}px`,
+    left: `${posicaoBalao.left}px`,
+    visibility: posicaoBalao.top === -9999 ? 'hidden' : 'visible',
+    };
 
     return createPortal(
-        <div className="guia-overlay" onClick={() => onGuideInteraction && onGuideInteraction()}>
-            <div ref={balaoRef} id="guia-balao" className="guia-balao" style={posicaoBalao} onClick={e => e.stopPropagation()}>
+        <div className="guia-overlay">
+            <div ref={balaoRef} id="guia-balao" className="guia-balao" style={estiloBalao}>
                 <div className={`guia-seta guia-seta-${posicaoSetaFinal}`}></div>
                 <div className="guia-conteudo">
                     <h3 className="guia-titulo">{passoAtual.titulo}</h3>

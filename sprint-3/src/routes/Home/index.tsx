@@ -15,7 +15,7 @@ export default function Home(){
                  data-guide-step="1" 
                  data-guide-title="Bem-vindo ao SimplesHC!" 
                  data-guide-text="Esta é a nossa seção principal, onde você encontra um resumo do nosso propósito e botões de acesso rápido."
-                 data-guide-arrow="down">
+                 data-guide-arrow="up">
             <div className="container flex flex-col md:flex-row items-center gap-[25px] px-8 py-10 md:text-[17px]">
                 <div>
                     <h1 className='mb-5 text-4xl font-bold text-[#1a237e]'>Simplificando o acesso à saúde</h1>

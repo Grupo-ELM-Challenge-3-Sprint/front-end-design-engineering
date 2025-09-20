@@ -1,4 +1,3 @@
-// src/pages/Entrar/index.jsx
 import { useState, useCallback, useMemo } from "react";
 import { useFormValidation, validators, useInputMasks, useFormState } from "../../hooks";
 import type { ValidationRules } from "../../hooks";

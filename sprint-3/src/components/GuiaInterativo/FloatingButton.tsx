@@ -12,7 +12,7 @@ const FloatingButton = ({ onClick }: FloatingButtonProps) => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed bottom-4 left-4 z-50">
       <button
         className="bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition-colors w-20 h-20 flex items-center justify-center text-4xl cursor-pointer"
         id="toggleGuideFloatingButton"

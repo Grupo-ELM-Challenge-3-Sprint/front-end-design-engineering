@@ -12,7 +12,7 @@ export const servicos: Servico[] = [
   {
     id: 'receitas',
     titulo: 'Receitas',
-    descricao: 'Acesse e gerencie suas receitas médicas de forma digital, com renovação simplificada e lembretes automáticos para não esquecer seus medicamentos.',
+    descricao: 'Acesse e gerencie suas receitas de forma digital, com lembretes automáticos para não esquecer seus medicamentos.',
     link: '/receitas',
     linkTexto: 'Adicione agora',
     imagem: '/src/assets/img/imagens-servicos/imagem-agendamento.png',
@@ -21,7 +21,7 @@ export const servicos: Servico[] = [
   {
     id: 'teleconsulta',
     titulo: 'Teleconsulta',
-    descricao: 'Consulte com especialistas de forma remota e segura, sem precisar sair de casa. Agende sua consulta online e receba atendimento médico de qualidade.',
+    descricao: 'Adicione Lembretes para suas consultas online e receba notificações para não perder seus atendimentos.',
     link: '/consultas',
     linkTexto: 'Conhecer serviço',
     imagem: '/src/assets/img/imagens-servicos/imagem-teleconsulta.png',
@@ -30,7 +30,7 @@ export const servicos: Servico[] = [
   {
     id: 'tutoriais',
     titulo: 'Tutoriais',
-    descricao: 'Aprenda a usar todos os recursos do SimplesHC com nossos guias interativos. Desde o cadastro até o agendamento de consultas, tudo explicado passo a passo.',
+    descricao: 'Aprenda a usar todos os recursos do Portal do PacienteHC. Desde o cadastro até o agendamento de consultas.',
     link: '/tutoriais',
     linkTexto: 'Ver Tutoriais',
     imagem: '/src/assets/img/imagens-servicos/imagem-tutoriais.png',
@@ -40,7 +40,7 @@ export const servicos: Servico[] = [
     id: 'atendimento-24h',
     titulo: 'Atendimento 24h',
     descricao: 'Emergências médicas atendidas 24 horas por dia, em todas as unidades HC.',
-    link: '/hospitais#lista-unidades',
+    link: '/hospitais',
     linkTexto: 'Ver unidades',
     imagem: '/src/assets/img/imagens-servicos/imagem-atendimento.png',
     alt: 'Ícone Atendimento 24h'
@@ -49,7 +49,7 @@ export const servicos: Servico[] = [
     id: 'especialidades',
     titulo: 'Especialidades',
     descricao: 'Mais de 40 especialidades médicas com profissionais renomados e equipamentos de última geração.',
-    link: '/hospitais#lista-unidades',
+    link: '/hospitais',
     linkTexto: 'Conhecer especialidades',
     imagem: '/src/assets/img/imagens-servicos/imagem-especialidades.png',
     alt: 'Ícone Especialidades'

@@ -20,7 +20,7 @@ export default function Servicos(){
             data-guide-step="1"
             data-guide-title="Nossos Serviços"
             data-guide-text="Explore os principais serviços que o SimplesHC oferece para facilitar seu acesso à saúde."
-            data-guide-arrow="down">
+            data-guide-arrow="up">
             <div className="container">
                 <h2>Serviços em Destaque</h2>
                 <div className="servicos-grid-pagina grid grid-cols-1 gap-6 md:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:gap-8">
@@ -34,9 +34,9 @@ export default function Servicos(){
         {/* botão para Acessar minha conta ou Contato  */}
         <section className="py-10 bg-indigo-100 text-center md:text-lg"
             data-guide-step="2"
-            data-guide-title="Entre em contato "
+            data-guide-title="Entre em contato"
             data-guide-text="Precisa de ajuda? Acesse sua conta ou fale conosco para mais informações."
-            data-guide-arrow="down">
+            data-guide-arrow="up">
             <div className="container">
                 <h2 className="text-[#1a237e] mb-2.5">Estamos aqui para cuidar de você</h2>
                 <p className="md:text-[18px] mb-[25px] text-[#2d3748] mx-auto">Agende sua consulta hoje mesmo ou entre em contato para saber mais sobre nossos serviços.</p>

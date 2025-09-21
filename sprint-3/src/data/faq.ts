@@ -23,17 +23,17 @@ export const faqData: FAQ[] = [
   {
     id: 'teleconsulta',
     question: "Como adicionar lembretes para minhas teleconsultas?",
-    answer: "A teleconsulta é realizada por videochamada. Após agendar, você receberá um lembrete por e-mail e no aplicativo. No horário marcado, acesse a seção \"Teleconsulta\" e clique em \"Iniciar Consulta\"."
+    answer: "Para adicionar um lembrete para sua teleconsulta, clique em Entrar no SimplesHC, insira seus dados de Login e acesse a seção \"consulta\" e clique em \"Adicionar Lembrete\". Adicione as informações da consulta e configure o lembrete para ser notificado com antecedência."
   },
   {
     id: 'guia-interativo',
     question: "O que é o guia interativo e como funciona?",
-    answer: "O guia interativo é um assistente que aparece automaticamente na sua primeira visita ao Portal do Paciente HC. Ele explica cada função e recurso disponível, ajudando especialmente quem tem pouca familiaridade com tecnologia. Você pode ativá-lo ou desativá-lo a qualquer momento clicando no ícone de acessibilidade (♿) no canto inferior esquerdo."
+    answer: "O guia interativo é um assistente visual que explica cada função e recurso disponível, ajudando especialmente quem tem pouca familiaridade com tecnologia. Você pode ativá-lo ou desativá-lo a qualquer momento clicando no ícone de acessibilidade (♿) no canto inferior esquerdo."
   },
   {
     id: 'tutoriais',
     question: "Onde encontro os tutoriais para usar o Portal?",
-    answer: "Os tutoriais estão disponíveis na seção \"Tutoriais\" do Portal do Paciente HC. Lá você encontra guias passo a passo sobre como instalar o App HC, fazer login, acessar os serviços, participar de teleconsultas e usar todas as funcionalidades. Os tutoriais são escritos em linguagem simples e incluem imagens explicativas."
+    answer: "Os tutoriais estão disponíveis na seção \"Tutoriais\" do SimplesHC. Lá você encontra guias passo a passo sobre como instalar o App HC, fazer login, acessar os serviços, participar de teleconsultas e usar todas as funcionalidades. Os tutoriais são escritos em linguagem simples e incluem imagens explicativas."
   },
   {
     id: 'dispositivos',

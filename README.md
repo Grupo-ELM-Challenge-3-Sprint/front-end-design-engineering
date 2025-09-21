@@ -40,7 +40,7 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
   </tr>
   <tr>
     <td align="center">
-      <img src="src/assets/img/imagens-integrantes/foto-enzo.jpeg" width="100px" alt="Foto de Enzo"/>
+      <img src="sprint-3/src/assets/img/imagens-integrantes/foto-enzo.jpeg" width="100px" alt="Foto de Enzo"/>
     </td>
     <td>Enzo Okuizumi</td>
     <td>561432</td>
@@ -50,7 +50,7 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
   </tr>
   <tr>
     <td align="center">
-      <img src="src/assets/img/imagens-integrantes/foto-lucas.jpg" width="100px" alt="Foto de Lucas"/>
+      <img src="sprint-3/src/assets/img/imagens-integrantes/foto-lucas.jpg" width="100px" alt="Foto de Lucas"/>
     </td>
     <td>Lucas Barros Gouveia</td>
     <td>566422</td>
@@ -60,7 +60,7 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
   </tr>
   <tr>
     <td align="center">
-      <img src="src/assets/img/imagens-integrantes/foto-milton.jpeg" width="100px" alt="Foto de Milton"/>
+      <img src="sprint-3/src/assets/img/imagens-integrantes/foto-milton.jpeg" width="100px" alt="Foto de Milton"/>
     </td>
     <td>Milton Marcelino</td>
     <td>564836</td>
@@ -92,17 +92,17 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
 │
 ├── src/
 │   ├── assets/
-│   │   ├── img/
+│   │   ├── img/ # Imagens, ícones e outros
 │   │   │   ├── icons/
 │   │   │   ├── imagens-integrantes/
 │   │   │   ├── imagem-index/
 │   │   │   ├── imagens-hospitais/
 │   │   │   ├── imagens-servicos/
 │   │   │   └── tutoriais/
-│   ├── components/
-│   ├── data/
-│   ├── hooks/
-│   ├── routes/
+│   ├── components/ # Componentes React reutilizáveis (Header, Footer, Cards)
+│   ├── data/ # Simulação de dados (pacientes)
+│   ├── hooks/ # Hooks customizados (validação, autenticação)
+│   ├── routes/ # Rotas das páginas do SimplesHC (Home, Contato, Perfil)
 │   │   ├── Consultas/
 │   │   ├── Contato/
 │   │   ├── Entrar/
@@ -115,9 +115,9 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
 │   │   ├── Receitas/
 │   │   ├── Servicos/
 │   │   └── Tutoriais/
-│   ├── App.tsx
-│   ├── globals.css
-│   ├── main.tsx
+│   ├── App.tsx # Ponto de entrada da aplicação React
+│   ├── globals.css # Estilos globais e configuração do Tailwind CSS
+│   ├── main.tsx # Componente principal que gerencia as rotas
 │   └── vite-env.d.ts
 │
 ├── .gitignore
@@ -373,10 +373,10 @@ Cada rota utiliza o layout `PacientePage` para manter a consistência visual e i
 
 - Repositório GitHub: [https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering](https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering)  
 
-- Vídeo no YouTube: [https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/watch?v=dQw4w9WgXcQ) (vídeo genérico)
+- Vídeo no YouTube: [https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/watch?v=dQw4w9WgXcQ) (trocar depois)
 
 ---
-## Como Manipular o Sistema
+## Como instalar / rodar o SimplesHC?
 
 Para rodar o projeto localmente, siga os passos abaixo:
 

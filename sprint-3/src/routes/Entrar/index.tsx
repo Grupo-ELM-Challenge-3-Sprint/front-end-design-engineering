@@ -4,7 +4,6 @@ import type { ValidationRules } from "../../hooks";
 import { LoginForm, CadastroForm } from "../../components/forms";
 import { addPaciente, getPacientePorCpf } from "../../data/dados";
 
-import '../../globals.css';
 
 export default function Entrar() {
     // Estados principais

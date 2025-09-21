@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import type { Hospital } from '../../data/hospitais';
 import localizacaoIcone from '../../assets/img/icons/imagem-localizacao.png';
 import telefoneIcone from '../../assets/img/icons/imagem-telefone.png';
 import horarioIcone from '../../assets/img/icons/imagem-horario.png';
-import type { Hospital } from '../../data/hospitais';
 
-export default React.memo(function HospitalCard({ hospital }: { hospital: Hospital }) {
+export default React.memo(function HospitalCard({ hospital, index }: { hospital: Hospital; index: number }) {
   return (
     <article className="unidade-card" role="article" aria-labelledby={`hospital-${hospital.id}-title`}>
       <img src={hospital.imagem} className="fachada-hospitais" alt={hospital.alt} loading="lazy" />
 
       <div className="unidade-card-content">
-        <h3 id={`hospital-${hospital.id}-title`} className="unidade-card-title">
+        <h3 id={`hospital-${index}-title`} className="unidade-card-title">
           {hospital.nome}
         </h3>
 
@@ -42,4 +42,3 @@ export default React.memo(function HospitalCard({ hospital }: { hospital: Hospit
     </article>
   );
 });
-

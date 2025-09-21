@@ -1,8 +1,6 @@
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { Link } from "react-router-dom";
-
-import '../../globals.css';
 import iconeYoutube from "../../assets/img/icons/icone-youtube.png";
 import iconeInstagram from "../../assets/img/icons/icone-instagram.png";
 import iconeTwitter from "../../assets/img/icons/icone-twitter.png";

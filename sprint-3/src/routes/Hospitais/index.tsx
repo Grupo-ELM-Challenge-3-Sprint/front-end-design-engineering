@@ -1,4 +1,3 @@
-import '../../globals.css';
 import { hospitais } from '../../data/hospitais';
 import HospitalCard from '../../components/HospitalCard';
 

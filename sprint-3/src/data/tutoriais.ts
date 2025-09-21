@@ -5,8 +5,8 @@ export interface TutorialItem {
 }
 
 export const tutorials: TutorialItem[] = [
-  { id: 'login', title: 'Como fazer login no app HC?', to: '/tutoriais/login' },
   { id: 'cadastro', title: 'Como se cadastrar no app HC?', to: '/tutoriais/cadastro' },
+  { id: 'login', title: 'Como fazer login no app HC?', to: '/tutoriais/login' },
   { id: 'esqueceu-senha', title: 'Esqueceu a sua senha?', to: '/tutoriais/esqueceu-senha' },
   { id: 'teleconsulta', title: 'Como acessar a teleconsulta no app HC?', to: '/tutoriais/teleconsulta' },
   { id: 'resultados-exames', title: 'Como acessar os meus resultados de exames?', to: '/tutoriais/resultados-exames' },
@@ -36,7 +36,7 @@ export const tutorialDetails: TutorialDetail[] = [
     id: 'cadastro',
     heading: 'Como se cadastrar no app HC?',
     videoTitle: 'Tutorial em vídeo de cadastro no App HC',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/embed/FYQlRGjazhA',
     intro: 'Veja como criar sua conta rapidamente.',
     steps: [
       { 
@@ -80,7 +80,7 @@ export const tutorialDetails: TutorialDetail[] = [
     id: 'login',
     heading: 'Como fazer login no app HC?',
     videoTitle: 'Tutorial em vídeo de como fazer Login do App HC',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://youtube.com/embed/LMpKeZiGxSc',
     intro: 'Siga os passos abaixo para acessar sua conta com CPF e senha.',
     steps: [
       { 
@@ -114,22 +114,19 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Toque em Esqueci minha senha', 
         description: "Na tela de login, toque em 'Esqueci minha senha' para iniciar a recuperação.",
-        image: '/src/assets/img/tutoriais/esqueceu-senha-etapa02.png'
+        image: '/src/assets/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Digite seu CPF', 
         description: 'Informe seu CPF corretamente para validação.',
-        image: '/src/assets/img/tutoriais/esqueceu-senha-etapa03.png'
       },
       { 
         title: 'Digite sua data de nascimento', 
         description: 'Preencha sua data de nascimento e toque em Localizar Paciente.',
-        image: '/src/assets/img/tutoriais/esqueceu-senha-etapa04.png'
       },
       { 
         title: 'Crie uma nova senha', 
         description: 'Defina e confirme uma nova senha forte para sua conta.',
-        image: '/src/assets/img/tutoriais/esqueceu-senha-etapa05.png'
       },
     ],
   },
@@ -138,7 +135,7 @@ export const tutorialDetails: TutorialDetail[] = [
     id: 'teleconsulta',
     heading: 'Como acessar a teleconsulta no app HC?',
     videoTitle: 'Tutorial em vídeo de teleconsulta no App HC',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://youtube.com/embed/LMpKeZiGxSc',
     intro: 'Aprenda como agendar e participar de consultas online.',
     steps: [
       { 
@@ -158,12 +155,12 @@ export const tutorialDetails: TutorialDetail[] = [
       },
       { 
         title: 'Verifique teleconsultas agendadas', 
-        description: 'Verifique se há teleconsultas agendadas na sua agenda.',
+        description: 'Verifique se há teleconsultas agendadas na sua agenda e clique em Entrar na consulta.',
         image: '/src/assets/img/tutoriais/teleconsulta-etapa04.png'
       },
       { 
-        title: 'Acesse o link da consulta online', 
-        description: 'No horário marcado, acesse o link informado para a consulta online.',
+        title: 'Sala de espera virtual', 
+        description: 'Aguarde na sala de espera virtual até o início da consulta com o profissional de saúde.',
         image: '/src/assets/img/tutoriais/teleconsulta-etapa05.png'
       },
     ],
@@ -172,6 +169,8 @@ export const tutorialDetails: TutorialDetail[] = [
   {
     id: 'resultados-exames',
     heading: 'Como acessar os meus resultados de exames?',
+    videoTitle: 'Tutorial em vídeo de como acessar seus resultados de Exames do App HC',
+    videoUrl: 'https://www.youtube.com/embed/cjJ9VXAIiy4?si=6Vi5FCQMw021xuWD"',
     intro: 'Veja como visualizar seus resultados de exames de forma rápida e segura.',
     steps: [
       { 

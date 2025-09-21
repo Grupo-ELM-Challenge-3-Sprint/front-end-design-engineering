@@ -29,13 +29,7 @@ export default function TutorialContent() {
           <section className="bg-white border border-slate-200 rounded-xl p-4 md:p-6 shadow-sm">
             {data.videoTitle && <h2 className="text-slate-800 font-semibold mb-4 text-sm">{data.videoTitle}</h2>}
             <div className="aspect-video w-full overflow-hidden rounded-lg">
-              <iframe 
-                className="w-full h-full"
-                src={data.videoUrl}
-                title={data.videoTitle || data.heading}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+              <iframe className="w-full h-full" src={data.videoUrl} title={data.videoTitle || data.heading} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
           </section>
         )}

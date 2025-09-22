@@ -42,37 +42,37 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Clique em Acessar Portal', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Informe seus dados pessoais', 
         description: 'Insira CPF e em seguida clique em Localizar Paciente.',
-        image: '/src/assets/img/tutoriais/cadastro-etapa02.png'
+        image: '/img/tutoriais/cadastro-etapa02.png'
       },
       { 
         title: 'Dados de contato', 
         description: 'Adicione e-mail e telefone.',
-        image: '/src/assets/img/tutoriais/cadastro-etapa03.png'
+        image: '/img/tutoriais/cadastro-etapa03.png'
       },
       { 
         title: 'Selecione o nome da mãe', 
         description: 'Em seguida selecione a alternativa correta que corresponde ao nome completo de sua mãe.',
-        image: '/src/assets/img/tutoriais/cadastro-etapa04.png'
+        image: '/img/tutoriais/cadastro-etapa04.png'
       },
       { 
         title: 'Selecione o ano de nascimento', 
         description: 'Em seguida selecione qual alternativa correta é o ano de seu nascimento.',
-        image: '/src/assets/img/tutoriais/cadastro-etapa05.png'
+        image: '/img/tutoriais/cadastro-etapa05.png'
       },
       { 
         title: 'Crie uma senha segura', 
         description: 'Crie uma senha de acesso e confirme a mesma no próximo campo. Para finalizar clique no botão CADASTRAR SENHA.',
-        image: '/src/assets/img/tutoriais/cadastro-etapa06.png'
+        image: '/img/tutoriais/cadastro-etapa06.png'
       },
       { 
         title: 'Cadastro Concluído com sucesso!', 
         description: 'Ao concluir com sucesso a etapa de cadastro a tela será apresentada. Clique no botão ACESSAR AGORA.',
-        image: '/src/assets/img/tutoriais/cadastro-etapa07.png'
+        image: '/img/tutoriais/cadastro-etapa07.png'
       },
     ],
   },
@@ -86,17 +86,17 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Acesse a tela de login', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Digite seu CPF e sua senha', 
         description: 'Informe o CPF e senha no campo indicado e clique em Acessar.',
-        image: '/src/assets/img/tutoriais/login-etapa02.png'
+        image: '/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Acesso realizado com sucesso', 
         description: 'Você será redirecionado para a tela de Início.',
-        image: '/src/assets/img/tutoriais/login-etapa03.png'
+        image: '/img/tutoriais/login-etapa03.png'
       },
     ],
   },
@@ -109,12 +109,12 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Clique em Acessar Portal', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Toque em Esqueci minha senha', 
         description: "Na tela de login, toque em 'Esqueci minha senha' para iniciar a recuperação.",
-        image: '/src/assets/img/tutoriais/login-etapa02.png'
+        image: '/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Digite seu CPF', 
@@ -141,27 +141,27 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Clique em Acessar Portal', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Faça login e acesse o Menu', 
         description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
-        image: '/src/assets/img/tutoriais/login-etapa02.png'
+        image: '/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Clique na opção \'Teleconsultas\'', 
         description: "No menu do Portal, clique na opção 'Teleconsultas'.",
-        image: '/src/assets/img/tutoriais/teleconsulta-etapa03.png'
+        image: '/img/tutoriais/teleconsulta-etapa03.png'
       },
       { 
         title: 'Verifique teleconsultas agendadas', 
         description: 'Verifique se há teleconsultas agendadas na sua agenda e clique em Entrar na consulta.',
-        image: '/src/assets/img/tutoriais/teleconsulta-etapa04.png'
+        image: '/img/tutoriais/teleconsulta-etapa04.png'
       },
       { 
         title: 'Sala de espera virtual', 
         description: 'Aguarde na sala de espera virtual até o início da consulta com o profissional de saúde.',
-        image: '/src/assets/img/tutoriais/teleconsulta-etapa05.png'
+        image: '/img/tutoriais/teleconsulta-etapa05.png'
       },
     ],
   },
@@ -176,12 +176,12 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Clique em Acessar Portal', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Faça login e acesse o Menu', 
         description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
-        image: '/src/assets/img/tutoriais/login-etapa02.png'
+        image: '/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Clique em \'Meus Resultados\'', 
@@ -206,12 +206,12 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Clique em Acessar Portal', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Faça login e acesse o Menu', 
         description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
-        image: '/src/assets/img/tutoriais/login-etapa02.png'
+        image: '/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Clique na opção \'Minhas Receitas\'', 
@@ -236,12 +236,12 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Clique em Acessar Portal', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Faça login e acesse o Menu', 
         description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
-        image: '/src/assets/img/tutoriais/login-etapa02.png'
+        image: '/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Clique na opção \'Minhas Agendas\'', 
@@ -266,12 +266,12 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Clique em Acessar Portal', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Faça login e acesse o Menu', 
         description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
-        image: '/src/assets/img/tutoriais/login-etapa02.png'
+        image: '/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Clique na opção \'Solicitação de Exames\'', 
@@ -298,12 +298,12 @@ export const tutorialDetails: TutorialDetail[] = [
       { 
         title: 'Clique em Acessar Portal', 
         description: 'Abra o app e toque em Acessar Portal.',
-        image: '/src/assets/img/tutoriais/abrirHC-etapa01.png'
+        image: '/img/tutoriais/abrirHC-etapa01.png'
       },
       { 
         title: 'Faça login e acesse o Menu', 
         description: "Após fazer login no Portal do Paciente HC, clique em 'Menu'.",
-        image: '/src/assets/img/tutoriais/login-etapa02.png'
+        image: '/img/tutoriais/login-etapa02.png'
       },
       { 
         title: 'Clique na opção \'Documentos\'', 

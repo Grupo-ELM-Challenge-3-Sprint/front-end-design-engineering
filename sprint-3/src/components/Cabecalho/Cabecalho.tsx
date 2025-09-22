@@ -1,11 +1,9 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import imagemLogo from '../../assets/img/imagem-index/imagem-logo.jpeg'
-import imagemBotaoMenu from '../../assets/img/icons/icone-botao.png'
 import { useState, useEffect } from "react";
 import { useAuth } from '../../hooks/useAuth';
+import imagemLogo from '/img/imagem-index/imagem-logo.jpeg';
 
 export default function Cabecalho() {
-
     const [menuOpen, setMenuOpen] = useState(false);
     const { isLoggedIn, handleLogout } = useAuth();
     const location = useLocation();
@@ -27,7 +25,7 @@ export default function Cabecalho() {
             </Link>
 
             <button className="hidden max-[951px]:block" type="button" aria-label="Abrir menu" onClick={() => setMenuOpen(!menuOpen)}>
-                <img src={imagemBotaoMenu} alt="Menu" className="w-8" />
+                <img src="https://www.svgrepo.com/show/510067/menu.svg" alt="Menu" className="w-10" />
             </button>
             <nav className={`
                     ${menuOpen ? "block" : "hidden"}

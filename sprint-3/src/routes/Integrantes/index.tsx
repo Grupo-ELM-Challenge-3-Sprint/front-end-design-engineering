@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
-
-import '../../globals.css';
-import fotoEnzo from '../../assets/img/imagens-integrantes/foto-enzo.jpeg';
-import fotoLucas from '../../assets/img/imagens-integrantes/foto-lucas.jpg';
-import fotoMilton from '../../assets/img/imagens-integrantes/foto-milton.jpeg';
-import iconeLinkedin from '../../assets/img/icons/icone-linkedin.png';
-import iconeGitHub from '../../assets/img/icons/icone-github.png';
+import fotoEnzo from '/img/imagens-integrantes/foto-enzo.jpeg';
+import fotoLucas from '/img/imagens-integrantes/foto-lucas.jpg';
+import fotoMilton from '/img/imagens-integrantes/foto-milton.jpeg';
 
 export default function Integrantes(){
     return(
@@ -30,8 +26,8 @@ export default function Integrantes(){
                             <p className="integrante-rm">RM: 561432</p>
                             <p className="integrante-turma">Turma: 1TDSPG</p>
                             <div className="integrante-redes">
-                                <Link to="https://www.linkedin.com/in/enzo-okuizumi-b60292256/" aria-label="Linkedin Enzo Okuizumi" title="Linkedin Enzo Okuizumi" target="_blank" rel="noopener"><img src={iconeLinkedin} alt="LinkedIn"/></Link>
-                                <Link to="https://github.com/EnzoOkuizumiFiap" aria-label="GitHub Enzo Okuizumi" title="Github Enzo Okuizumi" target="_blank" rel="noopener"><img src={iconeGitHub} alt="GitHub"/></Link>
+                                <Link to="https://www.linkedin.com/in/enzo-okuizumi-b60292256/" aria-label="Linkedin Enzo Okuizumi" title="Linkedin Enzo Okuizumi" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/452047/linkedin-1.svg" alt="LinkedIn"/></Link>
+                                <Link to="https://github.com/EnzoOkuizumiFiap" aria-label="GitHub Enzo Okuizumi" title="Github Enzo Okuizumi" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub"/></Link>
                             </div>
                         </div>
                     </div>
@@ -44,8 +40,8 @@ export default function Integrantes(){
                             <p className="integrante-rm">RM: 566422</p>
                             <p className="integrante-turma">Turma: 1TDSPG</p>
                             <div className="integrante-redes">
-                                <Link to="https://www.linkedin.com/in/luz-barros-gouveia-09b147355/" aria-label="Linkedin Lucas Barros Gouveia" title="Linkedin Lucas Barros Gouveia" target="_blank" rel="noopener"><img src={iconeLinkedin} alt="LinkedIn"/></Link>
-                                <Link to="https://github.com/LuzBGouveia" aria-label="GitHub Lucas Barros Gouveia" title="GitHub Lucas Barros Gouveia" target="_blank" rel="noopener"><img src={iconeGitHub} alt="GitHub"/></Link>
+                                <Link to="https://www.linkedin.com/in/luz-barros-gouveia-09b147355/" aria-label="Linkedin Lucas Barros Gouveia" title="Linkedin Lucas Barros Gouveia" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/452047/linkedin-1.svg" alt="LinkedIn"/></Link>
+                                <Link to="https://github.com/LuzBGouveia" aria-label="GitHub Lucas Barros Gouveia" title="GitHub Lucas Barros Gouveia" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub"/></Link>
                             </div>
                         </div>
                     </div>
@@ -58,8 +54,8 @@ export default function Integrantes(){
                             <p className="integrante-rm">RM: 564836</p>
                             <p className="integrante-turma">Turma: 1TDSPG</p>
                             <div className="integrante-redes">
-                                <Link to="http://linkedin.com/in/milton-marcelino-250298142" aria-label="Linkedin Milton Marcelino" title="Linkedin Milton Marcelino" target="_blank" rel="noopener"><img src={iconeLinkedin} alt="Linkedin"/></Link>
-                                <Link to="https://github.com/MiltonMarcelino" aria-label="GitHub Milton Marcelino" title="GitHub Milton Marcelino" target="_blank" rel="noopener"><img src={iconeGitHub} alt="GitHub"/></Link>
+                                <Link to="http://linkedin.com/in/milton-marcelino-250298142" aria-label="Linkedin Milton Marcelino" title="Linkedin Milton Marcelino" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/452047/linkedin-1.svg" alt="Linkedin"/></Link>
+                                <Link to="https://github.com/MiltonMarcelino" aria-label="GitHub Milton Marcelino" title="GitHub Milton Marcelino" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub"/></Link>
                             </div>
                         </div>
                     </div>

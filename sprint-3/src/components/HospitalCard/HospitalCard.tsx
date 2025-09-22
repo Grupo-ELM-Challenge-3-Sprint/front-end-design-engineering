@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import type { Hospital } from '../../data/hospitais';
-import localizacaoIcone from '../../assets/img/icons/imagem-localizacao.png';
-import telefoneIcone from '../../assets/img/icons/imagem-telefone.png';
-import horarioIcone from '../../assets/img/icons/imagem-horario.png';
 
 export default React.memo(function HospitalCard({ hospital, index }: { hospital: Hospital; index: number }) {
   return (
@@ -16,22 +13,17 @@ export default React.memo(function HospitalCard({ hospital, index }: { hospital:
         </h3>
 
         <p className="unidade-card-info">
-          <img src={localizacaoIcone} alt="ícone localização" className="info-icon" />
-          {hospital.endereco.split('\n').map((line, idx) => (
-            <React.Fragment key={idx}>
-              {line}
-              {idx < hospital.endereco.split('\n').length - 1 && <br />}
-            </React.Fragment>
-          ))}
+          <img src="https://www.svgrepo.com/show/294650/location.svg" alt="ícone localização" className="info-icon" />
+          {hospital.endereco}
         </p>
 
         <p className="unidade-card-info">
-          <img src={telefoneIcone} alt="ícone telefone" className="info-icon" />
+          <img src="https://www.svgrepo.com/show/435962/telephone.svg" alt="ícone telefone" className="info-icon" />
           {hospital.telefone}
         </p>
 
         <p className="unidade-card-info">
-          <img src={horarioIcone} alt="ícone horário" className="info-icon" />
+          <img src="https://www.svgrepo.com/show/521539/calendar-time.svg" alt="ícone horário" className="info-icon" />
           {hospital.horario}
         </p>
 

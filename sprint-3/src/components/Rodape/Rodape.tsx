@@ -1,7 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import iconeYoutube from "../../assets/img/icons/icone-youtube.png";
-import iconeInstagram from "../../assets/img/icons/icone-instagram.png";
-import iconeTwitter from "../../assets/img/icons/icone-twitter.png";
 
 export default function Rodape() {
 
@@ -11,9 +8,9 @@ export default function Rodape() {
                 <h3>SimplesHC</h3>
                 <p>Simplificando o acesso à saúde para todos.</p>
                 <div className="social-icons flex justify-center">
-                    <Link to="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeYoutube} alt="Ícone Youtube" /> </Link> 
-                    <Link to="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeInstagram} alt="Ícone Instagram" /> </Link>
-                    <Link to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeTwitter} alt="Ícone Twitter" /></Link>
+                    <Link to="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/475700/youtube-color.svg" alt="Ícone Youtube" className="w-7" /> </Link> 
+                    <Link to="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="Ícone Instagram" className="w-7"/> </Link>
+                    <Link to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/475689/twitter-color.svg" alt="Ícone Twitter" className="w-7" /></Link>
                 </div>
             </div>
             <div className="footer-column">

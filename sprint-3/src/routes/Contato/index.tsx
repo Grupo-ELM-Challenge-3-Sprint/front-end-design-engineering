@@ -1,10 +1,6 @@
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { Link } from "react-router-dom";
-import iconeYoutube from "../../assets/img/icons/icone-youtube.png";
-import iconeInstagram from "../../assets/img/icons/icone-instagram.png";
-import iconeTwitter from "../../assets/img/icons/icone-twitter.png";
-
 
 type ContatoFormInputs = {
   nomeCompleto: string;
@@ -145,9 +141,9 @@ export default function Contato() {
                         <div className="info-bloco">
                             <h4>Redes Sociais</h4>
                             <div className="info-redes-sociais flex gap-2.5 mt-2">
-                                <Link to="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeYoutube} alt="Ícone Youtube" /></Link>
-                                <Link to="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeInstagram} alt="Ícone Instagram" /></Link>
-                                <Link to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src={iconeTwitter} alt="Ícone Twitter" /></Link>
+                                <Link to="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/475700/youtube-color.svg" alt="Ícone Youtube" className="w-7" /></Link>
+                                <Link to="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="Ícone Instagram" className="w-7" /></Link>
+                                <Link to="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="https://www.svgrepo.com/show/475689/twitter-color.svg" alt="Ícone Twitter" className="w-7" /></Link>
                             </div>
                         </div>
                     </aside>

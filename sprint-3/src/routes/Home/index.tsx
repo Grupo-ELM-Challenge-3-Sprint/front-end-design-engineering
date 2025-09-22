@@ -1,9 +1,4 @@
 import { Link } from 'react-router-dom';
-import medicaImage from '../../assets/img/imagem-index/medica.png';
-import examesImage from '../../assets/img/imagem-index/imagem-exames.png';
-import agendamentoImage from '../../assets/img/imagem-index/imagem-agendamento.png';
-import teleconsultaImage from '../../assets/img/imagem-index/imagem-teleconsulta.png';
-import medicoImage from '../../assets/img/imagem-index/medico.png';
 
 export default function Home(){
     return(
@@ -27,8 +22,8 @@ export default function Home(){
                         <Link to="/hospitais" className="btn btn-secondary">Conheça nossas unidades</Link>
                     </div>
                 </div>
-                <div className="w-full max-w-[500px] mt-[10px] mx-auto lg:max-w-[600px]">
-                    <img src={medicaImage} alt="Profissional de saúde utilizando um laptop em um ambiente moderno" className='rounded-[8px] shadow-[0_4px_15px_rgba(0,0,0,0.2)] mx-auto' />
+                <div className="mt-[10px] mx-auto w-full max-w-[400px] md:max-w-[500px]">
+                    <img src="https://media.istockphoto.com/id/2169942837/pt/foto/female-doctor-working-on-laptop-in-the-office.jpg?s=612x612&w=0&k=20&c=kCXaecxqLqXsaTuG6xrbkcWEI7kFLSD3MvcyPeBDp10=" alt="Profissional de saúde utilizando um laptop em um ambiente moderno" className=' rounded-[8px] shadow-[0_4px_15px_rgba(0,0,0,0.2)] mx-auto' />
                 </div>
             </div>
         </section>
@@ -39,17 +34,17 @@ export default function Home(){
                 <h2 className='text-center mt-3'>Nossos Serviços</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-[25px] gap-6">
                     <div className="service-card">
-                        <img src={examesImage} alt="ícone exames" />
+                        <img src="https://www.svgrepo.com/show/527687/document-add.svg" alt="ícone exames" />
                         <h3>Como Entrar no App HC</h3>
                         <p>Veja como instalar e acessar o App HC no seu celular e fazer login com segurança.</p>
                     </div>
                     <div className="service-card">
-                        <img src={agendamentoImage} alt="ícone agendamento" />
+                        <img src="https://www.svgrepo.com/show/528080/calendar.svg" alt="ícone agendamento" />
                         <h3>Como Acessar os Serviços no App HC</h3>
                         <p>Aprenda a encontrar e utilizar os principais serviços do App HC de forma simples.</p>
                     </div>
                     <div className="service-card">
-                        <img src={teleconsultaImage} alt="ícone teleconsulta" />
+                        <img src="https://www.svgrepo.com/show/528785/videocamera.svg" alt="ícone teleconsulta" />
                         <h3>Como entrar na Teleconsulta no App HC</h3>
                         <p>Descubra como agendar e participar de uma teleconsulta pelo App HC, sem sair de casa.</p>
                     </div>
@@ -61,8 +56,8 @@ export default function Home(){
         {/* Seção dedicada ao recursos de acessibilidade */}
         <section >
             <div className="flex flex-col md:flex-row items-center gap-[20px] text-center bg-gray-100 md:text-[17px] lg:text-[20px]">
-                <div className="w-full max-w-[400px] md:max-w-[600px] mx-auto my-6">
-                    <img src={medicoImage} alt="Guia interativo" className='md:mx-5 rounded-lg shadow-lg' />
+                <div className="mx-auto my-6">
+                    <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/37895316-masculino-segurando-seringa-e-chamando-para-paciente-em-video-ligar-vetor.jpg" alt="Guia interativo" className='w-full max-w-[400px] md:max-w-[500px] md:mx-5 rounded-lg shadow-lg ' />
                 </div>
                 <div className="guide-text md:mx-auto">
                     <h2 className='text-3xl mb-5 text-center mt-5 md:text-left'>Guia Interativo</h2>

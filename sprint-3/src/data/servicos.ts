@@ -15,7 +15,7 @@ export const servicos: Servico[] = [
     descricao: 'Acesse e gerencie suas receitas de forma digital, com lembretes automáticos para não esquecer seus medicamentos.',
     link: '/receitas',
     linkTexto: 'Adicione agora',
-    imagem: '/src/assets/img/imagens-servicos/imagem-agendamento.png',
+    imagem: 'https://www.svgrepo.com/show/533389/calendar-days.svg',
     alt: 'Ícone Receitas'
   },
   {
@@ -24,7 +24,7 @@ export const servicos: Servico[] = [
     descricao: 'Adicione Lembretes para suas consultas online e receba notificações para não perder seus atendimentos.',
     link: '/consultas',
     linkTexto: 'Conhecer serviço',
-    imagem: '/src/assets/img/imagens-servicos/imagem-teleconsulta.png',
+    imagem: 'https://www.svgrepo.com/show/529662/laptop.svg',
     alt: 'Ícone Teleconsulta'
   },
   {
@@ -33,7 +33,7 @@ export const servicos: Servico[] = [
     descricao: 'Aprenda a usar todos os recursos do Portal do PacienteHC. Desde o cadastro até o agendamento de consultas.',
     link: '/tutoriais',
     linkTexto: 'Ver Tutoriais',
-    imagem: '/src/assets/img/imagens-servicos/imagem-tutoriais.png',
+    imagem: 'https://www.svgrepo.com/show/421931/medical-medical-record.svg',
     alt: 'Ícone Tutoriais'
   },
   {
@@ -42,7 +42,7 @@ export const servicos: Servico[] = [
     descricao: 'Emergências médicas atendidas 24 horas por dia, em todas as unidades HC.',
     link: '/hospitais',
     linkTexto: 'Ver unidades',
-    imagem: '/src/assets/img/imagens-servicos/imagem-atendimento.png',
+    imagem: 'https://www.svgrepo.com/show/425565/costumer-service-customer-helpdesk.svg',
     alt: 'Ícone Atendimento 24h'
   },
   {
@@ -51,7 +51,7 @@ export const servicos: Servico[] = [
     descricao: 'Mais de 40 especialidades médicas com profissionais renomados e equipamentos de última geração.',
     link: '/hospitais',
     linkTexto: 'Conhecer especialidades',
-    imagem: '/src/assets/img/imagens-servicos/imagem-especialidades.png',
+    imagem: 'https://www.svgrepo.com/show/453043/doctor-f.svg',
     alt: 'Ícone Especialidades'
   },
   {
@@ -60,7 +60,7 @@ export const servicos: Servico[] = [
     descricao: 'Conheça todas as unidades do Hospital das Clínicas espalhadas pela cidade.',
     link: '/hospitais',
     linkTexto: 'Ver no mapa',
-    imagem: '/src/assets/img/imagens-servicos/imagem-unidades.png',
+    imagem: 'https://www.svgrepo.com/show/533487/hospital.svg',
     alt: 'Ícone Unidades HC'
   }
 ];

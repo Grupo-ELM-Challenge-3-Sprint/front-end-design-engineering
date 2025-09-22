@@ -1,6 +1,5 @@
 import type { ReactElement, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import iconeCheck from '../../assets/img/icons/icone-check-verde.png';
 import type { FormData, StatusMessage } from '../../hooks';
 import { PasswordField } from './PasswordField';
 
@@ -32,7 +31,7 @@ export const CadastroForm = ({
     return (
       <section>
         <div className="auth-card text-center">
-          <img src={iconeCheck} alt="Sucesso" className="w-12 h-12 mx-auto mb-4" />
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/069/462/938/small/white-check-mark-on-green-label-icon-png.png" alt="Sucesso" className="w-12 h-12 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-slate-800 mb-2">Cadastro realizado!</h2>
           <p className="auth-subtitle">Sua conta foi criada. Agora você já pode acessar a plataforma.</p>
           <div className="mt-6 flex flex-col gap-3">

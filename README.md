@@ -40,7 +40,7 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
   </tr>
   <tr>
     <td align="center">
-      <img src="sprint-3/c/img/imagens-integrantes/foto-enzo.jpeg" width="100px" alt="Foto de Enzo"/>
+      <img src="sprint-3/public/img/imagens-integrantes/foto-enzo.jpeg" width="100px" alt="Foto de Enzo"/>
     </td>
     <td>Enzo Okuizumi</td>
     <td>561432</td>

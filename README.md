@@ -17,13 +17,13 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
 
 ## Tecnologias Utilizadas
 
-- React 19.1.1  
-- React Router DOM 7.8.1  
-- React Hook Form 7.62.0  
-- TailwindCSS 4.1.12  
-- Vite 7.1.2  
-- TypeScript 5.8.3  
-- ESLint  
+- React 19.1.1
+- React Router DOM 7.8.1
+- React Hook Form 7.62.0
+- TailwindCSS 4.1.12
+- Vite 7.1.2
+- TypeScript 5.8.3
+- ESLint
 
 ---
 
@@ -72,36 +72,23 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
 
 ---
 
-## Imagens e Ícones Relacionados ao Projeto
-
-As imagens e ícones utilizados no projeto estão localizados nas seguintes pastas:
-
-- `src/assets/img/icons/`  
-- `src/assets/img/imagens-integrantes/`  
-- `src/assets/img/imagem-index/`  
-- `src/assets/img/imagens-hospitais/`  
-- `src/assets/img/imagens-servicos/`  
-- `src/assets/img/tutoriais/`  
-
----
-
 ## Estrutura de Pastas do Projeto
 
 ```
 /sprint-3
-│
+|
+├──public/
+│   └── img/ # Imagens e ícones
 ├── src/
-│   ├── assets/
-│   │   ├── img/ # Imagens, ícones e outros
-│   │   │   ├── icons/
-│   │   │   ├── imagens-integrantes/
-│   │   │   ├── imagem-index/
-│   │   │   ├── imagens-hospitais/
-│   │   │   ├── imagens-servicos/
-│   │   │   └── tutoriais/
 │   ├── components/ # Componentes React reutilizáveis (Header, Footer, Cards)
 │   ├── data/ # Simulação de dados (pacientes)
 │   ├── hooks/ # Hooks customizados (validação, autenticação)
+│   │   ├── useContatoForm.ts
+│   │   ├── useAuth.ts
+│   │   ├── useFormState.ts
+│   │   ├── useFormValidation.ts
+│   │   ├── useInputMasks.ts
+│   │   └── index.ts
 │   ├── routes/ # Rotas das páginas do SimplesHC (Home, Contato, Perfil)
 │   │   ├── Consultas/
 │   │   ├── Contato/
@@ -117,7 +104,7 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
 │   │   └── Tutoriais/
 │   ├── App.tsx # Ponto de entrada da aplicação React
 │   ├── globals.css # Estilos globais e configuração do Tailwind CSS
-│   ├── main.tsx # Componente principal que gerencia as rotas
+│   ├── main.tsx # Gerencia as rotas
 │   └── vite-env.d.ts
 │
 ├── .gitignore
@@ -134,7 +121,7 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
 
 ---
 
-## Explicações do Sistema - Componentes e Hooks Principais
+## Explicações do Sistema
 
 ### Seção 1: Rotas
 
@@ -181,13 +168,50 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
 #### `Contato/index.tsx`
 - **Função:** Página de contato para envio de mensagens e informações institucionais.
 - **Principais funcionalidades:**
-  - Formulário de contato com validação.
+  - Formulário de contato com validação usando hook customizado `useContatoForm`.
   - Informações de endereço, telefones, email, horário e redes sociais.
 - **Exemplo de uso:** Página para contato direto com a equipe.
 
 ---
 
-### Seção 2: Login e Cadastro
+### Seção 2: Componentes Principais do Sistema
+
+#### `Cabecalho.tsx`
+- **Função:** Componente de cabeçalho (header) da aplicação.
+- **Principais funcionalidades:**
+  - Logo e navegação principal do sistema.
+  - Menu de navegação com links para páginas principais.
+  - Design responsivo e acessível.
+- **Exemplo de uso:** Utilizado em todas as páginas públicas do sistema.
+
+#### `Rodape.tsx`
+- **Função:** Componente de rodapé (footer) da aplicação.
+- **Principais funcionalidades:**
+  - Informações institucionais do Hospital das Clínicas.
+  - Links para redes sociais e contato.
+  - Informações de copyright e políticas.
+- **Exemplo de uso:** Utilizado em todas as páginas do sistema.
+
+#### `HospitalCard.tsx`
+- **Função:** Componente para exibir informações de unidades hospitalares.
+- **Principais funcionalidades:**
+  - Exibe dados da unidade (nome, endereço, telefone, horários).
+  - Design responsivo com hover effects.
+  - Integração com dados de localização.
+- **Exemplo de uso:** Utilizado na página de Hospitais para listar as unidades.
+
+#### `ServiceCard.tsx`
+- **Função:** Componente para exibir serviços oferecidos pelo hospital.
+- **Principais funcionalidades:**
+  - Apresentação visual dos serviços disponíveis.
+  - Ícones e descrições dos serviços.
+  - Links para mais informações ou acesso.
+- **Exemplo de uso:** Utilizado na página de Serviços para apresentar os serviços.
+
+---
+
+
+### Seção 3: Login e Cadastro
 
 #### `Entrar/index.tsx`
 - **Função:** Página que gerencia os formulários de login e cadastro.
@@ -207,6 +231,14 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
   - Navegação para cadastro.
 - **Exemplo de uso:** Usado na página de login.
 
+#### `CadastroForm.tsx`
+- **Função:** Componente de formulário de cadastro de pacientes.
+- **Principais funcionalidades:**
+  - Campos para dados pessoais (nome, CPF, email, telefone).
+  - Validação de dados em tempo real.
+  - Integração com sistema de autenticação.
+- **Exemplo de uso:** Utilizado na página de cadastro/login.
+
 #### `PasswordField.tsx`
 - **Função:** Componente reutilizável para campos de senha com toggle de visibilidade.
 - **Principais funcionalidades:**
@@ -215,34 +247,22 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
   - Exibe mensagens de erro.
 - **Exemplo de uso:** Usado em formulários de login e cadastro.
 
-#### `useAuth.ts`
-- **Função:** Hook para gerenciar estado de autenticação do usuário.
-- **Principais funcionalidades:**
-  - Verifica se o usuário está logado via localStorage.
-  - Fornece função para logout que limpa dados e redireciona para login.
-  - Função para checar autenticação e redirecionar se não autenticado.
-- **Exemplo de uso:** Usado em componentes que precisam controlar acesso e logout.
+---
 
-#### `useFormState.ts`
-- **Função:** Hook para gerenciar estado dos formulários de login e cadastro.
-- **Principais funcionalidades:**
-  - Armazena dados dos formulários.
-  - Controla mensagens de status e visibilidade de senhas.
-  - Fornece funções para atualizar campos, resetar formulário, alterar status e alternar visibilidade de senha.
-- **Exemplo de uso:** Usado em formulários para controlar estado e interações.
+## Rotas Principais do Sistema
 
-#### `useFormValidation.ts`
-- **Função:** Hook para validação de formulários com regras customizáveis.
-- **Principais funcionalidades:**
-  - Valida campos individualmente e o formulário completo.
-  - Suporta regras de obrigatoriedade, tamanho mínimo, padrões regex e validações customizadas.
-  - Inclui validadores para email, CPF, data, senha e nome.
-  - Permite limpar erros específicos ou todos.
-- **Exemplo de uso:** Usado em formulários para validar dados antes do envio.
+O sistema possui as seguintes rotas principais, acessíveis na área do paciente após login:
+
+- `/perfil`: Página para visualização e edição dos dados pessoais do paciente.
+- `/tutoriais`: Lista de tutoriais para auxiliar o uso do portal.
+- `/consultas`: Gerenciamento de lembretes de consultas, com funcionalidades para adicionar, editar, remover e marcar consultas como concluídas.
+- `/receitas`: Gerenciamento de lembretes de medicamentos e receitas médicas, com funcionalidades para adicionar, editar e remover lembretes.
+
+Cada rota utiliza o layout `PacientePage` para manter a consistência visual e inclui suporte para o guia interativo que auxilia o usuário na navegação.
 
 ---
 
-### Seção 3: Área do Usuário e Perfil
+### Seção 4: Área do Usuário e Perfil
 
 #### `PacientePage.tsx`
 - **Função:** Componente de layout para a área do paciente.
@@ -274,7 +294,7 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
 
 ---
 
-### Seção 4: Rotas de Tutoriais, Consultas e Receitas
+### Seção 5: Rotas de Tutoriais, Consultas e Receitas
 
 #### `Tutoriais/index.tsx`
 - **Função:** Página que exibe a lista de tutoriais para o usuário.
@@ -284,6 +304,14 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
   - Utiliza o layout PacientePage.
   - Inclui atributos para guia interativo.
 - **Exemplo de uso:** Acessível na área do paciente para consulta de tutoriais.
+
+#### `TutorialCard.tsx`
+- **Função:** Componente de apresentação para exibir um card de tutorial.
+- **Principais funcionalidades:**
+  - Exibe título do tutorial.
+  - Link para acessar o tutorial.
+  - Estilização com efeitos de hover e responsividade.
+- **Exemplo de uso:** Usado na página de tutoriais para listar os tutoriais disponíveis.
 
 ---
 
@@ -313,15 +341,32 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
 
 ---
 
-### Seção 5: Componentes e Hooks Auxiliares
+### Seção 6: Hooks Customizados de Autenticação e Formulários e Hooks auxiliares
 
-#### `TutorialCard.tsx`
-- **Função:** Componente de apresentação para exibir um card de tutorial.
+#### `useAuth.ts`
+- **Função:** Hook para gerenciar estado de autenticação do usuário.
 - **Principais funcionalidades:**
-  - Exibe título do tutorial.
-  - Link para acessar o tutorial.
-  - Estilização com efeitos de hover e responsividade.
-- **Exemplo de uso:** Usado na página de tutoriais para listar os tutoriais disponíveis.
+  - Verifica se o usuário está logado via localStorage.
+  - Fornece função para logout que limpa dados e redireciona para login.
+  - Função para checar autenticação e redirecionar se não autenticado.
+- **Exemplo de uso:** Usado em componentes que precisam controlar acesso e logout.
+
+#### `useFormState.ts`
+- **Função:** Hook para gerenciar estado dos formulários de login e cadastro.
+- **Principais funcionalidades:**
+  - Armazena dados dos formulários.
+  - Controla mensagens de status e visibilidade de senhas.
+  - Fornece funções para atualizar campos, resetar formulário, alterar status e alternar visibilidade de senha.
+- **Exemplo de uso:** Usado em formulários para controlar estado e interações.
+
+#### `useFormValidation.ts`
+- **Função:** Hook para validação de formulários com regras customizáveis.
+- **Principais funcionalidades:**
+  - Valida campos individualmente e o formulário completo.
+  - Suporta regras de obrigatoriedade, tamanho mínimo, padrões regex e validações customizadas.
+  - Inclui validadores para email, CPF, data, senha e nome.
+  - Permite limpar erros específicos ou todos.
+- **Exemplo de uso:** Usado em formulários para validar dados antes do envio.
 
 ---
 
@@ -333,9 +378,19 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
   - Função para identificar o tipo de máscara a partir do nome do campo.
 - **Exemplo de uso:** Usado em formulários para formatar entradas de CPF, telefone e data em tempo real.
 
+#### `useContatoForm.ts`
+- **Função:** Hook customizado para gerenciar o formulário de contato.
+- **Principais funcionalidades:**
+  - Centraliza toda lógica do formulário de contato (validações, submissão, estados).
+  - Exporta tipo `ContatoFormInputs` para tipagem consistente.
+  - Implementa validações específicas para cada campo (nome, email, telefone, assunto, mensagem).
+  - Gerencia estados de loading (`isSubmitting`) e sucesso (`isSubmitSuccessful`).
+  - Função `onSubmit` com simulação de envio e reset automático do formulário.
+- **Exemplo de uso:** Usado no componente `Contato/index.tsx` para gerenciar o formulário.
+
 ---
 
-### Seção 6: Guia Interativo e Watson Assistant
+### Seção 7: Guia Interativo e Watson Assistant
 
 #### `GuiaInterativo.tsx`
 - **Função:** Implementa um guia interativo que destaca elementos da interface e orienta o usuário.
@@ -356,22 +411,20 @@ As imagens e ícones utilizados no projeto estão localizados nas seguintes past
 
 ---
 
-## Rotas Principais do Sistema
+## Imagens e Ícones Relacionados ao Projeto
 
-O sistema possui as seguintes rotas principais, acessíveis na área do paciente após login:
+As imagens e ícones utilizados no projeto estão localizados nas seguintes pastas:
 
-- `/perfil`: Página para visualização e edição dos dados pessoais do paciente.
-- `/tutoriais`: Lista de tutoriais para auxiliar o uso do portal.
-- `/consultas`: Gerenciamento de lembretes de consultas, com funcionalidades para adicionar, editar, remover e marcar consultas como concluídas.
-- `/receitas`: Gerenciamento de lembretes de medicamentos e receitas médicas, com funcionalidades para adicionar, editar e remover lembretes.
-
-Cada rota utiliza o layout `PacientePage` para manter a consistência visual e inclui suporte para o guia interativo que auxilia o usuário na navegação.
+- `public/img/icons/`
+- `public/img/imagem-index/`
+- `public/img/imagens-integrantes/`
+- `public/img/tutoriais/`
 
 ---
 
 ## Links Importantes
 
-- Repositório GitHub: [https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering](https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering)  
+- Repositório GitHub: [https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering](https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering)
 
 - Vídeo no YouTube: [https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/watch?v=dQw4w9WgXcQ) (trocar depois)
 
@@ -380,16 +433,16 @@ Cada rota utiliza o layout `PacientePage` para manter a consistência visual e i
 
 Para rodar o projeto localmente, siga os passos abaixo:
 
-1. Clone o repositório:  
+1. Clone o repositório:
    `git clone https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering.git`
 
-2. Instale as dependências:  
+2. Instale as dependências:
    `npm install`
 
-3. Inicie o servidor de desenvolvimento:  
+3. Inicie o servidor de desenvolvimento:
    `npm run dev`
 
-4. Abra o navegador e acesse:  
+4. Abra o navegador e acesse:
    `http://localhost:5173`
 
 ---

@@ -17,7 +17,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 5549-0111',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/yJ8ErztdASvJBuz17',
-    imagem: 'https://lh3.googleusercontent.com/gps-cs-s/AC9h4npMueecAW3SvPeHv7Zl7ZB-aMvgGWRfQYVhTPHDmlZXJ6zuZOS4MIQRcNZJD4cQg9wkdi63y5GIU2WNkwo76D4EuF9q6ZbvtuogzsxO6lIotHgY3YertZSNg4L23cCDJ-vMrWjouA=s1360-w1360-h1020-rw',
+    imagem: '/public/img/imagens-hospitais/imrea-vila-mariana.png',
     alt: 'Fachada IMREA Vila Mariana'
   },
   {
@@ -27,7 +27,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 3719-6060',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/qSQCG7WwCpAy47w89',
-    imagem: 'https://redelucymontoro.org.br/site/wp-content/uploads/2024/06/IMREA-Umarizal_001.jpg',
+    imagem: '/public/img/imagens-hospitais/imrea-umarizal.png',
     alt: 'Fachada IMREA Umarizal'
   },
   {
@@ -37,7 +37,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 3838-7555',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/R3sU1STb2zPuhboR6',
-    imagem: 'https://redelucymontoro.org.br/site/wp-content/uploads/2015/06/lapa-d39.jpg',
+    imagem: '/public/img/imagens-hospitais/imrea-lapa.png',
     alt: 'Fachada IMREA Lapa'
   },
   {
@@ -47,7 +47,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 2661-1000',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/ok3phCwsGKuYQLFL6',
-    imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOCvL2jOay-u1MMpAujg07zC_G-cfa23wkyA&s',
+    imagem: '/public/img/imagens-hospitais/imrea-clinicas.jpg',
     alt: 'Fachada IMREA Clínicas'
   }
 ];

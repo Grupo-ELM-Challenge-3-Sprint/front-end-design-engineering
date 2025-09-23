@@ -40,7 +40,7 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
   </tr>
   <tr>
     <td align="center">
-      <img src="sprint-3/src/assets/img/imagens-integrantes/foto-enzo.jpeg" width="100px" alt="Foto de Enzo"/>
+      <img src="sprint-3/c/img/imagens-integrantes/foto-enzo.jpeg" width="100px" alt="Foto de Enzo"/>
     </td>
     <td>Enzo Okuizumi</td>
     <td>561432</td>
@@ -50,7 +50,7 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
   </tr>
   <tr>
     <td align="center">
-      <img src="sprint-3/src/assets/img/imagens-integrantes/foto-lucas.jpg" width="100px" alt="Foto de Lucas"/>
+      <img src="sprint-3/public/img/imagens-integrantes/foto-lucas.jpg" width="100px" alt="Foto de Lucas"/>
     </td>
     <td>Lucas Barros Gouveia</td>
     <td>566422</td>
@@ -60,7 +60,7 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
   </tr>
   <tr>
     <td align="center">
-      <img src="sprint-3/src/assets/img/imagens-integrantes/foto-milton.jpeg" width="100px" alt="Foto de Milton"/>
+      <img src="sprint-3/public/img/imagens-integrantes/foto-milton.jpeg" width="100px" alt="Foto de Milton"/>
     </td>
     <td>Milton Marcelino</td>
     <td>564836</td>

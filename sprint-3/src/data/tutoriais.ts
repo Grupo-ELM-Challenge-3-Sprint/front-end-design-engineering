@@ -291,8 +291,6 @@ export const tutorialDetails: TutorialDetail[] = [
   {
     id: 'documentos',
     heading: 'Como acessar os meus documentos no app HC',
-    videoTitle: 'Tutorial em vídeo de documentos no App HC',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     intro: 'Veja como acessar e gerenciar seus documentos médicos.',
     steps: [
       { 

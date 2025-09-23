@@ -13,7 +13,7 @@ import Entrar from './routes/Entrar/index.tsx';
 import Servicos from './routes/Servicos/index.tsx';
 import Perfil from './routes/Perfil/index.tsx';
 import Tutoriais from './routes/Tutoriais/index.tsx';
-import TutorialContent from './routes/Tutoriais/TutorialContent.tsx';
+import TutorialContent from './components/TutorialCard/TutorialContent.tsx';
 import Consultas from './routes/Consultas/index.tsx';
 import Receitas from './routes/Receitas/index.tsx';
 

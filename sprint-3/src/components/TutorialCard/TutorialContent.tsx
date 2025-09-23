@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import PacientePage from '../../components/Painel/PacientePage';
+import PacientePage from '../Painel/PacientePage';
 import { tutorialDetails } from '../../data/tutoriais';
 
 export default function TutorialContent() {

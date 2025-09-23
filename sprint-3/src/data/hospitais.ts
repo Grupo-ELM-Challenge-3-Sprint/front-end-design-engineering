@@ -47,7 +47,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 2661-1000',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/ok3phCwsGKuYQLFL6',
-    imagem: 'https://redelucymontoro.org.br/site/wp-content/uploads/2024/06/qs_001.jpg',
+    imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOCvL2jOay-u1MMpAujg07zC_G-cfa23wkyA&s',
     alt: 'Fachada IMREA Clínicas'
   }
 ];

@@ -1,28 +1,15 @@
-import { useForm } from "react-hook-form";
-import type { SubmitHandler } from "react-hook-form";
 import { Link } from "react-router-dom";
-
-type ContatoFormInputs = {
-  nomeCompleto: string;
-  email: string;
-  telefone?: string;
-  assunto: string;
-  mensagem: string;
-};
+import { useContatoForm } from "../../hooks";
 
 export default function Contato() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
-    reset,
-  } = useForm<ContatoFormInputs>();
-
-  const onSubmit: SubmitHandler<ContatoFormInputs> = async (data) => {
-    console.log(data); // Exibe os dados do formulário no console
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    reset();
-  };
+    errors,
+    isSubmitting,
+    isSubmitSuccessful,
+    onSubmit,
+  } = useContatoForm();
 
     return (
         <main>

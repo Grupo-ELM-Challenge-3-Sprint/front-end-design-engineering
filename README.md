@@ -249,6 +249,19 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
 
 ---
 
+## Rotas Principais do Sistema
+
+O sistema possui as seguintes rotas principais, acessíveis na área do paciente após login:
+
+- `/perfil`: Página para visualização e edição dos dados pessoais do paciente.
+- `/tutoriais`: Lista de tutoriais para auxiliar o uso do portal.
+- `/consultas`: Gerenciamento de lembretes de consultas, com funcionalidades para adicionar, editar, remover e marcar consultas como concluídas.
+- `/receitas`: Gerenciamento de lembretes de medicamentos e receitas médicas, com funcionalidades para adicionar, editar e remover lembretes.
+
+Cada rota utiliza o layout `PacientePage` para manter a consistência visual e inclui suporte para o guia interativo que auxilia o usuário na navegação.
+
+---
+
 ### Seção 4: Área do Usuário e Perfil
 
 #### `PacientePage.tsx`
@@ -395,19 +408,6 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
   - Gerencia estado da conversa e respostas.
   - Fornece suporte contextual para dúvidas dos usuários.
 - **Exemplo de uso:** Usado para oferecer suporte interativo dentro do sistema.
-
----
-
-## Rotas Principais do Sistema
-
-O sistema possui as seguintes rotas principais, acessíveis na área do paciente após login:
-
-- `/perfil`: Página para visualização e edição dos dados pessoais do paciente.
-- `/tutoriais`: Lista de tutoriais para auxiliar o uso do portal.
-- `/consultas`: Gerenciamento de lembretes de consultas, com funcionalidades para adicionar, editar, remover e marcar consultas como concluídas.
-- `/receitas`: Gerenciamento de lembretes de medicamentos e receitas médicas, com funcionalidades para adicionar, editar e remover lembretes.
-
-Cada rota utiliza o layout `PacientePage` para manter a consistência visual e inclui suporte para o guia interativo que auxilia o usuário na navegação.
 
 ---
 

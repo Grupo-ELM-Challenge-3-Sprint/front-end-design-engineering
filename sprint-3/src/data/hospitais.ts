@@ -17,7 +17,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 5549-0111',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/yJ8ErztdASvJBuz17',
-    imagem: '/public/img/imagens-hospitais/imrea-vila-mariana.png',
+    imagem: '/img/imagens-hospitais/imrea-vila-mariana.png',
     alt: 'Fachada IMREA Vila Mariana'
   },
   {
@@ -27,7 +27,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 3719-6060',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/qSQCG7WwCpAy47w89',
-    imagem: '/public/img/imagens-hospitais/imrea-umarizal.png',
+    imagem: '/img/imagens-hospitais/imrea-umarizal.png',
     alt: 'Fachada IMREA Umarizal'
   },
   {
@@ -37,7 +37,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 3838-7555',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/R3sU1STb2zPuhboR6',
-    imagem: '/public/img/imagens-hospitais/imrea-lapa.png',
+    imagem: '/img/imagens-hospitais/imrea-lapa.png',
     alt: 'Fachada IMREA Lapa'
   },
   {
@@ -47,7 +47,7 @@ export const hospitais: Hospital[] = [
     telefone: '(11) 2661-1000',
     horario: 'Segunda a Sexta: 7h às 19h',
     mapaUrl: 'https://maps.app.goo.gl/ok3phCwsGKuYQLFL6',
-    imagem: '/public/img/imagens-hospitais/imrea-clinicas.jpg',
+    imagem: '/img/imagens-hospitais/imrea-clinicas.jpg',
     alt: 'Fachada IMREA Clínicas'
   }
 ];

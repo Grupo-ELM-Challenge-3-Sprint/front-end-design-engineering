@@ -411,17 +411,6 @@ Cada rota utiliza o layout `PacientePage` para manter a consistência visual e i
 
 ---
 
-## Imagens e Ícones Relacionados ao Projeto
-
-As imagens e ícones utilizados no projeto estão localizados nas seguintes pastas:
-
-- `public/img/icons/`
-- `public/img/imagem-index/`
-- `public/img/imagens-integrantes/`
-- `public/img/tutoriais/`
-
----
-
 ## Links Importantes
 
 - Repositório GitHub: [https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering](https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering)

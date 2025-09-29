@@ -60,19 +60,19 @@ export const CadastroForm = ({
         
         <form onSubmit={onSubmit}>
           <h3 className="form-step-title">Informações Pessoais</h3>
-          <div className="form-group">
+          <div className="form-group-auth">
             <label htmlFor="cadastroNomeCompleto">Nome completo*</label>
             <input id="cadastroNomeCompleto" className={`form-input ${errors.cadastroNomeCompleto ? 'border-red-500' : ''}`} type="text" value={formData.cadastroNomeCompleto}
               onChange={(e) => onInputChange('cadastroNomeCompleto', e.target.value)} required />
             {errors.cadastroNomeCompleto && <small className="error-message text-red-500">{errors.cadastroNomeCompleto}</small>}
           </div>
-          <div className="form-group">
+          <div className="form-group-auth">
             <label htmlFor="cadastroCpf">CPF*</label>
             <input id="cadastroCpf" className={`form-input ${errors.cadastroCpf ? 'border-red-500' : ''}`} type="text" value={formData.cadastroCpf}
               onChange={(e) => onInputChange('cadastroCpf', e.target.value)} required />
             {errors.cadastroCpf && <small className="error-message text-red-500">{errors.cadastroCpf}</small>}
           </div>
-          <div className="form-group">
+          <div className="form-group-auth">
             <label htmlFor="dataNascimento">Data de nascimento*</label>
             <input id="dataNascimento" className={`form-input ${errors.dataNascimento ? 'border-red-500' : ''}`} type="text" placeholder="dd/mm/aaaa" value={formData.dataNascimento}
               onChange={(e) => onInputChange('dataNascimento', e.target.value)} required />
@@ -80,13 +80,13 @@ export const CadastroForm = ({
           </div>
 
           <h3 className="form-step-title mt-6">Informações de Contato</h3>
-          <div className="form-group">
+          <div className="form-group-auth">
             <label htmlFor="cadastroEmail">Email*</label>
             <input id="cadastroEmail" className={`form-input ${errors.cadastroEmail ? 'border-red-500' : ''}`} type="email" value={formData.cadastroEmail} 
               onChange={(e) => onInputChange('cadastroEmail', e.target.value)} required />
             {errors.cadastroEmail && <small className="error-message text-red-500">{errors.cadastroEmail}</small>}
           </div>
-          <div className="form-group">
+          <div className="form-group-auth">
             <label htmlFor="cadastroTelefone">Telefone</label>
             <input 
               className="form-input"

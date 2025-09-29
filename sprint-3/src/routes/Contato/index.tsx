@@ -35,7 +35,7 @@ export default function Contato() {
                             
                         {/* Formulário de contato com validação e mensagens de erro */}
                         <form id="formContato" onSubmit={handleSubmit(onSubmit)} noValidate>
-                            <div className="form-group">
+                            <div className="form-group-contato">
                                 <label htmlFor="nomeCompleto">Nome Completo*</label>
                                 <input type="text" id="nomeCompleto" placeholder="Seu nome completo"
                                 {...register("nomeCompleto", { required: "Informe seu nome completo" })}
@@ -43,7 +43,7 @@ export default function Contato() {
                                 <small className="error-message">{errors.nomeCompleto?.message}</small>
                             </div>
 
-                            <div className="form-group">
+                            <div className="form-group-contato">
                                 <label htmlFor="email">Email*</label>
                                 <input type="email" id="email" placeholder="seu.email@exemplo.com"
                                 
@@ -58,13 +58,13 @@ export default function Contato() {
                                 <small className="error-message">{errors.email?.message}</small>
                             </div>
 
-                            <div className="form-group">
+                            <div className="form-group-contato">
                                 <label htmlFor="telefone">Telefone</label>
                                 <input type="tel" id="telefone" placeholder="(99) 99999-9999"
                                 {...register("telefone")}/>
                             </div>
                             
-                            <div className="form-group">
+                            <div className="form-group-contato">
                                 <label htmlFor="assunto">Assunto*</label>
                                 <select id="assunto"
                                 {...register("assunto", { required: "Selecione um assunto" })}
@@ -78,7 +78,7 @@ export default function Contato() {
                                 </select>
                                 <small className="error-message">{errors.assunto?.message}</small>
                             </div>
-                            <div className="form-group">
+                            <div className="form-group-contato">
                                 <label htmlFor="mensagem">Mensagem*</label>
                                 <textarea id="mensagem" placeholder="Descreva sua mensagem aqui..."
                                 {...register("mensagem", { required: "Digite sua mensagem" })}

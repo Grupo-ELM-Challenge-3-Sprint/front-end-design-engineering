@@ -24,7 +24,7 @@ export const PasswordField = ({
   onTogglePassword
 }: PasswordFieldProps): ReactElement => {
   return (
-    <div className="form-group">
+    <div className="form-group-auth">
       <label htmlFor={id}>{label}</label>
       <div className="relative">
         <input 

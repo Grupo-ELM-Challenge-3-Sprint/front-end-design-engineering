@@ -30,7 +30,7 @@ export const LoginForm = ({
         <p className="auth-subtitle">Entre com suas credenciais para acessar sua área de paciente.</p>
         
         <form onSubmit={onSubmit}>
-          <div className="form-group">
+          <div className="form-group-auth">
             <label htmlFor="loginCpf">CPF</label>
             <input 
               className={`form-input ${errors.loginCpf ? 'border-red-500' : ''}`}

@@ -415,7 +415,7 @@ Cada rota utiliza o layout `PacientePage` para manter a consistência visual e i
 
 - Repositório GitHub: [https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering](https://github.com/Grupo-ELM-Challenge-3-Sprint/front-end-design-engineering)
 
-- Vídeo no YouTube: [https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/watch?v=dQw4w9WgXcQ) (trocar depois)
+- Vídeo no YouTube: [https://www.youtube.com/watch?v=9jOQ2IKvZqk](https://www.youtube.com/watch?v=9jOQ2IKvZqk)
 
 ---
 ## Como instalar / rodar o SimplesHC?

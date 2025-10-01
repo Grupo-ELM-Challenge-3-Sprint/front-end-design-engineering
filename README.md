@@ -69,6 +69,21 @@ Mais do que uma atividade acadêmica, o SimplesHC tem como missão promover impa
 
 ---
 
+## Imagens e Ícones
+
+As imagens e ícones utilizados no projeto estão localizados na pasta `public/img`. A estrutura da pasta é organizada da seguinte forma:
+
+```
+public/img/
+├── icons/              # Ícones do site, como favicon e outros elementos gráficos
+├── imagem-index/       # Imagens usadas na página inicial, incluindo logos
+├── imagens-hospitais/  # Fotos das unidades hospitalares do Hospital das Clínicas
+├── imagens-integrantes/# Fotos dos membros da equipe de desenvolvimento
+└── tutoriais/          # Imagens ilustrativas dos tutoriais de uso da plataforma
+```
+
+---
+
 ## Estrutura de Pastas do Projeto
 
 ```
